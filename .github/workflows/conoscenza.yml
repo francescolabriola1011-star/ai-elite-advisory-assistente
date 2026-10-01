@@ -15,6 +15,6 @@ jobs:
       - run: |
           git config user.name "aggiorna-conoscenza"
           git config user.email "actions@users.noreply.github.com"
-          git add conoscenza.txt
+          git add conoscenza.txt conoscenza.json
           git diff --cached --quiet || git commit -m "Conoscenza aggiornata"
           git push

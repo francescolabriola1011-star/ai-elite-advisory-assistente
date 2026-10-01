@@ -19,4 +19,6 @@ parti.append("\n\n".join(righe))
 oggi = datetime.date.today().strftime("%d/%m/%Y")
 testo = f"CONOSCENZA DI BRACCIO DESTRO, AI ELITE ADVISORY. Versione del {oggi}.\n\n" + "\n\n".join(parti) + "\n"
 (root / "conoscenza.txt").write_text(testo, encoding="utf-8")
+# Stessa conoscenza in JSON: la legge l'azione del GPT su ChatGPT.
+(root / "conoscenza.json").write_text(json.dumps({"versione": oggi, "conoscenza": testo}, ensure_ascii=False), encoding="utf-8")
 print(f"conoscenza.txt: {len(testo)} caratteri, {len(parti)} parti")
