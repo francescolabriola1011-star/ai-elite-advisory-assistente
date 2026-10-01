@@ -1,0 +1,482 @@
+<title>Braccio Destro</title>
+<meta name="description" content="L'assistente AI che scrive per te messaggi ai lead, risposte alle obiezioni e note dopo la call.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --navy:#1F3864; --navy-ink:#14264A; --gold:#C8A558; --gold-soft:#F4EBD6;
+  --ground:#F3F5F9; --card:#FFFFFF; --ink:#18223A; --muted:#5B6782; --line:#DCE2EC;
+  --bubble:#E9F3EC; --bubble-ink:#183A26; --ok:#2E7D4F; --warn:#9C2B2B;
+  --tile:#FFFFFF; --tile-hover:#F8FAFD; --focus:#C8A558;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Figtree", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --navy:#9DB4E0; --navy-ink:#C9D7F2; --gold:#D9BA72; --gold-soft:#3A3222;
+    --ground:#10151F; --card:#171E2B; --ink:#E7ECF5; --muted:#9AA6BE; --line:#2A3446;
+    --bubble:#1C3426; --bubble-ink:#CFEBD8; --ok:#6FCB95; --warn:#E58A8A;
+    --tile:#171E2B; --tile-hover:#1D2636; --focus:#D9BA72;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --navy:#9DB4E0; --navy-ink:#C9D7F2; --gold:#D9BA72; --gold-soft:#3A3222;
+  --ground:#10151F; --card:#171E2B; --ink:#E7ECF5; --muted:#9AA6BE; --line:#2A3446;
+  --bubble:#1C3426; --bubble-ink:#CFEBD8; --ok:#6FCB95; --warn:#E58A8A;
+  --tile:#171E2B; --tile-hover:#1D2636; --focus:#D9BA72;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;margin:0}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:20px 56px;display:flex;flex-direction:column;gap:28px}
+h1,h2,h3{font-family:var(--serif);text-wrap:balance;margin:0;color:var(--navy-ink)}
+button,input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+
+header.top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.brand{display:flex;flex-direction:column;gap:2px}
+.brand .maker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.brand h1{font-size:30px;letter-spacing:-.01em}
+.brand h1 span{color:var(--gold)}
+.brand p{margin:0;color:var(--muted);font-size:15px}
+.who{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--card);padding:8px 12px;border-radius:999px;cursor:pointer;font-size:14px;white-space:nowrap}
+.who .dot{width:8px;height:8px;border-radius:50%;background:var(--warn)}
+.who.ok .dot{background:var(--ok)}
+
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:520px){.tiles{grid-template-columns:1fr}}
+.tile{display:flex;flex-direction:column;gap:6px;text-align:left;background:var(--tile);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px;cursor:pointer;transition:background .15s,border-color .15s}
+.tile:hover{background:var(--tile-hover);border-color:var(--gold)}
+.tile[aria-pressed="true"]{border-color:var(--navy);box-shadow:inset 0 0 0 1px var(--navy)}
+.tile .k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.tile strong{font-family:var(--serif);font-size:20px;color:var(--navy-ink);line-height:1.2}
+.tile span{color:var(--muted);font-size:14px}
+
+.work{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.work h2{font-size:22px}
+.hint{color:var(--muted);font-size:14px;margin:0}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+label.lab{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.02em}
+textarea,input[type=text],select{width:100%;border:1px solid var(--line);background:var(--ground);border-radius:10px;padding:12px}
+textarea{min-height:130px;resize:vertical}
+.chip{border:1px solid var(--line);background:var(--ground);border-radius:999px;padding:6px 12px;font-size:14px;cursor:pointer}
+.chip:hover{border-color:var(--gold)}
+.btn{border:0;border-radius:10px;padding:12px 18px;font-weight:700;cursor:pointer;background:var(--navy);color:var(--card)}
+:root[data-theme="dark"] .btn{color:#10151F}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn{color:#10151F}}
+.btn.ghost{background:transparent;color:var(--navy-ink);border:1px solid var(--line)}
+.btn:disabled{opacity:.55;cursor:default}
+
+.out{display:flex;flex-direction:column;gap:12px}
+.ans{white-space:pre-wrap;overflow-wrap:anywhere}
+.ans b{color:var(--navy-ink)}
+.msg{background:var(--bubble);color:var(--bubble-ink);border-radius:14px 14px 14px 4px;padding:14px 14px 10px;display:flex;flex-direction:column;gap:8px}
+.msg .t{white-space:pre-wrap;overflow-wrap:anywhere}
+.msg button{align-self:flex-end;border:0;background:transparent;color:var(--bubble-ink);font-weight:700;cursor:pointer;font-size:14px;padding:4px 6px}
+.thinking{color:var(--muted);font-style:italic}
+.err{color:var(--warn);font-size:14px}
+.save{display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-top:1px dashed var(--line);padding-top:12px}
+.save input{flex:1 1 200px}
+
+section.block{display:flex;flex-direction:column;gap:12px}
+section.block h2{font-size:22px}
+.search{position:relative}
+details.faq{background:var(--card);border:1px solid var(--line);border-radius:12px}
+details.faq summary{cursor:pointer;padding:14px 16px;font-weight:600;list-style:none;display:flex;gap:10px;justify-content:space-between;align-items:flex-start}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";color:var(--gold);font-weight:700;font-size:20px;line-height:1}
+details.faq[open] summary::after{content:"–"}
+details.faq .a{padding:0 16px 16px;white-space:pre-wrap;color:var(--ink)}
+.grp{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:6px}
+.empty{color:var(--muted);font-size:14px}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.contact .h{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.contact .h strong{font-family:var(--serif);font-size:18px;color:var(--navy-ink)}
+.contact .h small{color:var(--muted);font-variant-numeric:tabular-nums}
+.contact .n{white-space:pre-wrap;font-size:14px;color:var(--ink);max-height:7.5em;overflow:hidden}
+.contact.open .n{max-height:none}
+.linkish{border:0;background:none;color:var(--navy);cursor:pointer;padding:0;font-size:14px;font-weight:600}
+
+dialog{border:1px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);max-width:520px;width:calc(100% - 32px);padding:20px}
+dialog::backdrop{background:rgba(10,15,25,.45)}
+dialog form{display:flex;flex-direction:column;gap:12px}
+.chat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.chat h2{font-size:22px}
+.thread{display:flex;flex-direction:column;gap:12px;max-height:60vh;overflow-y:auto;padding-right:2px}
+.bot,.me{padding:12px 14px;border-radius:14px;max-width:92%;overflow-wrap:anywhere}
+.bot{background:var(--ground);border-bottom-left-radius:4px;align-self:flex-start;display:flex;flex-direction:column;gap:10px}
+.bot.intro{color:var(--muted)}
+.me{background:var(--navy);color:var(--card);border-bottom-right-radius:4px;align-self:flex-end;white-space:pre-wrap}
+:root[data-theme="dark"] .me{color:#10151F}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .me{color:#10151F}}
+.composer{display:flex;flex-direction:column;gap:8px}
+.composer textarea{min-height:64px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+h2.sub{font-size:18px;color:var(--muted);margin-bottom:-14px}
+.foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <span class="maker">AI Elite Advisory</span>
+      <h1>Braccio <span>Destro</span></h1>
+      <p>Scrive per te messaggi ai lead, risposte alle obiezioni e note dopo la call.</p>
+    </div>
+    <button class="who" id="whoBtn" type="button"><span class="dot"></span><span id="whoName">Imposta il profilo</span></button>
+  </header>
+
+  <section class="chat" aria-labelledby="chatH">
+    <h2 id="chatH">Chiedimi quello che chiederesti al CSM</h2>
+    <div class="thread" id="thread" aria-live="polite">
+      <div class="bot intro">Ciao, sono il tuo assistente. Scrivimi come scriveresti nel gruppo: dove trovi una cosa, come si fa un passaggio, cosa rispondere a un lead. Puoi anche incollarmi il messaggio di un lead o gli appunti di una call.</div>
+    </div>
+    <div class="row" id="sugg">
+      <button class="chip" type="button">Dove trovo il Business Manager?</button>
+      <button class="chip" type="button">Come faccio il follow up?</button>
+      <button class="chip" type="button">Il lead non risponde da 3 giorni, cosa faccio?</button>
+      <button class="chip" type="button">Come mando un messaggio a tutti i miei clienti?</button>
+    </div>
+    <form class="composer" id="composer">
+      <label class="sr" for="chatIn">Scrivi la tua domanda</label>
+      <textarea id="chatIn" rows="2" placeholder="Scrivi qui la tua domanda…"></textarea>
+      <div class="row"><button class="btn" id="chatGo" type="submit">Invia</button><button class="btn ghost" id="chatStop" type="button" hidden>Ferma</button><button class="btn ghost" id="chatNew" type="button">Nuova chat</button></div>
+    </form>
+  </section>
+
+  <h2 class="sub">Oppure vai dritto a</h2>
+  <div class="tiles" role="group" aria-label="Scorciatoie">
+    <button class="tile" type="button" data-mode="lead" aria-pressed="false"><span class="k">Lead</span><strong>Cosa gli scrivo?</strong><span>Incolla cosa ti ha scritto o racconta la situazione: ti do il messaggio pronto.</span></button>
+    <button class="tile" type="button" data-mode="obiezione" aria-pressed="false"><span class="k">Obiezione</span><strong>Mi ha detto che…</strong><span>Scrivi l'obiezione con le sue parole: ti do cosa rispondere e cosa evitare.</span></button>
+    <button class="tile" type="button" data-mode="call" aria-pressed="false"><span class="k">Dopo la call</span><strong>Ho finito una call</strong><span>Incolla appunti o trascrizione: nota per il gestionale, follow up, cosa migliorare.</span></button>
+    <button class="tile" type="button" data-mode="chiedi" aria-pressed="false"><span class="k">Domande</span><strong>Come faccio a…</strong><span>Gestionale, foglio lead, campagne, materiali. Le più comuni sono qui sotto.</span></button>
+  </div>
+
+  <div class="work" id="work" hidden>
+    <h2 id="workTitle"></h2>
+    <p class="hint" id="workHint"></p>
+    <div id="contactRow" class="row" hidden>
+      <label class="lab" for="contactSel">Contatto salvato (facoltativo)</label>
+      <select id="contactSel"></select>
+    </div>
+    <div class="row" id="examples"></div>
+    <label class="lab" for="input">Scrivi qui</label>
+    <textarea id="input"></textarea>
+    <div class="row">
+      <button class="btn" id="go" type="button">Scrivi per me</button>
+      <button class="btn ghost" id="stop" type="button" hidden>Ferma</button>
+      <button class="btn ghost" id="reset" type="button">Ricomincia</button>
+    </div>
+    <div class="out" id="out" aria-live="polite"></div>
+    <div class="row" id="refine" hidden>
+      <button class="chip" type="button" data-r="Rendilo più corto.">Più corto</button>
+      <button class="chip" type="button" data-r="Riscrivilo dando del lei.">Dai del lei</button>
+      <button class="chip" type="button" data-r="Dammi un'altra versione, con un attacco diverso.">Un'altra versione</button>
+    </div>
+    <div class="save" id="saveRow" hidden>
+      <input type="text" id="saveName" placeholder="Nome del contatto, es. Marco Rossi">
+      <button class="btn ghost" id="saveBtn" type="button">Salva nella scheda</button>
+    </div>
+  </div>
+
+  <section class="block" aria-labelledby="faqH">
+    <h2 id="faqH">Le domande che ci fate più spesso</h2>
+    <input type="text" id="faqSearch" placeholder="Cerca: appuntamento, automazioni, lead falsi…" aria-label="Cerca nelle domande">
+    <div id="faq"></div>
+  </section>
+
+  <section class="block" aria-labelledby="contH">
+    <h2 id="contH">I tuoi contatti</h2>
+    <p class="hint">Le schede salvate dopo le call. Restano solo su questo dispositivo e le uso quando mi chiedi cosa scrivere a quella persona.</p>
+    <div id="contacts"></div>
+  </section>
+
+  <p class="foot">Braccio Destro scrive, tu leggi e mandi. Non promette mai rendimenti e non dà consulenza su strumenti: quella resta tua. Per tutto il resto c'è il tuo CSM nel gruppo.</p>
+</div>
+
+<dialog id="prof">
+  <form method="dialog" id="profForm">
+    <h2>Il tuo profilo</h2>
+    <p class="hint">Mi serve per firmare i messaggi al posto tuo. Resta su questo dispositivo.</p>
+    <label class="lab" for="pNome">Nome e cognome</label>
+    <input type="text" id="pNome" placeholder="es. Marcello Rossi">
+    <label class="lab" for="pStudio">Indirizzo dello studio</label>
+    <input type="text" id="pStudio" placeholder="es. Via Roma 12, Torino, citofono Rossi">
+    <label class="lab" for="pGuida">Link della guida per i lead (facoltativo)</label>
+    <input type="text" id="pGuida" placeholder="lo trovi nei messaggi ufficiali">
+    <label class="lab" for="pCal">Link del tuo calendario (facoltativo)</label>
+    <input type="text" id="pCal" placeholder="https://…">
+    <div id="codeWrap" hidden>
+      <label class="lab" for="pCode">Codice di accesso</label>
+      <input type="text" id="pCode" placeholder="te lo dà il CSM">
+    </div>
+    <div class="row"><button class="btn" value="ok" type="submit">Salva</button><button class="btn ghost" value="no" type="submit">Chiudi</button></div>
+  </form>
+</dialog>
+
+<script type="application/json" id="kb">{"faq": {"_fonte": "Domande ricorrenti dei consulenti a CSM e media buyer, ricostruite il 1/10/2026 da memorie e SOP interne.", "gruppi": [{"id": "lead", "titolo": "Lead e messaggi", "voci": [{"d": "Come faccio il follow up?", "chi": "CSM", "r": "Ogni chiamata va con un WhatsApp subito dopo.\n1. Giorno 1: chiamata piu' audio\n2. Giorno 2, se non risponde: due chiamate piu' messaggio scritto\n3. Dopo 4 tentativi: messaggio di chiusura ciclo (\"fammi sapere con un NO...\") e lo ricontatti nelle settimane dopo\n\nChi sparisce: solo il nome col punto di domanda, \"Marco?\". Dopo l'appuntamento fissato: conferma subito, reminder 24 ore prima e messaggio la mattina. I testi sono in \"Messaggi da mandare Followup manuali\"; ogni tentativo si segna nelle note."}, {"d": "I lead sono di bassa qualita', molti non rispondono o sono falsi", "chi": "MB", "r": "Le campagne lavorano a maglie larghe, quindi entra di tutto. Su 15 contatti e' normale averne circa 5 falsi o stranieri, 5 che non rispondono e 5 buoni: le vendite arrivano dai 5 buoni, ma solo se li lavori tutti con lo stesso metodo.\n\nCosa fai: chiama entro 5 minuti, chiamata piu' WhatsApp ogni volta, 4 tentativi prima di chiudere il ciclo. I numeri inesistenti li segnali nel gruppo con nome ed esito: il media buyer li usa per correggere la campagna."}, {"d": "Il lead non risponde, cosa gli scrivo?", "chi": "CSM", "r": "Segui la sequenza: audio di primo contatto, poi messaggio dopo chiamata senza risposta, il giorno dopo due chiamate piu' messaggio scritto, infine la chiusura ciclo (\"fammi sapere con un NO...\"). A chi sparisce dopo giorni manda solo il nome col punto di domanda: \"Marco?\".\n\nVuoi il testo pronto adattato al tuo lead? Usa \"Cosa gli scrivo\"."}, {"d": "Il lead dice che non si ricorda di aver lasciato i dati", "chi": "CSM", "r": "Succede spesso, e non vuol dire che sia un lead falso. Ricordagli il tema: \"avevi chiesto la guida su quanto capitale serve per la pensione\". Se ancora non ricorda, fai la panoramica veloce dello script 1a call e chiedi se vuole capire come sistemare la cosa. Se dice di no, ringrazi e chiudi."}, {"d": "Arrivano lead fuori target (pensionati, eta' sbagliata, pochi soldi)", "chi": "MB", "r": "Segnalali nel gruppo con nome e motivo: il filtro per eta' su Meta e' debole e il media buyer corregge con il testo dell'annuncio e la domanda del modulo, non solo con l'eta'.\n\nCon il lead: rispondi gentile, fai capire il valore di una consulenza seria e vai avanti. Un appuntamento fuori target vale meno di zero."}, {"d": "Il lead ha gia' l'appuntamento ma riceve ancora i messaggi automatici", "chi": "CSM", "r": "Controlla di averlo spostato nello stadio \"appuntamento fissato\" nel gestionale: e' quello che mette il tag che ferma i messaggi. Se e' gia' li' e continuano ad arrivare, scrivilo nel gruppo col nome del lead: va sistemato il bivio dell'automazione."}]}, {"id": "strumenti", "titolo": "Gestionale e automazioni", "voci": [{"d": "Dove trovo il Business Manager?", "chi": "MB", "r": "Si apre da business.facebook.com, entrando con il profilo Facebook che gestisce la pagina dello studio. In Impostazioni vedi pagine, account pubblicitari, Instagram e chi ha accesso.\n\nIl passo per passo e' nel video 03 \"Aprire il Business Manager\", nella cartella Onboarding. Se hai piu' pagine o un accesso non va, scrivi al CSM nel gruppo: si sistema insieme in pochi minuti."}, {"d": "Come mando un messaggio WhatsApp a tutti i miei clienti?", "chi": "CSM", "r": "Dal gestionale, non piu' con le liste broadcast:\n1. Impostazioni, WhatsApp, Modelli: crei il modello (categoria Utility per report e avvisi) e lo mandi in approvazione\n2. Contatti: dai un'etichetta ai clienti, filtri e salvi la lista\n3. Apri la lista, selezioni tutti, Invia WhatsApp, scegli il modello e invii o programmi\n\nUn invio a freddo costa circa 3 centesimi a messaggio. Guida completa: 08 Comunicazioni WhatsApp dal gestionale."}, {"d": "Le automazioni WhatsApp non partono", "chi": "CSM", "r": "La causa piu' frequente e' il credito del gestionale finito: i messaggi escono come falliti per fondi insufficienti. Vai in Impostazioni, poi Fatturazione e Wallet, ricarica e attiva la ricarica automatica. Se il credito c'e', scrivi nel gruppo con il nome di un lead che non ha ricevuto il messaggio."}, {"d": "Devo per forza usare le automazioni e il calendario del gestionale?", "chi": "CSM", "r": "Si'. Senza automazioni non si vede cosa succede ai lead, quindi gli appuntamenti non sono tracciabili e le garanzie non si possono calcolare. Se usi gia' un tuo calendario (es. Calendly), il CSM lo collega."}, {"d": "Dove segno che ho fissato un appuntamento?", "chi": "CSM", "r": "In tre posti, subito dopo la call:\n• Foglio Lead: spunta la casella dell'appuntamento sulla riga del lead\n• Gestionale: stadio \"appuntamento fissato\" e nota completa\n• Calendario: l'incontro con data, ora e indirizzo\n\nPoi manda la conferma scritta al lead."}, {"d": "Cosa scrivo nelle note del gestionale?", "chi": "CSM", "r": "Obiettivo con le sue parole, cosa ha gia' attivo e chi lo segue, quanto mette da parte al mese piu' la somma ferma, se decide da solo o in due, stadio ed esito, prossimo passo con data. Niente note su carta o chat private.\n\nSe incolli gli appunti in \"Ho finito una call\" la nota te la scrivo io."}, {"d": "Ho chiuso un cliente, cosa aggiorno?", "chi": "CSM", "r": "Gestionale (stadio chiuso e nota), casella CHIUSO nel Foglio Lead, e il Modulo Fatturato con l'importo reale. Il Modulo Fatturato e' quello da cui si calcola il ritorno delle campagne: senza, il tuo risultato non si vede."}]}, {"id": "campagne", "titolo": "Campagne", "voci": [{"d": "Ogni quanto mi arriva un nuovo lead?", "chi": "MB", "r": "Non a ritmo fisso: dipende dal budget giornaliero, dalla tua zona e da come rendono gli annunci in quel periodo.\n\nDove lo vedi: ogni lead compare in tempo reale nel gestionale (con la notifica, se hai l'app sul telefono) e come riga nuova nel Foglio Lead. Il conto della settimana, con spesa e costo per contatto, te lo da' il CSM il lunedi e il venerdi.\n\nSe passano 3 giorni senza lead nuovi, scrivilo nel gruppo: il media buyer controlla campagna e modulo."}, {"d": "Da qualche giorno non arrivano lead", "chi": "MB", "r": "Scrivilo subito nel gruppo, senza toccare niente su Meta. Le cause tipiche sono un modulo bloccato, un pagamento non passato o una campagna in revisione: il media buyer controlla e ti risponde. Non spegnere e non duplicare campagne da solo."}, {"d": "Il costo per contatto e' salito, quando migliora?", "chi": "MB", "r": "Una settimana non fa testo: gli effetti di un cambio si leggono dopo 2-3 settimane. Il giudizio si da' sul singolo annuncio, non sulla media della campagna. Il media buyer stacca quello che non rende e tiene quello che porta contatti."}, {"d": "Posso cambiare il testo dell'annuncio, la guida o il link?", "chi": "MB", "r": "No, avvisa prima il CSM. Annuncio, guida, messaggi e calendario sono una catena: se uno racconta una cosa diversa dall'altro, il lead non risponde e il costo sale. Le idee sono benvenute, le modifiche le fa il team."}, {"d": "Posso allargare la zona o alzare il budget?", "chi": "MB", "r": "Si decide con il media buyer: allargare la zona serve quando il bacino e' troppo piccolo, alzare il budget quando gli annunci buoni hanno spazio. Chiedilo nel gruppo e ricevi la proposta con i numeri."}]}, {"id": "percorso", "titolo": "Percorso e materiali", "voci": [{"d": "Dove trovo script, messaggi e obiezioni?", "chi": "CSM", "r": "Nella tua cartella Drive, sottocartella SCRIPT Vendita: script 1a call, 2° e 3° appuntamento, SOP, Playbook Obiezioni, Messaggi da mandare Followup manuali, Come aggiornare le note e il Simulatore Gap Pensionistico."}, {"d": "Dove trovo il Modulo Fatturato?", "chi": "CSM", "r": "Nella cartella Drive principale, accanto al Foglio Lead: si chiama \"Modulo Cliente, Fatturato\" seguito dal tuo nome. Lo compili a ogni chiusura con l'importo reale."}, {"d": "Come si usa il Simulatore Gap Pensionistico?", "chi": "CSM", "r": "E' il file .zip nella cartella SCRIPT Vendita. Scaricalo, aprilo sul computer e tienilo pronto prima del 3° appuntamento. Lo compili davanti al cliente con i dati raccolti nel 2° (eta', pensione prevista, reddito, contributi, capitale, risparmio mensile): prima esce il gap, poi come si colma. Sempre come simulazione, mai come rendimento promesso."}, {"d": "Dove carico i video e le registrazioni delle call?", "chi": "CSM", "r": "Video: cartella \"Contenuti da registrare\", un file originale per script, senza montaggio, nominato con tema e data, poi avvisi il CSM. Call: cartella \"Registrazioni Call e Appuntamenti\", servono per ascoltarle insieme e migliorare."}, {"d": "Quando ricevo i report e le call di aggiornamento?", "chi": "CSM", "r": "Aggiornamento dal CSM almeno il lunedi e il venerdi, piu' la call di report mensile. Nel report trovi lead, appuntamenti, conversioni, fatturato e ritorno sulle campagne."}, {"d": "Il training settimanale e' obbligatorio?", "chi": "CSM", "r": "E' parte del percorso e conta per le garanzie, insieme ad automazioni attive, calendario condiviso e gestionale aggiornato. Se il giorno non ti va bene dillo al CSM: si sta raccogliendo la disponibilita' di tutti."}, {"d": "Cosa dice la mia garanzia?", "chi": "CSM", "r": "Vale solo quello che c'e' scritto nel contratto firmato: per il dettaglio chiedi al CSM. I presupposti sono sempre gli stessi: lead lavorati col metodo, automazioni attive, calendario condiviso, training seguiti e gestionale aggiornato."}]}]}, "api": ""}</script>
+<script>
+(function(){
+  const $ = (s) => document.querySelector(s);
+  const store = {
+    get(k, d){ try{ const v = localStorage.getItem("bd_"+k); return v ? JSON.parse(v) : d; }catch(e){ return d; } },
+    set(k, v){ try{ localStorage.setItem("bd_"+k, JSON.stringify(v)); }catch(e){} }
+  };
+
+  const MODES = {
+    lead: { t:"Cosa gli scrivo?", h:"Incolla il messaggio del lead o scrivi in due righe cosa è successo. Più dettagli mi dai, più il testo è su misura.",
+      ph:"es. Lead entrato ieri, ho chiamato due volte e non risponde. Si chiama Giulia.",
+      ex:["Non risponde da 3 giorni","Ha risposto \"chi sei?\"","Mi ha scritto che ora non ha tempo","Conferma appuntamento di giovedì alle 18","Reminder per domani"] },
+    obiezione: { t:"Mi ha detto che…", h:"Scrivi l'obiezione con le sue parole e in che momento è arrivata (telefono, secondo o terzo incontro).",
+      ph:"es. Al terzo incontro mi ha detto: ci devo pensare, ne parlo con mia moglie.",
+      ex:["Ci devo pensare","Ho già un consulente in banca","E se i mercati scendono?","Quanto ci guadagni tu?","Non voglio muovere tutto"] },
+    call: { t:"Ho finito una call", h:"Incolla gli appunti o la trascrizione. Ti restituisco la nota per il gestionale, il follow up pronto, cosa migliorare e gli agganci da ricordare.",
+      ph:"es. Prima call con Paolo, 52 anni, architetto. Ha 180k fermi in banca, mette via 600 al mese. Decide con la moglie. Gioca a golf. Fissato martedì 18:30 in studio…",
+      ex:[] },
+    chiedi: { t:"Come faccio a…", h:"Fai la domanda come la faresti al CSM. Prima dai un'occhiata alle domande frequenti qui sotto: lì la risposta è immediata.",
+      ph:"es. Dove segno che il lead è arrivato al terzo appuntamento?",
+      ex:["Dove segno l'appuntamento?","Le automazioni non partono","Cosa aggiorno quando chiudo?"] }
+  };
+
+  let mode = null, turns = [], ctl = null, backend = null, PROMPT = "", FAQ = null, API_URL = "api/chat";
+
+  // ---------- profilo ----------
+  function prof(){ return store.get("profilo", {}); }
+  function paintWho(){
+    const p = prof(), ok = !!p.nome && (backend !== "api" || !API_URL || !!p.code);
+    $("#whoBtn").classList.toggle("ok", ok);
+    $("#whoName").textContent = p.nome ? p.nome : "Imposta il profilo";
+  }
+  function openProf(){
+    const p = prof();
+    $("#pNome").value = p.nome||""; $("#pStudio").value = p.studio||""; $("#pGuida").value = p.guida||""; $("#pCal").value = p.calendario||""; $("#pCode").value = p.code||"";
+    $("#codeWrap").hidden = backend !== "api" || !API_URL;
+    $("#prof").showModal();
+  }
+  $("#whoBtn").addEventListener("click", openProf);
+  $("#prof").addEventListener("close", () => {
+    if ($("#prof").returnValue !== "ok") return;
+    store.set("profilo", { nome:$("#pNome").value.trim(), studio:$("#pStudio").value.trim(), guida:$("#pGuida").value.trim(), calendario:$("#pCal").value.trim(), code:$("#pCode").value.trim() });
+    paintWho();
+  });
+
+  // ---------- contatti ----------
+  function contacts(){ return store.get("contatti", []); }
+  function paintContacts(){
+    const list = contacts(), box = $("#contacts"); box.textContent = "";
+    if (!list.length){ const p = document.createElement("p"); p.className="empty"; p.textContent = "Nessuna scheda ancora. Dopo una call usa \"Ho finito una call\" e poi Salva nella scheda."; box.append(p); }
+    list.forEach((c, i) => {
+      const el = document.createElement("div"); el.className = "contact";
+      const h = document.createElement("div"); h.className="h";
+      const s = document.createElement("strong"); s.textContent = c.nome;
+      const d = document.createElement("small"); d.textContent = "aggiornata il " + c.data;
+      h.append(s, d);
+      const n = document.createElement("div"); n.className="n"; n.textContent = c.nota;
+      const r = document.createElement("div"); r.className="row";
+      const more = document.createElement("button"); more.className="linkish"; more.type="button"; more.textContent="Apri tutta";
+      more.onclick = () => { el.classList.toggle("open"); more.textContent = el.classList.contains("open") ? "Chiudi" : "Apri tutta"; };
+      const write = document.createElement("button"); write.className="linkish"; write.type="button"; write.textContent="Cosa gli scrivo adesso?";
+      write.onclick = () => { pick("lead"); $("#contactSel").value = String(i); $("#input").focus(); };
+      const del = document.createElement("button"); del.className="linkish"; del.type="button"; del.textContent="Elimina";
+      del.onclick = () => { if (del.dataset.c){ const l = contacts(); l.splice(i,1); store.set("contatti", l); paintContacts(); fillContactSel(); } else { del.dataset.c="1"; del.textContent="Tocca di nuovo per eliminare"; } };
+      r.append(more, write, del);
+      el.append(h, n, r); box.append(el);
+    });
+  }
+  function fillContactSel(){
+    const sel = $("#contactSel"); sel.textContent = "";
+    const o = document.createElement("option"); o.value=""; o.textContent="Nessuno"; sel.append(o);
+    contacts().forEach((c,i) => { const x = document.createElement("option"); x.value=String(i); x.textContent=c.nome; sel.append(x); });
+  }
+
+  // ---------- modalità ----------
+  function pick(m){
+    mode = m; turns = [];
+    document.querySelectorAll(".tile").forEach(t => t.setAttribute("aria-pressed", String(t.dataset.mode === m)));
+    const M = MODES[m];
+    $("#work").hidden = false; $("#workTitle").textContent = M.t; $("#workHint").textContent = M.h;
+    $("#input").placeholder = M.ph; $("#input").value = "";
+    $("#contactRow").hidden = (m === "chiedi" || !contacts().length);
+    fillContactSel();
+    const ex = $("#examples"); ex.textContent = "";
+    M.ex.forEach(e => { const b = document.createElement("button"); b.type="button"; b.className="chip"; b.textContent=e; b.onclick=()=>{ $("#input").value = e; $("#input").focus(); }; ex.append(b); });
+    $("#out").textContent = ""; $("#refine").hidden = true; $("#saveRow").hidden = true;
+    $("#work").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start"});
+  }
+  document.querySelectorAll(".tile").forEach(t => t.addEventListener("click", () => pick(t.dataset.mode)));
+  $("#reset").addEventListener("click", () => mode && pick(mode));
+
+  // ---------- rendering risposta ----------
+  function esc(s){ return s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c])); }
+  function inline(s){ return esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>"); }
+  function render(text, into){
+    into.textContent = "";
+    const re = /TESTO DA MANDARE\s*:?\s*\n?([\s\S]*?)(?:\n?\s*FINE TESTO|$)/g;
+    let last = 0, m;
+    while ((m = re.exec(text))){
+      const before = text.slice(last, m.index).trim();
+      if (before){ const d = document.createElement("div"); d.className="ans"; d.innerHTML = inline(before); into.append(d); }
+      const body = m[1].trim();
+      if (body){
+        const b = document.createElement("div"); b.className="msg";
+        const t = document.createElement("div"); t.className="t"; t.textContent = body.replace(/\*\*/g,"");
+        const c = document.createElement("button"); c.type="button"; c.textContent="Copia";
+        c.onclick = async () => { try{ await navigator.clipboard.writeText(t.textContent); c.textContent="Copiato"; }catch(e){ const r = document.createRange(); r.selectNodeContents(t); const s = getSelection(); s.removeAllRanges(); s.addRange(r); c.textContent="Selezionato: tieni premuto e copia"; } setTimeout(()=>c.textContent="Copia", 2500); };
+        b.append(t, c); into.append(b);
+      }
+      last = re.lastIndex;
+    }
+    const rest = text.slice(last).trim();
+    if (rest){ const d = document.createElement("div"); d.className="ans"; d.innerHTML = inline(rest); into.append(d); }
+  }
+
+  // ---------- chiamata a Claude ----------
+  function contesto(){
+    const p = prof(); const ctx = { nome:p.nome||"", studio:p.studio||"", guida:p.guida||"", calendario:p.calendario||"" };
+    const i = $("#contactSel").value;
+    let extra = "";
+    if (i !== "" && mode !== "chiedi"){ const c = contacts()[Number(i)]; if (c) extra = "\n\nSCHEDA SALVATA DI " + c.nome.toUpperCase() + " (usala per personalizzare):\n" + c.nota; }
+    return { ctx, extra };
+  }
+  const MODE_LABEL = { libera:"MODALITA': LIBERA", lead:"MODALITA': RISPONDI AL LEAD", obiezione:"MODALITA': OBIEZIONE", call:"MODALITA': DOPO LA CALL", chiedi:"MODALITA': CHIEDI" };
+
+  async function ask(onText, signal, m = mode, t = turns){
+    const mode = m, turns = t;
+    const { ctx } = contesto();
+    if (backend === "sample"){
+      if (!PROMPT) throw { code:"api", message:"Non ho caricato le mie istruzioni, quindi non rispondo per non darti risposte generiche. Ricarica la pagina; se succede ancora avvisa il CSM." };
+      const sample = await claude.use("sample");
+      const faqText = FAQ ? "\n\nDOMANDE FREQUENTI DEI CONSULENTI E RISPOSTE UFFICIALI\n" + FAQ.gruppi.flatMap(g => g.voci.map(v => "D: " + v.d + "\nR: " + v.r)).join("\n\n") : "";
+      const head = PROMPT + faqText + "\n\n" + MODE_LABEL[mode] + "\nPROFILO DEL CONSULENTE (usa questi dati al posto dei segnaposto): " + JSON.stringify(ctx);
+      const r = await sample([{role:"user", content: head}, ...turns], { cache:false, signal, onText:({text}) => onText(text) });
+      return r.text;
+    }
+    if (!API_URL) throw { code:"api", message:"La chat si sta attivando in questi giorni. Intanto qui sotto trovi le risposte alle domande più frequenti, e per il resto scrivi al CSM nel gruppo." };
+    const p = prof();
+    const res = await fetch(API_URL, { method:"POST", headers:{"Content-Type":"application/json"}, signal,
+      body: JSON.stringify({ code:p.code||"", mode, profilo:ctx, messages:turns }) });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw { code:"api", message: data.error || "Il servizio non ha risposto. Riprova fra poco." };
+    onText(data.text); return data.text;
+  }
+
+  function errCopy(e){
+    const c = e && e.code;
+    if (c === "not_granted" || c === "sampling_disabled") return "Per usarmi qui devi consentire l'uso di Claude a questa pagina.";
+    if (c === "rate_limited") return "Troppe richieste in poco tempo. Riprova fra un minuto.";
+    if (c === "api") return e.message;
+    return "Non sono riuscito a rispondere. Riprova.";
+  }
+
+  async function send(userText){
+    if (!backend){ $("#out").textContent = "Sto ancora caricando, riprova fra un istante."; return; }
+    const p = prof();
+    if (!p.nome){ openProf(); return; }
+    if (backend === "api" && API_URL && !p.code){ openProf(); return; }
+    const { extra } = contesto();
+    turns.push({ role:"user", content: userText + (turns.length === 0 ? extra : "") });
+    const out = $("#out"); out.textContent = "";
+    const box = document.createElement("div"); const th = document.createElement("div"); th.className="thinking"; th.textContent = "Sto scrivendo…"; box.append(th); out.append(box);
+    ctl = new AbortController();
+    $("#go").disabled = true; $("#stop").hidden = false; $("#refine").hidden = true; $("#saveRow").hidden = true;
+    try{
+      const text = await ask(t => render(t, box), ctl.signal);
+      turns.push({ role:"assistant", content:text });
+      render(text, box);
+      $("#refine").hidden = (mode === "chiedi");
+      if (mode === "call"){ $("#saveRow").hidden = false; const sel = $("#contactSel").value; if (sel !== "") $("#saveName").value = contacts()[Number(sel)]?.nome || ""; }
+    }catch(e){
+      if (e && e.text) render(e.text, box);
+      if (!(e && e.code === "cancelled")){ const d = document.createElement("p"); d.className="err"; d.textContent = errCopy(e); out.append(d); }
+      if (turns.length && turns[turns.length-1].role === "user") turns.pop();
+    }finally{
+      $("#go").disabled = false; $("#stop").hidden = true;
+    }
+  }
+  $("#go").addEventListener("click", () => { const v = $("#input").value.trim(); if (!v || !mode) return; send(v); $("#input").value = ""; $("#input").placeholder = "Vuoi cambiare qualcosa? Scrivilo qui, es. aggiungi che lo chiamo domani alle 9"; });
+  $("#stop").addEventListener("click", () => ctl && ctl.abort());
+  document.querySelectorAll("#refine .chip").forEach(b => b.addEventListener("click", () => send(b.dataset.r)));
+  $("#saveBtn").addEventListener("click", () => {
+    const nome = $("#saveName").value.trim(); const last = [...turns].reverse().find(t => t.role === "assistant");
+    if (!nome || !last) { $("#saveName").focus(); return; }
+    const l = contacts(); const idx = l.findIndex(c => c.nome.toLowerCase() === nome.toLowerCase());
+    const data = new Date().toLocaleDateString("it-IT");
+    const voce = { nome, data, nota: last.content.replace(/TESTO DA MANDARE|FINE TESTO/g,"").trim() };
+    if (idx >= 0){ voce.nota = l[idx].nota + "\n\n— " + data + "\n" + voce.nota; l[idx] = voce; } else l.unshift(voce);
+    store.set("contatti", l); paintContacts(); fillContactSel();
+    $("#saveBtn").textContent = "Salvata"; setTimeout(()=>$("#saveBtn").textContent="Salva nella scheda", 2000);
+  });
+
+  // ---------- chat libera ----------
+  let chatTurns = [], chatCtl = null;
+  function bubble(cls, text){
+    const d = document.createElement("div"); d.className = cls;
+    if (cls === "me") d.textContent = text; else render(text, d);
+    $("#thread").append(d); $("#thread").scrollTop = $("#thread").scrollHeight; return d;
+  }
+  async function chatSend(text){
+    text = (text||"").trim(); if (!text) return;
+    if (!backend){ bubble("bot", "Sto ancora caricando, riprova fra un istante."); return; }
+    const p = prof();
+    if (!p.nome || (backend === "api" && API_URL && !p.code)){ openProf(); return; }
+    $("#sugg").hidden = true;
+    bubble("me", text);
+    chatTurns.push({ role:"user", content:text });
+    const b = document.createElement("div"); b.className = "bot"; const th = document.createElement("span"); th.className="thinking"; th.textContent="Sto scrivendo…"; b.append(th); $("#thread").append(b);
+    $("#thread").scrollTop = $("#thread").scrollHeight;
+    chatCtl = new AbortController(); $("#chatGo").disabled = true; $("#chatStop").hidden = false;
+    try{
+      const out = await ask(t => { render(t, b); $("#thread").scrollTop = $("#thread").scrollHeight; }, chatCtl.signal, "libera", chatTurns.slice(-12));
+      chatTurns.push({ role:"assistant", content:out }); render(out, b);
+    }catch(e){
+      if (e && e.text) render(e.text, b); else b.textContent = "";
+      if (!(e && e.code === "cancelled")){ const d = document.createElement("p"); d.className="err"; d.textContent = errCopy(e); b.append(d); }
+      if (chatTurns.length && chatTurns[chatTurns.length-1].role === "user") chatTurns.pop();
+    }finally{ $("#chatGo").disabled = false; $("#chatStop").hidden = true; }
+  }
+  $("#composer").addEventListener("submit", e => { e.preventDefault(); const v = $("#chatIn").value; $("#chatIn").value = ""; chatSend(v); });
+  $("#chatIn").addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey && !matchMedia("(pointer: coarse)").matches){ e.preventDefault(); $("#composer").requestSubmit(); } });
+  $("#chatStop").addEventListener("click", () => chatCtl && chatCtl.abort());
+  $("#chatNew").addEventListener("click", () => { chatTurns = []; [...$("#thread").children].slice(1).forEach(n => n.remove()); $("#sugg").hidden = false; $("#chatIn").focus(); });
+  document.querySelectorAll("#sugg .chip").forEach(c => c.addEventListener("click", () => chatSend(c.textContent)));
+
+  // ---------- FAQ ----------
+  function paintFaq(q){
+    const box = $("#faq"); box.textContent = ""; if (!FAQ) return;
+    const needle = (q||"").toLowerCase().trim(); let shown = 0;
+    FAQ.gruppi.forEach(g => {
+      const voci = g.voci.filter(v => !needle || (v.d + " " + v.r).toLowerCase().includes(needle));
+      if (!voci.length) return;
+      const gh = document.createElement("div"); gh.className="grp"; gh.textContent = g.titolo; box.append(gh);
+      voci.forEach(v => {
+        const d = document.createElement("details"); d.className="faq";
+        const s = document.createElement("summary"); s.textContent = v.d;
+        const a = document.createElement("div"); a.className="a"; a.textContent = v.r;
+        d.append(s, a); box.append(d); shown++;
+      });
+    });
+    if (!shown){ const p = document.createElement("p"); p.className="empty"; p.textContent = "Nessuna risposta pronta. Chiedimelo in \"Come faccio a…\"."; box.append(p); }
+  }
+  $("#faqSearch").addEventListener("input", e => paintFaq(e.target.value));
+
+  // ---------- avvio ----------
+  async function boot(){
+    // Conoscenza incorporata dalla build (build.py); in sviluppo si ripiega sui file a parte.
+    let KB = null;
+    try{ const el = document.getElementById("kb"); if (el) KB = JSON.parse(el.textContent); }catch(e){ KB = null; }
+    if (KB){ FAQ = KB.faq; PROMPT = KB.prompt || ""; if ("api" in KB) API_URL = KB.api; }
+    else { try{ FAQ = await (await fetch("faq.json")).json(); }catch(e){ FAQ = null; } }
+    paintFaq(""); paintContacts(); fillContactSel();
+    let s = null;
+    try{ s = window.claude ? await window.claude.use("sample") : null; }catch(e){ s = null; }
+    if (s){ backend = "sample"; if (!PROMPT){ try{ const r = await fetch("prompt.txt"); const t = await r.text(); PROMPT = t.includes("BRACCIO DESTRO") ? t : ""; }catch(e){ PROMPT = ""; } } }
+    else backend = "api";
+    paintWho();
+  }
+  paintWho();
+  boot();
+})();
+</script>
