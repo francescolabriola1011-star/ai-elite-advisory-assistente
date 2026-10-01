@@ -114,6 +114,11 @@ dialog form{display:flex;flex-direction:column;gap:12px}
 .composer{display:flex;flex-direction:column;gap:8px}
 .composer textarea{min-height:64px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.collega{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.collega h2{font-size:22px}
+.steps{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+.steps a{color:var(--navy);font-weight:600}
+.chip[aria-selected="true"]{border-color:var(--navy);background:var(--card);font-weight:700}
 h2.sub{font-size:18px;color:var(--muted);margin-bottom:-14px}
 .foot{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
@@ -128,6 +133,44 @@ h2.sub{font-size:18px;color:var(--muted);margin-bottom:-14px}
     </div>
     <button class="who" id="whoBtn" type="button"><span class="dot"></span><span id="whoName">Imposta il profilo</span></button>
   </header>
+
+  <section class="collega" id="collega" aria-labelledby="colH" hidden>
+    <h2 id="colH">Collegalo al tuo Claude o ChatGPT</h2>
+    <p class="hint">Cinque minuti, una volta sola. Poi gli scrivi come scriveresti al CSM: dove trovi una cosa, cosa rispondere a un lead, come gestire un'obiezione, la nota dopo una call. La conoscenza la aggiorniamo noi: il tuo assistente legge sempre l'ultima versione.</p>
+    <div class="row" role="tablist" aria-label="Quale assistente usi">
+      <button class="chip" type="button" role="tab" id="tabClaude" aria-selected="true">Uso Claude</button>
+      <button class="chip" type="button" role="tab" id="tabGpt" aria-selected="false">Uso ChatGPT</button>
+    </div>
+    <ol class="steps" id="stepsClaude">
+      <li>Scarica il file della conoscenza: <a href="conoscenza.txt" download>conoscenza.txt</a></li>
+      <li>Su claude.ai apri <b>Progetti</b> e crea un progetto chiamato <b>Braccio Destro</b>.</li>
+      <li>In <b>Istruzioni del progetto</b> incolla il testo qui sotto e completa i tuoi dati in fondo.</li>
+      <li>In <b>Conoscenza del progetto</b> carica il file conoscenza.txt.</li>
+      <li>Apri le chat sempre dentro il progetto. Ogni tanto ricarica il file dal link: lo aggiorniamo noi.</li>
+    </ol>
+    <ol class="steps" id="stepsGpt" hidden>
+      <li>Scarica il file della conoscenza: <a href="conoscenza.txt" download>conoscenza.txt</a></li>
+      <li>Su chatgpt.com apri <b>Progetti</b> e crea un progetto chiamato <b>Braccio Destro</b>.</li>
+      <li>In <b>Istruzioni</b> del progetto incolla il testo qui sotto e completa i tuoi dati in fondo.</li>
+      <li>In <b>File</b> del progetto carica conoscenza.txt.</li>
+      <li>Apri le chat sempre dentro il progetto. Ogni tanto ricarica il file dal link: lo aggiorniamo noi.</li>
+    </ol>
+    <div class="msg">
+      <div class="t" id="istruzioni">Sei Braccio Destro, l'assistente di AI Elite Advisory per i consulenti finanziari che lavorano con noi. Aiuti me, consulente, a rispondere ai lead, gestire le obiezioni, scrivere le note dopo le call e trovare le cose nel percorso.
+
+La tua conoscenza è nel file conoscenza.txt che ti ho caricato. La versione sempre aggiornata è a questo link: https://francescolabriola1011-star.github.io/ai-elite-advisory-assistente/conoscenza.txt
+Se puoi aprire i link, all'inizio di ogni conversazione leggi quella pagina e usa la versione più recente; altrimenti usa il file caricato.
+
+Segui sempre le regole del file: formato delle risposte, compliance (mai promettere rendimenti) e testi ufficiali dei messaggi. Rispondi in italiano.
+
+I miei dati, da usare al posto dei segnaposto:
+Nome e cognome:
+Indirizzo dello studio:
+Link della guida per i lead:
+Link del mio calendario:</div>
+      <button type="button" id="copiaIstr">Copia il testo</button>
+    </div>
+  </section>
 
   <section class="chat" aria-labelledby="chatH">
     <h2 id="chatH">Chiedimi quello che chiederesti al CSM</h2>
@@ -443,6 +486,20 @@ h2.sub{font-size:18px;color:var(--muted);margin-bottom:-14px}
   $("#chatNew").addEventListener("click", () => { chatTurns = []; [...$("#thread").children].slice(1).forEach(n => n.remove()); $("#sugg").hidden = false; $("#chatIn").focus(); });
   document.querySelectorAll("#sugg .chip").forEach(c => c.addEventListener("click", () => chatSend(c.textContent)));
 
+  // ---------- collega il tuo assistente ----------
+  function tab(claude){
+    $("#tabClaude").setAttribute("aria-selected", String(claude)); $("#tabGpt").setAttribute("aria-selected", String(!claude));
+    $("#stepsClaude").hidden = !claude; $("#stepsGpt").hidden = claude;
+  }
+  $("#tabClaude").addEventListener("click", () => tab(true));
+  $("#tabGpt").addEventListener("click", () => tab(false));
+  $("#copiaIstr").addEventListener("click", async () => {
+    const b = $("#copiaIstr"), t = $("#istruzioni");
+    try{ await navigator.clipboard.writeText(t.textContent); b.textContent = "Copiato"; }
+    catch(e){ const r = document.createRange(); r.selectNodeContents(t); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selezionato: copialo"; }
+    setTimeout(() => b.textContent = "Copia il testo", 2500);
+  });
+
   // ---------- FAQ ----------
   function paintFaq(q){
     const box = $("#faq"); box.textContent = ""; if (!FAQ) return;
@@ -474,6 +531,13 @@ h2.sub{font-size:18px;color:var(--muted);margin-bottom:-14px}
     try{ s = window.claude ? await window.claude.use("sample") : null; }catch(e){ s = null; }
     if (s){ backend = "sample"; if (!PROMPT){ try{ const r = await fetch("prompt.txt"); const t = await r.text(); PROMPT = t.includes("BRACCIO DESTRO") ? t : ""; }catch(e){ PROMPT = ""; } } }
     else backend = "api";
+    // Pagina pubblica senza server: niente chat, si collega il proprio Claude o ChatGPT.
+    if (backend === "api" && !API_URL){
+      $("#collega").hidden = false;
+      document.querySelectorAll(".chat, h2.sub, .tiles, #work, #whoBtn, #contH").forEach(el => el.hidden = true);
+      const cont = $("#contH") && $("#contH").closest("section"); if (cont) cont.hidden = true;
+      document.querySelector(".brand p").textContent = "Il tuo assistente per lead, obiezioni e call, dentro il tuo Claude o ChatGPT.";
+    }
     paintWho();
   }
   paintWho();
