@@ -154,7 +154,7 @@ code{background:var(--code);border-radius:6px;padding:2px 6px;font-size:13px;ove
   };
   // Modelli in ordine di preferenza: se uno non c'e' piu' su Puter si passa al successivo,
   // l'ultimo (null) e' il modello predefinito di Puter.
-  const MODELLI = ["claude-sonnet-4-6", "anthropic/claude-opus-5", null];
+  const MODELLI = ["anthropic/claude-sonnet-5", "claude-sonnet-4-6", null];
 
   let KB = "", turns = [], fermato = false, inCorso = false;
   let dati = store.get("dati", {});
