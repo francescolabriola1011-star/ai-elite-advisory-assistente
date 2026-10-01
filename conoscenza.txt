@@ -316,6 +316,21 @@ R: Segnalali nel gruppo con nome e motivo: il filtro per eta' su Meta e' debole 
 
 Con il lead: rispondi gentile, fai capire il valore di una consulenza seria e vai avanti. Un appuntamento fuori target vale meno di zero.
 
+D: Un lead mi ha scritto su WhatsApp ma non lo trovo nel Foglio Lead
+R: Chi scrive direttamente su WhatsApp dall'annuncio, invece di compilare il modulo, entra nel gestionale ma non nel Foglio Lead.
+
+Cosa fai:
+1. Aggiungilo a mano come riga nuova nel Foglio Lead
+2. Nelle note scrivi che arriva da WhatsApp
+3. Lavoralo come ogni altro lead, con le stesse caselle
+
+Se non lo aggiungi, quel contatto non esiste per nessun conteggio e il tuo risultato risulta piu' basso di quello vero.
+
+D: Un lead ha ricompilato il modulo ma non compare come nuovo
+R: Se ricompila con lo stesso numero o la stessa mail, il gestionale aggiorna il contatto che esiste gia' invece di crearne uno nuovo: resta allo stadio di prima e non ti salta all'occhio in pipeline.
+
+Cercalo per nome nel gestionale, guarda la nota dell'ultima volta e riparti da li': una seconda richiesta vuol dire che il tema gli interessa ancora. Riportalo allo stadio giusto e richiamalo.
+
 D: Il lead ha gia' l'appuntamento ma riceve ancora i messaggi automatici
 R: Controlla di averlo spostato nello stadio "appuntamento fissato" nel gestionale: e' quello che mette il tag che ferma i messaggi. Se e' gia' li' e continuano ad arrivare, scrivilo nel gruppo col nome del lead: va sistemato il bivio dell'automazione.
 
