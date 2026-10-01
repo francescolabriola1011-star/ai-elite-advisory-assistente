@@ -202,7 +202,7 @@ code{background:var(--code);border-radius:6px;padding:2px 6px;font-size:13px;ove
 
   // ---------- rendering ----------
   function esc(s){ return s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c])); }
-  function inline(s){ return esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>"); }
+  function inline(s){ return esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/(https:\/\/[^\s<)]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>'); }
   function render(text, into){
     into.textContent = "";
     const re = /TESTO DA MANDARE\s*:?\s*\n?([\s\S]*?)(?:\n?\s*FINE TESTO|$)/g;
