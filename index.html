@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="it">
 <meta charset="utf-8">
-<title>Braccio Destro</title>
+<title>Braccio Destro di AI Elite Advisory</title>
 <meta name="description" content="Braccio Destro, l'assistente di AI Elite Advisory per i consulenti: lead, obiezioni, call e tutto il percorso.">
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -41,12 +41,13 @@ button,input,textarea{font:inherit;color:inherit}
 [hidden]{display:none!important}
 a{color:var(--navy)}
 
-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:12px}
 .logo{width:44px;height:44px;border-radius:12px;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:20px;flex:none}
 .maker{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;display:block}
 .brand h1{font-size:24px;line-height:1.1}
 .brand h1 span{color:var(--gold)}
+.ghost.michele{text-decoration:none;color:var(--navy-ink);font-weight:600;border-color:var(--gold)}
 .ghost{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 12px;cursor:pointer;font-size:14px;white-space:nowrap}
 
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:14px}
@@ -88,14 +89,14 @@ code{background:var(--code);border-radius:6px;padding:2px 6px;font-size:13px;ove
   <header>
     <div class="brand">
       <div class="logo" aria-hidden="true">BD</div>
-      <div><span class="maker">AI Elite Advisory</span><h1>Braccio <span>Destro</span></h1></div>
+      <div><h1>Braccio <span>Destro</span></h1><span class="maker">di AI Elite Advisory</span></div>
     </div>
-    <button class="ghost" id="apriDati" type="button">I tuoi dati</button>
+    <div class="row"><a class="ghost michele" href="https://api.leadconnectorhq.com/widget/booking/yRAqLujEvK84jpvu88VB" target="_blank" rel="noopener">Prenota una call con Michele</a><button class="ghost" id="apriDati" type="button">I tuoi dati</button></div>
   </header>
 
   <section class="card" id="accesso" hidden>
     <h2>Per iniziare, un accesso gratuito</h2>
-    <p class="hint">Braccio Destro usa Puter per far funzionare l'intelligenza artificiale: accedi una volta con un clic (puoi usare il tuo account Google) e resti collegato su questo dispositivo.</p>
+    <p class="hint">Braccio Destro di AI Elite Advisory usa Puter per far funzionare l'intelligenza artificiale: accedi una volta con un clic (puoi usare il tuo account Google) e resti collegato su questo dispositivo.</p>
     <div class="row"><button class="btn" id="accedi" type="button">Accedi e inizia</button></div>
     <p class="err" id="accessoErr" hidden></p>
   </section>
@@ -112,13 +113,14 @@ code{background:var(--code);border-radius:6px;padding:2px 6px;font-size:13px;ove
 
   <section class="card chat" id="chat" aria-label="Chat con Braccio Destro">
     <div class="thread" id="thread" aria-live="polite">
-      <div class="bot intro">Ciao, sono Braccio Destro. Scrivimi come scriveresti al CSM: dove trovi una cosa, come si fa un passaggio, cosa rispondere a un lead. Puoi anche incollarmi il messaggio di un lead o gli appunti di una call.</div>
+      <div class="bot intro">Ciao, sono Braccio Destro di AI Elite Advisory. Scrivimi come scriveresti al CSM: dove trovi una cosa, come si fa un passaggio, cosa rispondere a un lead. Puoi anche incollarmi il messaggio di un lead o gli appunti di una call.</div>
     </div>
     <div class="row" id="sugg">
       <button class="chip" type="button">Dove trovo il Business Manager?</button>
       <button class="chip" type="button">Come faccio il follow up?</button>
       <button class="chip" type="button">Il lead non risponde da 3 giorni, cosa gli scrivo?</button>
       <button class="chip" type="button">Mi ha detto "ci devo pensare", cosa rispondo?</button>
+      <button class="chip" type="button">Cos'è il Social Planner?</button>
     </div>
     <form class="composer" id="composer">
       <label class="sr" for="chatIn">Scrivi la tua domanda</label>
