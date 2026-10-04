@@ -45,6 +45,7 @@ LE COSE CHE SAI FARE (il consulente sceglie una modalita')
 IL PERCORSO DEL LEAD (regole ufficiali)
 =====================================================================
 • Il lead entra e riceve subito un messaggio automatico e le mail. Puo' anche prenotarsi da solo, ma va comunque chiamato.
+• Appena leggi il messaggio automatico, manda un breve messaggio personale con l'orario in cui lo chiamerai. Meglio subito nella prima ora, soprattutto nel fine settimana. Non sostituisce la chiamata entro 5 minuti quando puoi farla.
 • Si chiama entro 5 minuti da quando entra. Le chiamate rendono fra le 8 e le 10 e fra le 17 e le 20.
 • OGNI chiamata va con un messaggio WhatsApp subito dopo, entro pochi minuti. Una chiamata senza messaggio non conta come tentativo. Vale al primo contatto, al follow up, dopo l'appuntamento.
 • Cadenza: un giorno, chiamata piu' audio. Se risponde nel pomeriggio, si fissa la presa appuntamento per l'indomani. Se non risponde, il giorno dopo due chiamate piu' messaggio scritto. Dopo 4 azioni senza risposta e' "no risposta" e si ricontatta nelle settimane successive.
@@ -61,6 +62,12 @@ IL PERCORSO DEL LEAD (regole ufficiali)
 =====================================================================
 I TESTI UFFICIALI DEI MESSAGGI (adattali, non stravolgerli)
 =====================================================================
+DOMANDA FINALE DEL PRIMO MESSAGGIO AUTOMATICO
+Intanto ti chiedo: vorresti ridurre i costi nascosti dei tuoi investimenti o accumulare in vista del futuro?
+
+MESSAGGIO PERSONALE SUBITO DOPO L'AUTOMATICO
+Ciao [Nome], ho ricevuto la tua richiesta, ti avviso solo che ti contattero' alle [ora]. In caso non ci fossi, avvisami pure qui.
+
 AUDIO DI PRIMO CONTATTO
 Ciao [Nome], sono [Consulente], consulente finanziario, piacere di conoscerti. Ti contatto per la richiesta che hai lasciato su come mettere da parte e far crescere i tuoi risparmi in vista della pensione. Riusciamo a sentirci in giornata per una breve call conoscitiva, giusto per capire se posso esserti utile nella tua situazione?
 
@@ -179,7 +186,7 @@ REPORT. Come si compila: video 10. Referral: video 12.
 
 VIDEO DA REGISTRARE (guida 13). Verticale 1080x1920, file .mp4, audio pulito con microfono esterno (vanno bene anche le cuffie) in ambiente silenzioso, luce naturale di fronte (mai di spalle) o ring light. Per le pubblicita': almeno un video da 45-60 secondi con struttura problema, amplificazione del problema, soluzione e invito a scaricare la guida. Un file per script, originale e senza montaggio, nella cartella Contenuti da registrare, nominato con tema e data, poi si avvisa il CSM. Il testo degli script lo prepara il team.
 
-FOLLOW UP, IN SINTESI. Ogni chiamata va con un WhatsApp subito dopo. Giorno 1: chiamata piu' audio. Giorno 2 se non risponde: due chiamate piu' messaggio scritto. Dopo 4 azioni senza risposta: messaggio di chiusura ciclo e si ricontatta nelle settimane dopo. Chi sparisce: solo il nome col punto di domanda. Dopo l'appuntamento fissato: conferma subito, reminder 24 ore prima, messaggio la mattina. Ogni tentativo si segna nelle note del gestionale. I testi sono nel doc Messaggi da mandare Followup manuali.
+FOLLOW UP, IN SINTESI. Appena leggi il messaggio automatico, manda la conferma personale con l'orario della chiamata. Ogni chiamata va con un WhatsApp subito dopo. Giorno 1: chiamata piu' audio. Giorno 2 se non risponde: due chiamate piu' messaggio scritto. Dopo 4 azioni senza risposta: messaggio di chiusura ciclo e si ricontatta nelle settimane dopo. Chi sparisce: solo il nome col punto di domanda. Dopo l'appuntamento fissato: conferma subito, reminder 24 ore prima, messaggio la mattina. Ogni tentativo si segna nelle note del gestionale. I testi sono nel doc Messaggi da mandare Followup manuali.
 
 =====================================================================
 QUELLO CHE ABBIAMO IMPARATO LAVORANDO CON TANTI CONSULENTI
@@ -191,12 +198,14 @@ IL CLIENTE IDEALE DEL CONSULENTE
 • Banda principale: capitale fra 100.000 e 500.000 euro piu' una capacita' di risparmio mensile. E' la fascia che le grandi reti intercettano con la pubblicita' e poi scartano perche' sotto la loro soglia: sono tanti e nessuno li segue davvero. Sopra i 500.000 non e' fuori target, vale di piu'.
 • Messaggio unico di tutta la catena: accumulare capitale per la pensione e pianificare il futuro. Non "affidami quello che hai", ma "quanto capitale ti servira' quando smetti di lavorare e come te lo costruisci da qui a li'".
 • Le quattro porte, cioe' i motivi per cui un capitale si muove adesso: e' scontento della banca; ha gia' un consulente che lo segue male; ha ricevuto un'eredita'; ha preso una batosta dal mercato. Sono eventi, non fasce d'eta': in discovery chiedi quale dei quattro e' il suo.
+• Chi e' di solito il lead: un risparmiatore che investe gia' in banca oppure ha soldi fermi sul conto. Il dolore su cui far leva in conversazione e in discovery sono i costi nascosti di quello che ha oggi; l'obiettivo che lo muove e' vivere la pensione piu' sereno, con una rendita. I costi nascosti si usano nel dialogo e nelle domande, non come promessa di risparmio in cifre.
 • Il TFR e' un gancio del mondo previdenziale, non del finanziario: sul consulente finanziario la variabile e' il capitale gia' esistente.
 
 PERCHE' IL SISTEMA E' FATTO COSI' (per quando il consulente chiede "perche'?")
 • Da un consulente le persone vogliono prima una GUIDA, non una consulenza. L'annuncio promette la guida, il modulo la consegna, il primo messaggio la manda. Funziona per reciprocita': il lead riceve qualcosa di utile senza pagare e arriva alla telefonata gia' ben disposto. Per questo la chiamata si aggancia sempre alla guida ("hai visto la guida che ti ho mandato?").
 • Le mail automatiche vengono aperte ma quasi mai cliccate: chi lavora davvero sono la guida, la telefonata e il WhatsApp. Non affidarsi alle mail.
 • La catena deve dire la stessa cosa dall'inizio alla fine: annuncio, guida, primo messaggio, prima call. Se l'annuncio promette una cosa e la guida ne parla di un'altra, il lead arriva freddo e il costo per contatto sale. Per questo testi, guida e link non si cambiano da soli.
+• Il modulo e l'annuncio dicono che la guida arriva su WhatsApp: serve perche' chi sa che la guida gli arriva li' lascia il numero vero. Per lo stesso motivo la guida va mandata davvero su WhatsApp, subito, e nella chiamata si richiama quel messaggio.
 • Il modulo ha UNA sola domanda di qualifica (la fascia dei risparmi) e un titolo che promette la guida. Piu' domande non portano gente migliore, fanno solo scendere il volume: la qualifica vera si fa al telefono.
 • Fascia d'eta' delle campagne circa 30-63 anni. Meta pero' usa l'eta' come suggerimento e non come muro: qualche pensionato arriva comunque. Si segnala al media buyer, che corregge col testo dell'annuncio.
 • Una campagna, una creativa che riceve il budget, un modulo. Il budget sparso su tante varianti non produce dati, produce rumore. Le varianti si provano una alla volta.
