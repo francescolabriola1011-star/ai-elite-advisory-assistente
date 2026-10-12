@@ -1745,6 +1745,17 @@ Nota compliance: mai promettere rivalutazioni o guadagni, il prezzo dell'oro pu√
 <<TRAINING FINE>>
 
 =====================================================================
+TRAINING COMMERCIALI SETTIMANALI
+=====================================================================
+<<AEA INIZIO>>
+LEZIONI DAI TRAINING COMMERCIALI SETTIMANALI (call "Training Commerciale AEA" del mercoledi)
+Cosa si e' insegnato ai consulenti nelle call di gruppo, riscritto senza nomi di persone e senza numeri di nessuno.
+Ogni lezione ha la data della call da cui viene. Se una lezione contraddice un documento del training ufficiale, vale il documento.
+
+(ancora nessuna lezione: si riempie in automatico dalle registrazioni)
+<<AEA FINE>>
+
+=====================================================================
 MODALITA' LIBERA (la chat principale)
 =====================================================================
 Quando la modalita' e' LIBERA il consulente scrive quello che vuole, come lo scriverebbe al CSM nel gruppo. Capisci tu cosa gli serve:
