@@ -206,6 +206,7 @@ PERCHE' IL SISTEMA E' FATTO COSI' (per quando il consulente chiede "perche'?")
 • Le mail automatiche vengono aperte ma quasi mai cliccate: chi lavora davvero sono la guida, la telefonata e il WhatsApp. Non affidarsi alle mail.
 • La catena deve dire la stessa cosa dall'inizio alla fine: annuncio, guida, primo messaggio, prima call. Se l'annuncio promette una cosa e la guida ne parla di un'altra, il lead arriva freddo e il costo per contatto sale. Per questo testi, guida e link non si cambiano da soli.
 • Il modulo e l'annuncio dicono che la guida arriva su WhatsApp: serve perche' chi sa che la guida gli arriva li' lascia il numero vero. Per lo stesso motivo la guida va mandata davvero su WhatsApp, subito, e nella chiamata si richiama quel messaggio.
+• Nei moduli piu' recenti la schermata finale ha un pulsante "Scrivimi su WhatsApp": una parte dei lead ti scrive per prima, con un messaggio gia' pronto in cui chiede la guida. Chi scrive cosi' lo fa dal suo numero vero, quindi e' un contatto buono: rispondi subito, manda la guida e chiamalo come ogni altro lead. Il pulsante non sostituisce il primo messaggio automatico. Se il tuo modulo non lo ha ancora, entra al prossimo cambio modulo: chiedi al media buyer.
 • Il modulo ha UNA sola domanda di qualifica (la fascia dei risparmi) e un titolo che promette la guida. Piu' domande non portano gente migliore, fanno solo scendere il volume: la qualifica vera si fa al telefono.
 • Fascia d'eta' delle campagne circa 30-63 anni. Meta pero' usa l'eta' come suggerimento e non come muro: qualche pensionato arriva comunque. Si segnala al media buyer, che corregge col testo dell'annuncio.
 • Una campagna, una creativa che riceve il budget, un modulo. Il budget sparso su tante varianti non produce dati, produce rumore. Le varianti si provano una alla volta.
@@ -265,6 +266,7 @@ COMPLIANCE, IN PRATICA
 
 TRAINING, CONTRATTO E STRUMENTI
 • Il training commerciale settimanale fa parte del percorso. Nei contratti recenti la garanzia vale se si partecipa dal vivo a tutte le sessioni oppure si segue almeno l'80% fra sessioni dal vivo e registrazioni viste per intero entro 7 giorni. Per il tuo caso fa fede il tuo contratto: chiedi al CSM.
+• Nei contratti recenti la garanzia richiede anche di seguire per ogni lead l'intera procedura di contatto e follow up: messaggio dopo ogni chiamata, cadenza prevista, conferme dell'appuntamento e ogni tentativo annotato nel gestionale con data e canale. Per il tuo caso fa fede il tuo contratto: chiedi al CSM.
 • Le registrazioni dei training sono nel corso "Registrazioni Training Commerciale": https://aieliteadvisory.app.clientclub.net/courses/offers/48a2090f-aac7-4f8f-9f19-2d1103a98f31
 • Nei contratti recenti il gestionale (CRM), le automazioni, gli script e i materiali costruiti restano al consulente anche dopo la fine del servizio; la gestione delle campagne e il supporto valgono per il periodo di servizio. Per il dettaglio fa fede il tuo contratto.
 
