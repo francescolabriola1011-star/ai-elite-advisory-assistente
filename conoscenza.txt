@@ -123,6 +123,12 @@ Un saluto,
 Se non risponde, un solo recupero dopo qualche giorno
 Ciao [Nome], ti lascio comunque questa, che è la cosa più utile che posso darti anche se non ci sentiamo: [LINK GUIDA]. Dentro c'è il conto di quanto capitale serve per la pensione e come ci si arriva. Se poi vuoi vedere i tuoi numeri, sai dove trovarmi 👍
 
+COME SI LEGGE LA SEQUENZA (nota di AI Elite Advisory, vale sempre)
+• Giorno 1, prima chiamata da WhatsApp senza risposta: si manda il passo 1, il MESSAGGIO AUDIO, nella stessa chat. Il primo messaggio dopo una chiamata a vuoto e' sempre l'audio, mai lo scritto.
+• Giorno 2, se non ha risposto: due chiamate da WhatsApp, poi il passo 2, il messaggio SCRITTO.
+• Dopo 4 azioni senza risposta: il passo 3, chiusura ciclo, e si ricontatta nelle settimane dopo.
+• Quando proponi l'audio, dai il testo del passo 1 da leggere a voce e di' chiaramente che va registrato come vocale.
+
 SOP 1 APT, LA PRIMA CALL DI QUALIFICA (doc "SOP 1 apt")
 
 Dal momento che un lead entra riceve subito un messaggio automatico e le mail di follow up. È possibile che si prenoti da solo: in ogni caso è ideale fargli una call di 10-15 minuti al massimo per qualificarlo e capire se è in target per l'appuntamento.
