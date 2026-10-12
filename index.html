@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Figtree:wght@400;500;600;700&display=swap">
-<script src="https://js.puter.com/v2/"></script>
 <style>
 :root{
   --navy:#1F3864; --navy-ink:#14264A; --gold:#C8A558;
@@ -94,13 +93,6 @@ code{background:var(--code);border-radius:6px;padding:2px 6px;font-size:13px;ove
     <div class="row"><a class="ghost michele" href="https://api.leadconnectorhq.com/widget/booking/yRAqLujEvK84jpvu88VB" target="_blank" rel="noopener">Prenota una call con Michele</a><button class="ghost" id="apriDati" type="button">I tuoi dati</button></div>
   </header>
 
-  <section class="card" id="accesso" hidden>
-    <h2>Per iniziare, un accesso gratuito</h2>
-    <p class="hint">Braccio Destro di AI Elite Advisory usa Puter per far funzionare l'intelligenza artificiale: accedi una volta con un clic (puoi usare il tuo account Google) e resti collegato su questo dispositivo.</p>
-    <div class="row"><button class="btn" id="accedi" type="button">Accedi e inizia</button></div>
-    <p class="err" id="accessoErr" hidden></p>
-  </section>
-
   <section class="card" id="dati" hidden>
     <h2>I tuoi dati</h2>
     <p class="hint">Servono per firmare i messaggi che ti preparo. Restano su questo dispositivo.</p>
@@ -154,38 +146,13 @@ code{background:var(--code);border-radius:6px;padding:2px 6px;font-size:13px;ove
     get(k, d){ try{ const v = localStorage.getItem("bd_"+k); return v ? JSON.parse(v) : d; }catch(e){ return d; } },
     set(k, v){ try{ localStorage.setItem("bd_"+k, JSON.stringify(v)); }catch(e){} }
   };
-  // Modelli in ordine di preferenza: se uno non c'e' piu' su Puter si passa al successivo,
-  // l'ultimo (null) e' il modello predefinito di Puter.
-  const MODELLI = ["anthropic/claude-sonnet-5", "claude-sonnet-4-6", null];
+  // Server della chat su Cloudflare: la chiave AI resta li', il consulente non accede a niente.
+  const API = "https://braccio-destro-chat.braccio-destro-connettore.workers.dev";
+  // Codice facoltativo: se un giorno il server lo chiede, si da' il link con ?c=codice.
+  const qc = new URLSearchParams(location.search).get("c"); if (qc) store.set("codice", qc);
 
-  let KB = "", turns = [], fermato = false, inCorso = false;
+  let turns = [], fermato = false, inCorso = false;
   let dati = store.get("dati", {});
-
-  // ---------- conoscenza: sempre l'ultima versione pubblicata ----------
-  async function caricaKB(){
-    try{
-      const r = await fetch("conoscenza.txt?v=" + Date.now(), { cache: "no-store" });
-      const t = await r.text();
-      KB = t.includes("BRACCIO DESTRO") ? t : "";
-    }catch(e){ KB = ""; }
-  }
-
-  // ---------- accesso a Puter ----------
-  function puterPronto(){ return typeof window.puter !== "undefined" && puter.auth && puter.ai; }
-  async function collegato(){
-    try{ return puterPronto() && await puter.auth.isSignedIn(); }catch(e){ return false; }
-  }
-  async function mostraAccesso(){
-    const ok = await collegato();
-    $("#accesso").hidden = ok;
-    return ok;
-  }
-  $("#accedi").addEventListener("click", async () => {
-    const e = $("#accessoErr"); e.hidden = true;
-    if (!puterPronto()){ e.textContent = "Il servizio non si e' caricato. Ricarica la pagina."; e.hidden = false; return; }
-    try{ await puter.auth.signIn(); }catch(err){ e.textContent = "Accesso non completato. Se il browser ha bloccato la finestra, consentila e riprova."; e.hidden = false; }
-    if (await mostraAccesso()) $("#chatIn").focus();
-  });
 
   // ---------- dati del consulente ----------
   function apriDati(){
@@ -229,48 +196,48 @@ code{background:var(--code);border-radius:6px;padding:2px 6px;font-size:13px;ove
     $("#thread").append(d); d.scrollIntoView({block:"end"}); return d;
   }
 
-  // ---------- chiamata all'AI tramite Puter ----------
-  function sistema(){
-    return KB + "\n\nPROFILO DEL CONSULENTE (usa questi dati al posto dei segnaposto; se mancano chiedili una volta): " +
-      JSON.stringify(dati) + "\nModalita': LIBERA.";
-  }
+  // ---------- chiamata al server della chat ----------
+  let ctrl = null;
   async function chiedi(onText){
-    if (!KB) await caricaKB();
-    if (!KB) throw new Error("kb");
-    const messaggi = [{ role: "system", content: sistema() }, ...turns.slice(-12)];
-    let ultimoErrore;
-    for (const modello of MODELLI){
-      try{
-        const opzioni = { stream: true }; if (modello) opzioni.model = modello;
-        const risposta = await puter.ai.chat(messaggi, opzioni);
-        let testo = "";
-        for await (const parte of risposta){
-          if (fermato) break;
-          if (parte && parte.type === "text" && parte.text){ testo += parte.text; onText(testo); }
-          else if (parte && typeof parte.text === "string" && !parte.type){ testo += parte.text; onText(testo); }
-        }
-        if (testo || fermato) return testo;
-      }catch(e){
-        ultimoErrore = e;
-        const s = JSON.stringify(e && (e.error || e.message || e)).toLowerCase();
-        if (s.includes("insufficient") || s.includes("credit") || s.includes("funds") || s.includes("limit")) throw new Error("credito");
-        if (s.includes("auth") || s.includes("sign")) throw new Error("accesso");
-        // modello non disponibile o altro guasto: si prova il successivo
-      }
+    ctrl = new AbortController();
+    let r;
+    try{
+      r = await fetch(API, {
+        method: "POST", headers: { "Content-Type": "application/json" }, signal: ctrl.signal,
+        body: JSON.stringify({ code: store.get("codice", ""), profilo: dati, messages: turns.slice(-12) })
+      });
+    }catch(e){ if (fermato) return ""; throw new Error("rete"); }
+    if (!r.ok){
+      let err = ""; try{ err = (await r.json()).error || ""; }catch(e){}
+      if (r.status === 429) throw new Error("veloce");
+      if (err === "kb" || err === "codice") throw new Error(err);
+      throw new Error("vuoto");
     }
-    throw ultimoErrore || new Error("vuoto");
+    const reader = r.body.getReader(), dec = new TextDecoder();
+    let testo = "";
+    try{
+      while (true){
+        const { value, done } = await reader.read();
+        if (done) break;
+        testo += dec.decode(value, { stream: true });
+        const k = testo.indexOf("[[ERRORE]]");
+        if (k >= 0){ const prima = testo.slice(0, k).trim(); if (!prima) throw new Error("vuoto"); testo = prima; break; }
+        onText(testo);
+      }
+    }catch(e){ if (!fermato) throw e; }
+    return testo;
   }
 
   const ERRORI = {
     kb: "Non riesco a caricare la mia conoscenza, quindi non rispondo per non darti risposte generiche. Ricarica la pagina; se succede ancora avvisa il CSM.",
-    credito: "Hai finito l'uso gratuito incluso nel tuo accesso Puter. Puoi ricaricarlo dal tuo account Puter, oppure usare Braccio Destro dentro il tuo Claude (istruzioni in fondo alla pagina).",
-    accesso: "Devi prima accedere: usa il pulsante qui sopra.",
+    veloce: "Stai andando veloce: aspetta un minuto e riprova.",
+    codice: "Per usare Braccio Destro apri il link che ti ha mandato il CSM.",
+    rete: "Non riesco a collegarmi. Controlla la connessione e riprova.",
     vuoto: "Non ho ricevuto risposta. Riprova fra poco."
   };
 
   async function invia(testo){
     testo = (testo || "").trim(); if (!testo || inCorso) return;
-    if (!(await collegato())){ await mostraAccesso(); $("#accedi").focus(); return; }
     $("#sugg").hidden = true;
     bolla("me", testo);
     turns.push({ role: "user", content: testo });
@@ -287,19 +254,17 @@ code{background:var(--code);border-radius:6px;padding:2px 6px;font-size:13px;ove
       const p = document.createElement("p"); p.className = "err";
       p.textContent = ERRORI[e && e.message] || "Qualcosa non ha funzionato. Riprova fra poco.";
       b.append(p); turns.pop();
-      if (e && e.message === "accesso") mostraAccesso();
     }finally{
       inCorso = false; $("#invia").disabled = false; $("#ferma").hidden = true; b.scrollIntoView({block:"end"});
     }
   }
   $("#composer").addEventListener("submit", e => { e.preventDefault(); const v = $("#chatIn").value; $("#chatIn").value = ""; invia(v); });
   $("#chatIn").addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey && !matchMedia("(pointer: coarse)").matches){ e.preventDefault(); $("#composer").requestSubmit(); } });
-  $("#ferma").onclick = () => { fermato = true; };
+  $("#ferma").onclick = () => { fermato = true; if (ctrl) ctrl.abort(); };
   $("#nuova").onclick = () => { turns = []; [...$("#thread").children].slice(1).forEach(n => n.remove()); $("#sugg").hidden = false; $("#chatIn").focus(); };
   document.querySelectorAll("#sugg .chip").forEach(c => c.addEventListener("click", () => invia(c.textContent)));
 
   // ---------- avvio ----------
-  caricaKB();
-  mostraAccesso();
+
 })();
 </script>
