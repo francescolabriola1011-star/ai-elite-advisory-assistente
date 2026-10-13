@@ -76,6 +76,9 @@ main{flex:1;width:100%;max-width:820px;margin:0 auto;padding:20px 16px 8px;displ
 .qs{display:flex;flex-wrap:wrap;gap:8px}
 .chip{border:1px solid var(--line);background:transparent;border-radius:999px;padding:7px 12px;font-size:14px;cursor:pointer;color:var(--ink)}
 .chip:hover{border-color:var(--gold)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--card);gap:2px;align-self:flex-start}
+.seg button{border:0;background:transparent;border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;cursor:pointer;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--navy);color:var(--yellow)}
 .lab{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
 
 /* messaggi */
@@ -149,6 +152,10 @@ code{background:var(--ground);border-radius:6px;padding:2px 6px;font-size:13px;o
         <h1>Ciao<span id="ciaoNome"></span>, su cosa ti <em>aiuto</em> oggi?</h1>
       </div>
       <p>Conosco tutto il tuo percorso: script, messaggi di follow up, obiezioni, gestionale e materiali. Scegli qui sotto o scrivimi come scriveresti al CSM.</p>
+      <div class="seg" role="group" aria-label="Su cosa lavori">
+        <button type="button" data-p="cf" aria-pressed="true">Consulenza finanziaria</button>
+        <button type="button" data-p="oro" aria-pressed="false">Oro fisico</button>
+      </div>
       <div class="grid" id="azioni">
         <button class="act" type="button" data-fill="Il lead mi ha scritto questo, cosa gli rispondo?&#10;&#10;"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 21l1.9-5.4A8 8 0 1 1 21 12z"/></svg></span><span><b>Rispondi a un lead</b><span>Incolla il suo messaggio, ti preparo la risposta da copiare</span></span></button>
         <button class="act" type="button" data-fill="Il cliente mi ha detto: &quot;&quot;. Cosa gli rispondo?"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></span><span><b>Gestisci un'obiezione</b><span>"Ci devo pensare", "costa", "ho già un consulente"…</span></span></button>
@@ -220,6 +227,10 @@ code{background:var(--ground);border-radius:6px;padding:2px 6px;font-size:13px;o
   let dati = store.get("dati", {});
   const ta = $("#chatIn");
 
+  // prodotto del consulente: il server usa solo i documenti di quel prodotto (costa meno)
+  function segna(){ document.querySelectorAll(".seg button").forEach(b => b.setAttribute("aria-pressed", String((dati.prodotto || "cf") === b.dataset.p))); }
+  document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => { dati.prodotto = b.dataset.p; store.set("dati", dati); segna(); }));
+  segna();
   function saluto(){ const n = (dati.nome || "").trim().split(/\s+/)[0]; $("#ciaoNome").textContent = n ? " " + n : ""; }
   saluto();
 
@@ -234,7 +245,7 @@ code{background:var(--ground);border-radius:6px;padding:2px 6px;font-size:13px;o
   $("#dati").addEventListener("click", e => { if (e.target.id === "dati") $("#dati").hidden = true; });
   document.addEventListener("keydown", e => { if (e.key === "Escape") $("#dati").hidden = true; });
   $("#salvaDati").onclick = () => {
-    dati = { nome: $("#fNome").value.trim(), studio: $("#fStudio").value.trim(), guida: $("#fGuida").value.trim(), calendario: $("#fCal").value.trim() };
+    dati = { prodotto: dati.prodotto, nome: $("#fNome").value.trim(), studio: $("#fStudio").value.trim(), guida: $("#fGuida").value.trim(), calendario: $("#fCal").value.trim() };
     store.set("dati", dati); saluto(); $("#dati").hidden = true; ta.focus();
   };
 
