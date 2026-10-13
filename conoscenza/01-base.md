@@ -1751,8 +1751,58 @@ TRAINING COMMERCIALI SETTIMANALI
 LEZIONI DAI TRAINING COMMERCIALI SETTIMANALI (call "Training Commerciale AEA" del mercoledi)
 Cosa si e' insegnato ai consulenti nelle call di gruppo, riscritto senza nomi di persone e senza numeri di nessuno.
 Ogni lezione ha la data della call da cui viene. Se una lezione contraddice un documento del training ufficiale, vale il documento.
+Call lette: 02/09/2026, 09/09/2026, 16/09/2026, 23/09/2026, 07/10/2026.
 
-(ancora nessuna lezione: si riempie in automatico dalle registrazioni)
+PRIMA CHIAMATA
+• Il lead e' tiepido: non ti conosce, ma ha alzato la mano. Lo scopo della prima chiamata non e' vendere, e' guadagnarti la sua fiducia e qualificarlo. (07/10)
+• Non dire "ads" o "la pubblicita' che hai cliccato": di' "ho visto che hai lasciato i tuoi contatti / hai chiesto informazioni su...". (16/09)
+• Presentati come consulente finanziario iscritto all'albo. Il nome della banca o della rete dillo dopo, se serve a rassicurare: in apertura fa sembrare la chiamata un call center o fa pensare che sia successo qualcosa sul conto. (16/09)
+• Non chiedere "ti posso rubare 8-10 minuti?", perche' la risposta e' quasi sempre no. Di' "e' una chiamata breve, vediamo tutto in pochi minuti". (23/09)
+• Prima domanda aperta: "cosa ti ha spinto a chiedere informazioni proprio adesso?". Poi fallo parlare. Non partire subito dai soldi: chi si sente chiedere quanto ha si chiude. Domanda che apre: "se avessi una bacchetta magica, cosa cambieresti di come ti segue oggi la tua banca?". (02/09, 16/09)
+• Non saltare subito a "quando ci vediamo?": prima le domande, deve parlare piu' lui di te. Non si vende il trapano, si parla del buco: cosa vuole ottenere, non il prodotto. (07/10)
+• Il budget si chiede per ultimo e con le mani avanti: prima "di cosa ti occupi?", poi "se posso chiederti, indicativamente su che cifra ragioniamo?". (02/09, 16/09)
+• Spiega cosa fa un consulente in parole semplici, senza termini tecnici: "ti aiuto a decidere dove vuoi arrivare, da A a B, e come arrivarci, tenendo la rotta nel tempo". Se il lead parla di ETF, tassi o prodotti, riportalo a "cosa vuoi aver fatto fra 5 o 20 anni?". (02/09, 07/10)
+• Se nomina criptovalute o guadagni facili, chiarisci subito che sei un consulente iscritto all'albo e che non prometti rendimenti. (23/09)
+• Usa la guida che ha scaricato: "hai avuto modo di guardarla?". Chiedigli di segnarsi i suoi numeri prima dell'appuntamento. Quasi nessuno la compila da solo: ricordaglielo piu' volte. (02/09)
+• Durata: entro 12 minuti. Se si allunga perche' il lead divaga, guidalo tu. Se serve chiudi con garbo: "devo lasciarti per un'altra chiamata, ci tengo a vedere tutto bene: fissiamo l'appuntamento e ti mando gli orari su WhatsApp". (23/09)
+• Esci dalla chiamata con i 4 punti chiari (problema, obiettivo, consapevolezza, cifra indicativa): lo script e' una traccia e non va recitato parola per parola, ma quelle quattro informazioni devono esserci. (02/09, 07/10)
+• Appuntamento fissato: ripetigli giorno, ora e indirizzo, e manda subito la conferma scritta del doc Messaggi. (02/09)
+• Anche se il lead non e' in target, chiedi con garbo se ha colleghi o conoscenti a cui potrebbe interessare. Non scartare a priori chi ha poco: puo' avere contatti che contano. (02/09, 23/09)
+
+DOPO LA CHIAMATA E FOLLOW UP
+• Nella conferma dell'appuntamento allega 2 o 3 screenshot di messaggi veri di tuoi clienti soddisfatti, col nome coperto. Funziona molto meglio del biglietto da visita e fa presentare molte piu' persone all'appuntamento. (02/09, 07/10)
+• Un lead che non risponde all'audio non e' un lead disinteressato: spesso e' un professionista impegnato. Non raccontarti scuse, continua la sequenza. C'e' chi non risponde alla chiamata e ti scrive su WhatsApp due minuti dopo: va preso quando vuole lui. (23/09, 07/10)
+• I contatti restano un tuo archivio della zona: si possono ricontattare anche dopo mesi. Non mandare sempre lo stesso messaggio: usa uno spunto nuovo, per esempio una notizia di attualita'. (23/09)
+• Chi ti scrive "non sono io, non ho lasciato i dati": non chiamarlo e non insistere. Rispondi in breve che qualcuno ha inserito il suo numero per errore e che non verra' piu' contattato, poi segnalo come Non in target. I numeri inesistenti: prova a cercare la persona su Facebook o Instagram, altrimenti Non in target. (07/10)
+• Dopo ogni contatto aggiorna stadio e note nel gestionale e le caselle del Foglio Lead: serve a te e serve al team per tarare le campagne. Se il lead e' lontano dalla tua zona, scrivilo nella nota. (07/10)
+• Canali in piu': una volta a settimana guarda su Instagram chi ha iniziato a seguirti e mandagli i due messaggi del doc Messaggi (apertura, poi un solo recupero). Cinque minuti a settimana, uno o due appuntamenti in piu' al mese. (02/09, 23/09, 07/10)
+
+SECONDO APPUNTAMENTO (ascolto)
+• Si apre dicendo "oggi non ti faccio nessuna proposta": abbassa le difese e ti distingue da chi parla a macchinetta. (23/09)
+• Nel secondo appuntamento parla soprattutto lui: piccolo recap, poi domanda aperta ("raccontami meglio cosa hai pensato, come ti sei mosso finora"). A ogni preferenza che esprime chiedi "come mai?" e lascialo spiegare. (09/09, 16/09, 23/09)
+• Compila il questionario MiFID insieme a lui mentre parlate: raccoglie i dati per il simulatore e lo fa parlare di se'. (23/09)
+• Niente simulazioni e niente proposta nel secondo: la simulazione la porti nel terzo. Se gliela mostri nel secondo, fra un incontro e l'altro si fa i suoi conti e arriva al terzo con la cifra gia' smontata. (23/09)
+• Tira fuori tu le alternative che ha (lasciare tutto fermo, fare da solo, l'immobiliare, vendere l'attivita') e falle cadere, senza parlare male di nessuno. Se metti sul tavolo un problema grosso, dagli subito una prospettiva di soluzione, non mandarlo a casa a rimuginare. (16/09, 23/09)
+• Partner: invece di "decidi da solo?" chiedi "oltre a te, chi beneficerebbe di questo piano?". Se ti dice la moglie o il marito: "allora e' meglio che venga anche lei, cosi' non devi rispiegare tutto". (16/09, 23/09)
+• Pre-chiusura: "se ti porto una soluzione che risolve questo, questo e questo, saresti pronto a partire?". Se dice di no, scopri il perche' prima di mostrargli qualunque cosa. Poi "c'e' altro?" fino a quando non c'e' altro. (16/09, 23/09)
+• Se vuole partire con poco "per prova": non dargli mai contro ("fai benissimo, non ci conosciamo ancora"). Chiedigli se quella cifra e' una prova o tutto quello che ha, e spiega che con un capitale piu' ampio puoi costruire un piano piu' completo e diversificato. Non si "prova": si parte. (09/09)
+• Il grosso del lavoro si fa nel primo incontro. Se alla proposta ti dice "ci devo pensare", di solito e' andato male l'incontro prima. (09/09)
+
+TERZO APPUNTAMENTO (proposta e chiusura)
+• Vai con uno schema in testa e guida tu la conversazione: chi parla tanto, se non lo guidi, ti porta dove vuole lui. (09/09)
+• Recap con le sue parole, poi il simulatore: prima il numero che gli manca ("la brutta notizia"), poi come si colma partendo da quello che ha e da quello che mette via ogni mese. Deve vedere i numeri, non solo sentirli. (16/09, 23/09)
+• Collega ogni beneficio a una cosa che ti ha detto lui, usando le sue parole ogni due o tre frasi. In questo incontro parli soprattutto tu. (09/09, 16/09)
+• Il prezzo si dice solo dal vivo, alla fine, dopo che ha capito tutto il servizio. Mai mandarlo prima per mail. Scrivilo su un foglio o giragli il foglio, poi silenzio. (09/09)
+• Se l'obiezione e' il prezzo, di solito non ha capito il valore: rispiega tutto quello che ricevera' (piano scritto, revisioni, aggiornamenti, una persona che lo segue). Se e' "guadagni anche quando il portafoglio scende", spiega che lavori come un commercialista o un avvocato: un compenso per il lavoro, e che il tuo interesse e' che resti cliente per anni. Togliti i panni del venditore. (09/09)
+• Ai "lo lascio sul conto perche' non si sa mai": il denaro serve per gli obiettivi, gli imprevisti si coprono con le coperture assicurative e con una parte liquida lasciata fuori dal piano. (16/09)
+• Puoi presentare due soluzioni fra cui scegliere: si sente libero e la decisione diventa quale, non se. (09/09)
+• Chiusura: riepilogo dei punti a cui ha detto si', poi "carta d'identita' e codice fiscale, cosi' partiamo" e silenzio. Non lasciarlo uscire senza una decisione o una data. (16/09, 23/09)
+• Riprova sociale sempre: clienti simili a lui che si sono trovati bene, senza promettere risultati. (09/09)
+
+METODO
+• Segui sempre lo stesso processo, cosi' quando una trattativa non si chiude capisci quale passo e' mancato. (16/09)
+• Allenati con le simulazioni (role play) nel training settimanale: le correzioni piu' utili escono li', e cambiare due cose nella presentazione ha gia' portato clienti in piu' in un mese. (07/10, 23/09)
+• Un lead geolocalizzato vede solo te, non dieci concorrenti: c'e' meno da convincere sul perche' scegliere te e piu' da curare nel processo. (09/09)
 <<AEA FINE>>
 
 =====================================================================
