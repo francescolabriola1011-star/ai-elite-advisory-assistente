@@ -1751,7 +1751,7 @@ TRAINING COMMERCIALI SETTIMANALI
 LEZIONI DAI TRAINING COMMERCIALI SETTIMANALI (call "Training Commerciale AEA" del mercoledi)
 Cosa si e' insegnato ai consulenti nelle call di gruppo, riscritto senza nomi di persone e senza numeri di nessuno.
 Ogni lezione ha la data della call da cui viene. Se una lezione contraddice un documento del training ufficiale, vale il documento.
-Call lette: 02/09/2026, 09/09/2026, 16/09/2026, 23/09/2026, 07/10/2026.
+Call lette: 02/09/2026, 09/09/2026, 16/09/2026, 23/09/2026, 07/10/2026, 14/10/2026.
 
 PRIMA CHIAMATA
 • Il lead e' tiepido: non ti conosce, ma ha alzato la mano. Lo scopo della prima chiamata non e' vendere, e' guadagnarti la sua fiducia e qualificarlo. (07/10)
@@ -1766,12 +1766,27 @@ PRIMA CHIAMATA
 • Usa la guida che ha scaricato: "hai avuto modo di guardarla?". Chiedigli di segnarsi i suoi numeri prima dell'appuntamento. Quasi nessuno la compila da solo: ricordaglielo piu' volte. (02/09)
 • Durata: entro 12 minuti. Se si allunga perche' il lead divaga, guidalo tu. Se serve chiudi con garbo: "devo lasciarti per un'altra chiamata, ci tengo a vedere tutto bene: fissiamo l'appuntamento e ti mando gli orari su WhatsApp". (23/09)
 • Esci dalla chiamata con i 4 punti chiari (problema, obiettivo, consapevolezza, cifra indicativa): lo script e' una traccia e non va recitato parola per parola, ma quelle quattro informazioni devono esserci. (02/09, 07/10)
+• Chiama nella fascia 18-19: a fine giornata la persona ha tempo e ti dedica dieci minuti. A meta' mattina o a meta' pomeriggio e' al lavoro e ti liquida anche se era interessata. (14/10)
+• Apri con "ti chiamo per la richiesta che hai lasciato su...". La guida serve ad attirare il clic, non e' il gancio per fissare l'appuntamento: non costruire la chiamata attorno a "hai guardato la guida?", perche' molti rispondono di no e la chiamata si spegne. (14/10)
+• Se ti dice "non mi ricordo" o "non ho lasciato niente", non entrare mai in discussione per dimostrargli che l'ha fatto: "ci sta, siamo tutti molto impegnati, ti faccio una panoramica veloce di chi sono e cosa faccio" e vai avanti come se nulla fosse. (14/10)
+• La prima chiamata serve a fargli comprare te, prima della banca e del prodotto. La fiducia si costruisce in quest'ordine: in te, poi nel servizio, poi nella struttura per cui lavori. Il nome della banca o della rete pesa di piu' nel secondo e nel terzo incontro. (14/10)
+• Chiedi sempre il vero motivo: "come mai proprio adesso? Cosa ti ha fatto decidere oggi di guardarti intorno?". Senza il dolore vero arrivi all'appuntamento con una persona che vuole solo informazioni. (14/10)
+• Quando nomina una cosa che lo interessa (un prodotto, un'idea, una preoccupazione), chiedigli "come mai?" e fallo parlare, poi lascia la porta aperta: "lo vediamo con calma quando ci vediamo". Quel discorso lasciato a meta' e' il suo motivo per venire all'appuntamento. (14/10)
+• La domanda sulla cifra si fa col tono giusto: al telefono ti sente e non ti vede, quindi rallenta e usa un tono sincero ("se posso chiederti, giusto per capire, su che cifra ragioniamo?"). Fatta cosi', quasi nessuno si offende. Se la conversazione non si e' aperta e il profilo ti fa gia' capire che qualcosa c'e', puoi anche non farla: lo script e' una traccia, serve anche intuito. (14/10)
+• Se ti chiede "tu vendi i prodotti della banca?", non rispondere "si'" chiudendo la conversazione da solo: chiedigli cosa cerca e perche'. Adatta la risposta a quello che teme: chi e' stanco del prodotto di banca vuole sentire come funziona il servizio di consulenza, chi ha paura vuole sentire la solidita' della struttura per cui lavori. Non dichiararti mai quello che non sei. (14/10)
+• Se il lead non ha ne' risparmi ne' possibilita' di mettere via qualcosa ogni mese, prova un paio di agganci reali (fondo pensione, previdenza, la pensione che si avvicina). Se non c'e' niente, chiudi con garbo, chiedi se conosce qualcuno a cui puo' interessare e passa al prossimo: non perdere tempo. (14/10)
+• Fissa la data in chiamata, non "risentiamoci": proponi due disponibilita' precise e blocca quella che sceglie. Se quella settimana non riesce, blocca gia' una data della settimana dopo ("se hai un imprevisto me lo dici e la spostiamo"), chiedigli di confermarti il promemoria e tienilo caldo fino all'incontro. (14/10)
+• Non mollare alla prima obiezione o al primo "non so": rispondi e porta la conversazione un passo piu' avanti. (14/10)
 • Appuntamento fissato: ripetigli giorno, ora e indirizzo, e manda subito la conferma scritta del doc Messaggi. (02/09)
 • Anche se il lead non e' in target, chiedi con garbo se ha colleghi o conoscenti a cui potrebbe interessare. Non scartare a priori chi ha poco: puo' avere contatti che contano. (02/09, 23/09)
 
 DOPO LA CHIAMATA E FOLLOW UP
 • Nella conferma dell'appuntamento allega 2 o 3 screenshot di messaggi veri di tuoi clienti soddisfatti, col nome coperto. Funziona molto meglio del biglietto da visita e fa presentare molte piu' persone all'appuntamento. (02/09, 07/10)
 • Un lead che non risponde all'audio non e' un lead disinteressato: spesso e' un professionista impegnato. Non raccontarti scuse, continua la sequenza. C'e' chi non risponde alla chiamata e ti scrive su WhatsApp due minuti dopo: va preso quando vuole lui. (23/09, 07/10)
+• Chiama sempre dalla chat WhatsApp: vede la tua foto e il tuo nome, la chiamata non sembra un call center, e audio e messaggi restano nella stessa conversazione. (14/10)
+• Nel messaggio dopo la chiamata manda qualcosa che parli di te, non la brochure della banca: uno screenshot di un messaggio di un cliente o una recensione Google. Funziona anche per reciprocita': gli hai dato qualcosa, si sente in debito di presentarsi. (14/10)
+• Le recensioni e i messaggi dei clienti devono essere veri, mai inventati. Se pensi di non averne, salva da oggi ogni "grazie, mi trovo bene" e ogni presentazione che ricevi, copri il nome e usali. (14/10)
+• Se un lead ti risponde male, fermati e non insistere. Se ti capita spesso, dillo al team e si correggono le campagne: una campagna che porta qualche persona scortese puo' portare anche il cliente buono. (14/10)
 • I contatti restano un tuo archivio della zona: si possono ricontattare anche dopo mesi. Non mandare sempre lo stesso messaggio: usa uno spunto nuovo, per esempio una notizia di attualita'. (23/09)
 • Chi ti scrive "non sono io, non ho lasciato i dati": non chiamarlo e non insistere. Rispondi in breve che qualcuno ha inserito il suo numero per errore e che non verra' piu' contattato, poi segnalo come Non in target. I numeri inesistenti: prova a cercare la persona su Facebook o Instagram, altrimenti Non in target. (07/10)
 • Dopo ogni contatto aggiorna stadio e note nel gestionale e le caselle del Foglio Lead: serve a te e serve al team per tarare le campagne. Se il lead e' lontano dalla tua zona, scrivilo nella nota. (07/10)
@@ -1802,6 +1817,7 @@ TERZO APPUNTAMENTO (proposta e chiusura)
 METODO
 • Segui sempre lo stesso processo, cosi' quando una trattativa non si chiude capisci quale passo e' mancato. (16/09)
 • Allenati con le simulazioni (role play) nel training settimanale: le correzioni piu' utili escono li', e cambiare due cose nella presentazione ha gia' portato clienti in piu' in un mese. (07/10, 23/09)
+• Allenati nel role play sui lead difficili, quelli che stanno zitti o ti mettono paletti: provare li' non costa niente, sbagliare la prima volta su un lead vero lo brucia. (14/10)
 • Un lead geolocalizzato vede solo te, non dieci concorrenti: c'e' meno da convincere sul perche' scegliere te e piu' da curare nel processo. (09/09)
 <<AEA FINE>>
 
