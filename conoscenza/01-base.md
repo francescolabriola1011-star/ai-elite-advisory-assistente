@@ -71,9 +71,10 @@ Ci sono due prodotti: CONSULENTE FINANZIARIO e PROMOTORE ORO FISICO. Usa i docum
 COME SI LEGGE LA SEQUENZA (nota di AI Elite Advisory, vale sempre)
 • Giorno 1, prima chiamata da WhatsApp senza risposta: si manda il passo 1, il MESSAGGIO AUDIO, nella stessa chat. Il primo messaggio dopo una chiamata a vuoto e' sempre l'audio, mai lo scritto.
 • Giorno 2, se non ha risposto: due chiamate da WhatsApp, poi il passo 2, il messaggio SCRITTO.
-• Dopo 4 azioni senza risposta: il passo 3, chiusura ciclo, e si ricontatta nelle settimane dopo.
+• Giorno 3, se non ha ancora risposto: tre chiamate da WhatsApp, poi il passo 3, chiusura ciclo, che e' soltanto "[Nome]?".
+• Se risponde in qualunque momento si fissa l'appuntamento. Dopo il giorno 3 senza risposta e' "no risposta" e si ricontatta nelle settimane successive.
 • Quando proponi l'audio, dai il testo del passo 1 da leggere a voce e di' chiaramente che va registrato come vocale.
-(vale per il consulente finanziario; per l'oro segui la cadenza scritta nel suo doc Messaggi e follow up manuali)
+(vale per il consulente finanziario e per il promotore d'oro: la tabella "Sequenza in caso di NO RISPOSTA" in testa al doc Messaggi e' la stessa. Se un altro documento del training riporta per il passo 3 un messaggio piu' lungo, vale "[Nome]?" del doc Messaggi)
 
 <<TRAINING INIZIO>>
 ######## PRODOTTO: CONSULENTE FINANZIARIO ########
@@ -455,11 +456,17 @@ No:
 
 === DOCUMENTO: "Messaggi da mandare Followup manuali" (cartella SCRIPT Vendita, CONSULENTE FINANZIARIO) ===
 MESSAGGI DA MANDARE
-Cadenza: sempre 1 giorno, call più audio.
+Sequenza in caso di NO RISPOSTA
 
-* Se ti rispondono oggi pomeriggio → presa appuntamento domani, o call se ti dicono di chiamarli e riesci
-* Se non ti rispondono → 2 call domani più messaggio scritto
-* Se non rispondono dopo 4 azioni → "no risposta", si ricontattano nelle settimane successive
+Giorno
+	Cosa si fa
+	Giorno 1
+	1 chiamata e 1 audio
+	Giorno 2
+	2 chiamate e il 2° messaggio
+	Giorno 3
+	3 chiamate e il 3° messaggio
+	Se risponde → si fissa l'appuntamento. Se dopo il giorno 3 non ha risposto → "no risposta", si ricontatta nelle settimane successive.
 Le chiamate si fanno sempre da WhatsApp, non con la chiamata normale
 Chiama il lead dalla chat WhatsApp dove gli è arrivato il primo messaggio. Vede la chiamata nella stessa conversazione, riconosce chi sei e non ti scambia per un call center. Se non risponde, l'audio e il messaggio scritto arrivano nella stessa chat, di seguito.
 Consigliato, subito dopo il primo messaggio automatico: messaggio breve scritto o audio (da mandare quando si legge il messaggio, meglio se subito nella prima ora, specialmente se nel weekend)
@@ -469,11 +476,17 @@ Ciao [Nome], sono [Consulente], consulente finanziario, piacere di conoscerti. T
 2. Messaggio dopo call senza risposta
 Ciao [Nome], sono [Consulente], consulente finanziario, piacere di conoscerti 👋 Ti scrivo perché ho visto la tua richiesta su come far crescere i tuoi risparmi e prepararti per il futuro. Fammi sapere quando hai 10 minuti, così facciamo una breve chiacchierata e capiamo se posso aiutarti nella tua situazione. Attendo tue 👍
 3. Messaggio scritto, chiusura ciclo no risposta
-Ehy [Nome], fammi sapere con un "NO" se hai cambiato idea sul sistemare questa cosa, almeno evito di disturbarti!
+[Nome]?
 Altro follow up, contenuto di valore
 Ciao [Nome], ti giro un contenuto dove spiego quanto capitale serve davvero quando si smette di lavorare, e come ci si arriva partendo da quello che si ha oggi: [LINK CONTENUTO]
 
 PS. Ti avevo cercato per capire se un piano di questo tipo ha senso nel tuo caso, fammi sapere quando ci sei così ci prendiamo mezz'ora 👍
+Se il lead è scartato (non in target, capitale troppo basso, fuori zona)
+Non si butta e non si fissa l'appuntamento: gli si lascia la guida. Si manda subito dopo la call, poi resta nei follow up di contenuto, perché si può comprare anche dopo mesi.
+Ciao [Nome], ti mando una guida che ti mostra come gli investitori proteggono e fanno crescere i propri risparmi prima della pensione:
+https://assets.cdn.filesafe.space/Xmq3TDBDajmEuxN4p3d8/media/6a926ea7a90361de8b2fa367.pdf
+Leggila con calma quando hai dieci minuti 👍
+In attesa di risentirci, ti saluto 👋
 Follow up presa appuntamento, subito dopo aver fissato
 Allega 1 o 2 testimonianze se le hai.
 
@@ -1587,9 +1600,17 @@ Compliance: in nessuna di queste risposte si promettono rivalutazioni o guadagni
 MESSAGGI DA MANDARE
 Appuntamenti dal vivo, nel tuo ufficio. Consulente in oro fisico da investimento, acquisto spot.
 
-Cadenza: sempre 1 giorno, call più audio.
-Se non ti rispondono → 2 call domani più messaggio scritto
-Se non rispondono dopo 4 azioni → "no risposta", si ricontattano nelle settimane successive
+Sequenza in caso di NO RISPOSTA
+
+Giorno
+	Cosa si fa
+	Giorno 1
+	1 chiamata e 1 audio
+	Giorno 2
+	2 chiamate e il 2° messaggio
+	Giorno 3
+	3 chiamate e il 3° messaggio
+	Se risponde → si fissa l'appuntamento. Se dopo il giorno 3 non ha risposto → "no risposta", si ricontatta nelle settimane successive.
 
 LE CHIAMATE SI FANNO SEMPRE DA WHATSAPP, NON CON LA CHIAMATA NORMALE
 Chiama il lead dalla chat WhatsApp dove gli è arrivato il primo messaggio. Vede la chiamata nella stessa conversazione, riconosce chi sei e non ti scambia per un call center. Se non risponde, l'audio e il messaggio scritto arrivano nella stessa chat, di seguito.
@@ -1600,13 +1621,19 @@ Ciao [Nome], sono [Consulente], mi occupo di oro fisico da investimento qui a [z
 Ciao [Nome], sono [Consulente], mi occupo di oro fisico da investimento qui a [zona], piacere di conoscerti 👋 Ti scrivo perché ho visto la tua richiesta su come mettere al riparo una parte dei risparmi. Fammi sapere quando hai 10 minuti, così facciamo una breve chiacchierata e capiamo se ha senso nel tuo caso. Attendo tue 👍
 
 3. MESSAGGIO SCRITTO, CHIUSURA CICLO NO RISPOSTA
-Ehy [Nome], fammi sapere con un "NO" se hai cambiato idea sul mettere al riparo una parte dei risparmi, almeno evito di disturbarti!
+[Nome]?
 
 ALTRO FOLLOW UP, CONTENUTO DI VALORE
 Ciao [Nome], ti giro un contenuto dove spiego la differenza fra comprare oro fisico e comprare un prodotto che segue il prezzo dell'oro, e come si legge un certificato: [LINK CONTENUTO]
 
 PS. Ti avevo cercato per capire se un'operazione di questo tipo ha senso nel tuo caso specifico, fammi sapere quando ci sei così ci prendiamo mezz'ora in ufficio 👍
 
+SE IL LEAD È SCARTATO (NON IN TARGET, CAPITALE TROPPO BASSO, FUORI ZONA)
+Non si butta e non si fissa l'appuntamento: gli si lascia la guida. Si manda subito dopo la call, poi resta nei follow up di contenuto, perché si può comprare anche dopo mesi.
+Ciao [Nome], ti mando una guida che ti mostra come chi ha costruito un patrimonio lo mette al riparo, fuori dalla banca e fuori dall'azienda:
+https://assets.cdn.filesafe.space/Xmq3TDBDajmEuxN4p3d8/media/dd82d093-c4b9-49e0-ac09-a565cfa8ae74.pdf
+Leggila con calma quando hai dieci minuti 👍
+In attesa di risentirci, ti saluto 👋
 FOLLOW UP PRESA APPUNTAMENTO, SUBITO DOPO AVER FISSATO
 Eccoci [Nome], ti confermo il nostro appuntamento di [giorno ore]. Ci vediamo qui: [INDIRIZZO UFFICIO] ([riferimento per parcheggio o citofono]). Ti mando anche un paio di riferimenti di persone che seguo, così ti fai un'idea di come lavoro. A presto 💪
 
