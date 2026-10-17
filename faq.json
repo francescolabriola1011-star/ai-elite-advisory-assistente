@@ -116,6 +116,21 @@
           "d": "Posso allargare la zona o alzare il budget?",
           "chi": "MB",
           "r": "Si decide con il media buyer: allargare la zona serve quando il bacino e' troppo piccolo, alzare il budget quando gli annunci buoni hanno spazio. Chiedilo nel gruppo e ricevi la proposta con i numeri."
+        },
+        {
+          "d": "Oggi non e' arrivato nessun lead, e' normale?",
+          "chi": "MB",
+          "r": "Un giorno a zero si', le campagne oscillano. Si guarda la settimana e il singolo annuncio, non il giorno.\n\nSe passano 3 giorni di fila senza lead, scrivilo nel gruppo senza toccare niente su Meta: il media buyer controlla modulo, pagamento e annunci in revisione."
+        },
+        {
+          "d": "Posso spegnere la campagna per qualche giorno?",
+          "chi": "MB",
+          "r": "Meglio di no. Ogni volta che si spegne e si riaccende, Meta riparte da capo con l'apprendimento e i primi giorni costano di piu'.\n\nSe hai un motivo (ferie, agenda piena) scrivilo nel gruppo: si abbassa o si sospende nel modo giusto, insieme."
+        },
+        {
+          "d": "Perche' devo spostare i lead negli stadi del gestionale?",
+          "chi": "MB",
+          "r": "Perche' fa partire le automazioni giuste e dice a Meta quali contatti diventano appuntamenti: cosi' le campagne imparano a cercare persone simili. Un lead lasciato in \"nuovo\" non insegna niente alla campagna.\n\nNumeri sbagliati o persone ostili: stadio \"Non in target\", e lo segnali nel gruppo."
         }
       ]
     },
@@ -151,12 +166,22 @@
         {
           "d": "Il training settimanale e' obbligatorio?",
           "chi": "CSM",
-          "r": "E' parte del percorso e conta per le garanzie, insieme ad automazioni attive, calendario condiviso e gestionale aggiornato. Se il giorno non ti va bene dillo al CSM: si sta raccogliendo la disponibilita' di tutti."
+          "r": "Si', conta per la garanzia: dal vivo, oppure almeno l'80% della registrazione entro 7 giorni. Dal 20 ottobre si tiene il martedi alle 18, con simulazioni di chiamata e di appuntamento. Contano anche automazioni attive, calendario condiviso e gestionale aggiornato."
         },
         {
           "d": "Cosa dice la mia garanzia?",
           "chi": "CSM",
           "r": "Vale solo quello che c'e' scritto nel contratto firmato: per il dettaglio chiedi al CSM. I presupposti sono sempre gli stessi: lead lavorati col metodo, automazioni attive, calendario condiviso, training seguiti e gestionale aggiornato."
+        },
+        {
+          "d": "Cosa devo compilare il giovedi?",
+          "chi": "CSM",
+          "r": "Entro sera: le caselle del Foglio Lead e, nel Modulo Fatturato, gli appuntamenti con l'esito (Fatto, Saltato o Chiuso) e le chiusure con valore e data.\n\nSenza esito spuntato l'appuntamento non si conta, e senza appuntamenti contati la garanzia non si puo' verificare."
+        },
+        {
+          "d": "Ho fatto il primo appuntamento o la prima chiusura, cosa faccio?",
+          "chi": "CSM",
+          "r": "Spunta l'esito nel Modulo Fatturato (e Chiuso con valore e data, se hai chiuso) e scrivilo subito nel gruppo, col nome del lead. E' il momento in cui il team ti aiuta a fare il passo dopo."
         }
       ]
     }
