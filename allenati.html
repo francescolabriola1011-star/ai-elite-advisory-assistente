@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="it">
+<meta charset="utf-8">
+<title>Allenati alla prima chiamata · Braccio Destro</title>
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta name="theme-color" content="#0B1A3A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Figtree:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --navy:#0B1A3A; --yellow:#FFD21F; --gold:#D4A537; --white:#FFFFFF;
+  --ground:#F5F3EE; --card:#FFFFFF; --ink:#0F1B33; --muted:#5E6A82; --line:#E3E0D8;
+  --shadow:0 1px 2px rgba(11,26,58,.06), 0 8px 24px rgba(11,26,58,.06);
+  --serif:"Source Serif 4", Georgia, serif;
+  --sans:"Figtree", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;display:flex;flex-direction:column;min-height:100dvh}
+button,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:8px}
+[hidden]{display:none!important}
+.top{position:sticky;top:0;z-index:5;background:var(--navy);color:var(--white);padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px}
+.top .in{max-width:820px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--yellow),var(--gold));color:var(--navy);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:18px;flex:none}
+.brand{flex:1}
+.brand b{font-family:var(--serif);font-size:19px;display:block;line-height:1.1}
+.brand b span{color:var(--yellow)}
+.brand small{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700}
+main{flex:1;width:100%;max-width:820px;margin:0 auto;padding:20px 16px 8px;display:flex;flex-direction:column;gap:14px}
+h1{font-family:var(--serif);font-size:clamp(26px,5vw,34px);line-height:1.15;margin:0}
+h1 em{font-style:normal;color:var(--gold)}
+.muted{color:var(--muted);margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+label{font-weight:700;font-size:14px;display:flex;flex-direction:column;gap:6px}
+select{border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--white)}
+.btn{border:0;border-radius:999px;padding:12px 18px;font-weight:800;cursor:pointer;background:var(--navy);color:var(--yellow)}
+.btn.alt{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.btn.gold{background:var(--yellow);color:var(--navy)}
+.thread{display:flex;flex-direction:column;gap:10px}
+.msg{max-width:85%;padding:10px 14px;border-radius:16px;white-space:pre-wrap;box-shadow:var(--shadow)}
+.me{align-self:flex-end;background:var(--navy);color:var(--white);border-bottom-right-radius:4px}
+.lead{align-self:flex-start;background:var(--card);border:1px solid var(--line);border-bottom-left-radius:4px}
+.voto{align-self:stretch;max-width:100%;background:#FFF6D6;border:1px solid #EED68A}
+.who{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.bar{position:sticky;bottom:0;background:var(--ground);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line)}
+.bar .in{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+.row{display:flex;gap:8px;align-items:flex-end}
+textarea{flex:1;border:1px solid var(--line);border-radius:14px;padding:10px 12px;resize:none;min-height:46px;max-height:140px;background:var(--white)}
+.mic{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--white);cursor:pointer;flex:none;font-size:20px}
+.mic[aria-pressed="true"]{background:var(--yellow);border-color:var(--gold)}
+.err{color:#9C2B2B;font-size:14px;margin:0}
+</style>
+<body>
+<header class="top"><div class="in">
+  <div class="logo">BD</div>
+  <div class="brand"><small>AI Elite Advisory</small><b>Braccio <span>Destro</span> · Allenati</b></div>
+</div></header>
+
+<main>
+  <section id="setup" class="card">
+    <h1>Allenati alla <em>prima chiamata</em></h1>
+    <p class="muted">Io faccio il lead che ha lasciato i dati dalle ads, tu lo chiami. Quando hai finito premi "Chiudi e dammi il voto": ti dico cosa hai fatto bene, la cosa da correggere e la frase giusta.</p>
+    <label>Cosa proponi
+      <select id="prodotto"><option value="cf">Consulenza finanziaria</option><option value="oro">Oro fisico</option></select>
+    </label>
+    <label>Che lead vuoi trovare
+      <select id="tipo">
+        <option value="">A sorpresa</option>
+        <option value="tempo">Ha poco tempo</option>
+        <option value="mail">Mandami tutto per mail o WhatsApp</option>
+        <option value="banca">Ho gia' la banca o un consulente</option>
+        <option value="diffidente">Diffidente, pensa che sia una vendita</option>
+        <option value="guida" data-p="cf">Non ricorda la guida</option>
+        <option value="prezzo" data-p="oro">L'oro adesso costa troppo</option>
+        <option value="caldo">Interessato ma deve sentire il coniuge</option>
+      </select>
+    </label>
+    <label>Difficolta'
+      <select id="livello"><option value="facile">Facile</option><option value="medio" selected>Media</option><option value="difficile">Difficile</option></select>
+    </label>
+    <button class="btn gold" id="via">Chiama il lead</button>
+    <p class="muted" style="font-size:13px">Puoi scrivere o parlare: tocca il microfono, oppure usa il microfono della tastiera del telefono.</p>
+  </section>
+
+  <section id="thread" class="thread" aria-live="polite"></section>
+  <p class="err" id="err" hidden></p>
+</main>
+
+<div class="bar" id="bar" hidden><div class="in">
+  <div class="row">
+    <textarea id="txt" rows="1" placeholder="Cosa dici al lead..."></textarea>
+    <button class="mic" id="mic" aria-pressed="false" title="Parla">🎙</button>
+    <button class="btn" id="invia">Invia</button>
+  </div>
+  <div class="row">
+    <button class="btn gold" id="fine" style="flex:1">Chiudi e dammi il voto</button>
+    <button class="btn alt" id="nuova">Nuova chiamata</button>
+  </div>
+</div></div>
+
+<script>
+(function(){
+  const API = "https://braccio-destro-chat.braccio-destro-connettore.workers.dev";
+  const $ = (s) => document.querySelector(s);
+  const store = { get(k, d){ try{ return JSON.parse(localStorage.getItem("bd_" + k)) ?? d; }catch(e){ return d; } } };
+  const dati = store.get("dati", {});
+  let turns = [], scenario = {}, busy = false, finita = false;
+
+  $("#prodotto").value = dati.prodotto === "oro" ? "oro" : "cf";
+  function filtra(){
+    const p = $("#prodotto").value;
+    [...$("#tipo").options].forEach(o => { o.hidden = !!o.dataset.p && o.dataset.p !== p; });
+    if ($("#tipo").selectedOptions[0].hidden) $("#tipo").value = "";
+  }
+  $("#prodotto").addEventListener("change", filtra); filtra();
+
+  function bolla(cls, chi, testo){
+    const d = document.createElement("div"); d.className = "msg " + cls;
+    const w = document.createElement("span"); w.className = "who"; w.textContent = chi;
+    const b = document.createElement("div"); b.textContent = testo;
+    d.append(w, b); $("#thread").append(d); d.scrollIntoView({ block: "end" }); return b;
+  }
+  function errore(t){ $("#err").textContent = t; $("#err").hidden = !t; }
+
+  async function chiedi(box){
+    busy = true; errore("");
+    let testo = "";
+    try{
+      const r = await fetch(API, { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ modalita: "allenamento", scenario, profilo: { ...dati, prodotto: scenario.prodotto }, messages: turns.slice(-40) }) });
+      if (r.status === 429) throw new Error("Stai andando veloce: aspetta un minuto e riprova.");
+      if (!r.ok) throw new Error("Il servizio non ha risposto. Riprova fra poco.");
+      const reader = r.body.getReader(), dec = new TextDecoder();
+      while (true){
+        const { value, done } = await reader.read(); if (done) break;
+        testo += dec.decode(value, { stream: true });
+        const k = testo.indexOf("[[ERRORE]]");
+        if (k >= 0){ const m = testo.slice(k + 10); testo = testo.slice(0, k).trim(); if (!testo) throw new Error(m); break; }
+        box.textContent = testo.replace(/\*\*/g, "");
+        box.parentElement.scrollIntoView({ block: "end" });
+      }
+      turns.push({ role: "assistant", content: testo });
+    }catch(e){ box.parentElement.remove(); turns.pop(); errore(e.message || "Errore di rete."); }
+    busy = false;
+  }
+
+  $("#via").addEventListener("click", async () => {
+    scenario = { prodotto: $("#prodotto").value, tipo: $("#tipo").value, livello: $("#livello").value };
+    turns = [{ role: "user", content: "INIZIA" }]; finita = false;
+    $("#setup").hidden = true; $("#bar").hidden = false; $("#thread").innerHTML = "";
+    bolla("me", "Tu", "Stai chiamando il lead...");
+    await chiedi(bolla("lead", "Lead", "..."));
+    $("#txt").focus();
+  });
+
+  async function invia(){
+    const t = $("#txt").value.trim(); if (!t || busy || finita) return;
+    $("#txt").value = ""; bolla("me", "Tu", t); turns.push({ role: "user", content: t });
+    await chiedi(bolla("lead", "Lead", "..."));
+  }
+  $("#invia").addEventListener("click", invia);
+  $("#txt").addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey){ e.preventDefault(); invia(); } });
+
+  $("#fine").addEventListener("click", async () => {
+    if (busy || finita || turns.length < 3) return;
+    finita = true;
+    const ultimo = turns[turns.length - 1];
+    if (ultimo.role === "user") ultimo.content += "\n\n[[FINE CHIAMATA]]";
+    else turns.push({ role: "user", content: "[[FINE CHIAMATA]]" });
+    await chiedi(bolla("voto", "Il tuo voto", "Sto valutando la chiamata..."));
+  });
+  $("#nuova").addEventListener("click", () => { if (busy) return; $("#setup").hidden = false; $("#bar").hidden = true; $("#thread").innerHTML = ""; errore(""); window.scrollTo(0, 0); });
+
+  // dettatura dal browser, se disponibile (altrimenti si usa il microfono della tastiera)
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR){ $("#mic").hidden = true; }
+  else {
+    const rec = new SR(); rec.lang = "it-IT"; rec.interimResults = true; rec.continuous = true;
+    let base = "";
+    rec.onresult = (e) => { let s = ""; for (const r of e.results) s += r[0].transcript; $("#txt").value = (base + " " + s).trim(); };
+    rec.onend = () => $("#mic").setAttribute("aria-pressed", "false");
+    $("#mic").addEventListener("click", () => {
+      if ($("#mic").getAttribute("aria-pressed") === "true"){ rec.stop(); return; }
+      base = $("#txt").value; rec.start(); $("#mic").setAttribute("aria-pressed", "true");
+    });
+  }
+})();
+</script>
+</body>
+</html>
