@@ -37,16 +37,19 @@ p{margin:0;color:var(--muted);line-height:1.5}
 .rosso{border:0;border-radius:999px;padding:14px 22px;background:#B3261E;color:var(--white);font:inherit;font-weight:800;cursor:pointer;width:100%}
 .ancora{border:0;border-radius:999px;padding:14px 22px;background:var(--yellow);color:var(--navy);font:inherit;font-weight:800;cursor:pointer;width:100%}
 .righe{width:100%;text-align:left;display:flex;flex-direction:column;gap:8px;max-height:40vh;overflow:auto}
-.righe div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:8px 12px;font-size:15px;line-height:1.45}
+.righe div{white-space:pre-wrap;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:8px 12px;font-size:15px;line-height:1.45}
 .righe b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
 .err{color:#FFB4AB;font-size:14px}
+.giu{width:100%;background:#B3261E;border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.giu b{font-size:17px}
+.giu span{font-size:14px;color:#FFE1DC}
 @media (prefers-reduced-motion:reduce){.av::after{animation:none!important}}
 </style>
 <body>
 <main>
   <small class="top">AI Elite Advisory · Sparring partner</small>
   <h1>Allenati alla <em>prima chiamata</em></h1>
-  <p>Chiami un lead arrivato dalle ads e lui ti risponde a voce, con le sue obiezioni. Ogni chiamata e' un lead diverso.</p>
+  <p>Chiami un lead arrivato dalle ads: distratto, diffidente, con le sue obiezioni. Se parli troppo, chiedi subito i soldi o sei lento, ti riattacca.</p>
   <div class="scelta" role="group" aria-label="Cosa proponi">
     <button id="p-cf" aria-pressed="true">Consulenza finanziaria</button>
     <button id="p-oro" aria-pressed="false">Oro fisico</button>
@@ -57,6 +60,7 @@ p{margin:0;color:var(--muted);line-height:1.5}
     <div class="av" id="av" aria-hidden="true">?</div>
     <div class="tempo" id="tempo">00:00</div>
     <div class="livello" aria-hidden="true"><i id="liv"></i></div>
+    <div class="giu" id="giu" hidden><b>Il lead ti ha riattaccato</b><span id="giu-motivo"></span></div>
     <button class="rosso" id="riattacca">Riattacca</button>
   </section>
   <button class="ancora" id="ancora" hidden>Chiama un altro lead</button>
@@ -72,26 +76,30 @@ p{margin:0;color:var(--muted);line-height:1.5}
 (function(){
   // Agenti ElevenLabs creati da sparring/crea_agenti.py (agenti.json)
   const AGENTI = { donna: "agent_1301m5ekq72xfv6amxrs43xcfg89", uomo: "agent_4401m5ekqd75ev9s50sc8pk7jd3v" };
+  // Caratteri presi dai lead veri dei training (20/10/2026 e precedenti)
   const CARATTERI = {
     cf: [
-      "Hai poco tempo, rispondi di fretta e vuoi chiudere in un minuto.",
-      "Hai gia' la banca o un altro consulente e non vedi perche' cambiare.",
-      "Chiedi di ricevere tutto per mail o WhatsApp invece di fissare un appuntamento.",
-      "Sei diffidente: pensi che sia una vendita e chiedi subito quanto costa e cosa ci guadagna lui.",
-      "Ricordi vagamente di aver scaricato la guida ma non sai bene perche' ti chiama.",
-      "Sei interessato davvero ma rimandi: devi sentire tuo marito o tua moglie prima di decidere."
+      "Rispondi di fretta mentre fai altro e vuoi chiudere in un minuto.",
+      "Hai un consulente in banca da anni, ci vai anche a pranzo, e non vedi perche' cambiare; della pensione pero' non avete mai parlato.",
+      "Dici che il tema ti interessa ma non adesso, hai altro a cui pensare, e proponi tu di richiamare piu' avanti.",
+      "Sei diffidente: chiedi subito chi e', chi lo conosce e cosa ci guadagna.",
+      "Hai visto la pubblicita' ma la guida non l'hai letta e non ricordi perche' hai lasciato i dati.",
+      "Hai i soldi fermi in BTP e sul conto in banca, paghi costi che non capisci, ma non ti fidi di cambiare.",
+      "Sei un ex promotore che ora fa da solo con gli ETF: pensi di non aver bisogno di nessuno e lo dici con sufficienza.",
+      "Vuoi solo che ti mandino tutto per mail o WhatsApp e cerchi di evitare l'appuntamento."
     ],
     oro: [
-      "Hai poco tempo, rispondi di fretta e vuoi chiudere in un minuto.",
-      "Pensi che l'oro adesso sia troppo caro e che convenga aspettare che scenda.",
-      "Chiedi di ricevere tutto per mail o WhatsApp invece di fissare un appuntamento.",
-      "Sei diffidente: temi truffe sull'oro fisico, chiedi dove viene custodito e chi lo garantisce.",
-      "Hai gia' qualcosa in banca o un piano col tuo consulente e non vedi perche' aggiungere oro.",
-      "Sei interessato davvero ma rimandi: devi sentire tuo marito o tua moglie prima di decidere."
+      "Rispondi di fretta mentre fai altro e vuoi chiudere in un minuto.",
+      "Pensi che l'oro adesso sia ai massimi e che convenga aspettare che scenda.",
+      "Hai paura delle truffe sull'oro fisico: chiedi dove viene custodito, chi lo garantisce e chi e' lui.",
+      "Hai gia' un piano in banca col tuo consulente e non vedi perche' aggiungere oro.",
+      "Hai visto la pubblicita' ma non ricordi bene di cosa si trattava.",
+      "Dici che il tema ti interessa ma non adesso, e proponi tu di richiamare piu' avanti.",
+      "Vuoi solo che ti mandino tutto per mail o WhatsApp e cerchi di evitare l'appuntamento."
     ]
   };
   const PRODOTTO = { cf: "consulenza finanziaria", oro: "oro fisico da investimento" };
-  const DIFF = ["facile", "media", "media", "difficile"];
+  const DIFF = ["media", "difficile", "difficile"];
   let prodotto = "cf";
   const pesca = (a) => a[Math.floor(Math.random() * a.length)];
 
@@ -107,6 +115,20 @@ p{margin:0;color:var(--muted);line-height:1.5}
   function orologio(){ const s = Math.floor((Date.now() - inizio) / 1000); $("tempo").textContent = String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0"); }
   function livello(){ if (conv){ try{ $("liv").style.width = Math.min(100, conv.getInputVolume() * 250) + "%"; }catch(e){} } raf = requestAnimationFrame(livello); }
   function errore(t){ $("err").textContent = t; $("err").hidden = !t; }
+  // Il lead riattacca: tono di occupato all'italiana (425 Hz, tre colpi) e scritta rossa, poi arriva il voto.
+  async function riattaccato(motivo){
+    $("call").dataset.fase = "giu"; vedi("Il lead ti ha riattaccato");
+    $("giu").hidden = false; $("giu-motivo").textContent = motivo ? "Motivo: " + motivo : "";
+    try{
+      const ac = new (window.AudioContext || window.webkitAudioContext)(), t0 = ac.currentTime + 0.05;
+      for (let i = 0; i < 4; i++){
+        const o = ac.createOscillator(), g = ac.createGain(); o.frequency.value = 425; o.connect(g); g.connect(ac.destination);
+        const a = t0 + i * 0.4; g.gain.setValueAtTime(0.15, a); g.gain.setValueAtTime(0, a + 0.2); o.start(a); o.stop(a + 0.22);
+      }
+      await new Promise(r => setTimeout(r, 1700)); ac.close();
+    }catch(e){}
+    vedi("Il voto");
+  }
   function fine(){
     clearInterval(timer); cancelAnimationFrame(raf); conv = null;
     $("call").hidden = true; $("ancora").hidden = false;
@@ -117,7 +139,7 @@ p{margin:0;color:var(--muted);line-height:1.5}
     const genere = Math.random() < 0.5 ? "donna" : "uomo";
     try{ await navigator.mediaDevices.getUserMedia({ audio: true }); }
     catch(e){ errore("Serve il microfono: consentilo al sito dalle impostazioni del browser e riprova."); return; }
-    $("chiama").hidden = true; intro.forEach(x => x.hidden = true);
+    $("chiama").hidden = true; intro.forEach(x => x.hidden = true); $("giu").hidden = true;
     $("call").hidden = false; $("call").dataset.fase = "connette"; $("av").textContent = genere === "donna" ? "D" : "U";
     vedi("Sto chiamando..."); $("tempo").textContent = "00:00"; $("riattacca").disabled = false;
     try{
@@ -130,9 +152,10 @@ p{margin:0;color:var(--muted);line-height:1.5}
           difficolta: pesca(DIFF),
           genere: genere === "donna" ? "una donna" : "un uomo"
         },
+        clientTools: { riattacca: async ({ motivo }) => { await riattaccato(motivo); return "riattaccato"; } },
         onConnect: () => { inizio = Date.now(); timer = setInterval(orologio, 1000); livello(); },
         onModeChange: ({ mode }) => { $("call").dataset.fase = mode === "speaking" ? "parla" : "ascolta"; vedi(mode === "speaking" ? "Parla il lead" : "Ti ascolto"); },
-        onMessage: (m) => { if (m.message && m.message.replace(/[.\s…]/g, "")) riga(m.role === "user" || m.source === "user" ? "Tu" : "Lead", m.message); },
+        onMessage: (m) => { if (m.message && m.message.replace(/[.\s…]/g, "")) riga(m.role === "user" || m.source === "user" ? "Tu" : "Lead", m.message.replace(/\*\*/g, "").replace(/^\s*-{3,}\s*$/gm, "").replace(/\n{3,}/g, "\n\n").trim()); },
         onError: (msg) => { errore("La linea e' caduta: " + (msg || "riprova fra poco.")); },
         onDisconnect: () => fine()
       });
