@@ -98,7 +98,31 @@ p{margin:0;color:var(--muted);line-height:1.5}
       "Vuoi solo che ti mandino tutto per mail o WhatsApp e cerchi di evitare l'appuntamento."
     ]
   };
-  const PRODOTTO = { cf: "consulenza finanziaria", oro: "oro fisico da investimento" };
+  const CONSULENTE = { cf: "consulente finanziario", oro: "consulente che vende oro fisico da investimento" };
+  // Il lead e' sempre il potenziale cliente del consulente (buyer persona delle cartelle madre)
+  const PROFILO = {
+    cf: [
+      "Hai i risparmi investiti tramite la tua banca, con prodotti proposti dallo sportello e mai scelti davvero. Non sai quanto paghi ogni anno e sospetti che la banca ci guadagni piu' di te.",
+      "Hai una bella somma ferma sul conto per prudenza, perche' almeno non perdi. Inizi a pensare alla pensione e non hai un piano.",
+      "Hai un consulente che non si fa mai sentire, ti chiama solo per proporti un prodotto nuovo. Ti arriva ogni anno un documento dei costi che non leggi.",
+      "Hai appena ricevuto un'eredita' e non sai dove metterla. Hai paura di sbagliare, sono soldi di famiglia."
+    ],
+    oro: [
+      "Hai liquidita' ferma sul conto e temi che perda valore ogni anno. Vorresti mettere al riparo una parte del patrimonio, ma non sai niente di oro fisico.",
+      "Hai gia' comprato qualche moneta d'oro anni fa e vorresti capire se ha senso comprarne ancora, ma non ti fidi di chi vende.",
+      "Hai un titolo o un conto deposito che scade fra qualche mese e stai pensando a cosa fare con quei soldi.",
+      "Vorresti lasciare qualcosa ai figli in una forma che non si svaluta, ma hai paura delle truffe."
+    ]
+  };
+  const RICORDO = [
+    "Ti ricordi bene di aver lasciato i dati e di aver scaricato la guida, ma non l'hai ancora letta.",
+    "Ti ricordi vagamente: hai visto tante pubblicita' e non sai bene quale fosse.",
+    "Non ti ricordi proprio di aver lasciato i dati: all'inizio dici di non aver chiesto niente."
+  ];
+  const METODO = {
+    cf: "Apertura in una frase con il motivo della chiamata e 'ti ricordi?'. Frame: 'ti rubo 8-10 minuti per capire la tua situazione'. Domanda sull'obiettivo: 'cosa ti ha spinto proprio adesso a informarti? cosa vorresti ottenere?'. Situazione: soldi fermi, investiti, chi lo segue, sa quanto paga in euro. Domanda che apre tutto: 'hai mai fatto due conti su quanto ti servira' al mese in pensione?' senza dare la risposta al telefono. Solo dopo: quanto mette da parte al mese e se ha una somma ferma. Decide da solo o in due. Chiusura: 30-40 minuti in ufficio con doppia scelta di giorno e ora, mai 'ci risentiamo'. A ogni domanda tecnica: 'te lo spiego con calma quando ci vediamo'.",
+    oro: "Apertura in una frase con il motivo della chiamata e 'ti ricordi?'. Frame: 8-10 minuti per capire la situazione. Obiettivo: 'cosa ti ha spinto adesso a informarti sull'oro?'. Situazione: dove tiene i soldi, ha gia' oro, fattura e certificato. Solo dopo: che cifra destinerebbe, se e' gia' disponibile o si libera a una data. Mai quotare prezzi al grammo al telefono: 'la quotazione si fissa quando si compra, te la faccio vedere in ufficio'. Decide da solo o in due. Disinnesco: niente rendimenti promessi. Chiusura in ufficio con doppia scelta di giorno e ora."
+  };
   const DIFF = ["media", "difficile", "difficile"];
   let prodotto = "cf";
   const pesca = (a) => a[Math.floor(Math.random() * a.length)];
@@ -134,11 +158,14 @@ p{margin:0;color:var(--muted);line-height:1.5}
     $("call").hidden = true; $("ancora").hidden = false;
   }
 
+  let avvio = false;
   $("chiama").onclick = async () => {
+    if (avvio || conv) return;   // un tocco = una chiamata: niente lead doppi mentre il browser chiede il microfono
+    avvio = true; $("chiama").disabled = true;
     errore(""); $("righe").innerHTML = ""; $("righe").hidden = true;
     const genere = Math.random() < 0.5 ? "donna" : "uomo";
     try{ await navigator.mediaDevices.getUserMedia({ audio: true }); }
-    catch(e){ errore("Serve il microfono: consentilo al sito dalle impostazioni del browser e riprova."); return; }
+    catch(e){ errore("Serve il microfono: consentilo al sito dalle impostazioni del browser e riprova."); avvio = false; $("chiama").disabled = false; return; }
     $("chiama").hidden = true; intro.forEach(x => x.hidden = true); $("giu").hidden = true;
     $("call").hidden = false; $("call").dataset.fase = "connette"; $("av").textContent = genere === "donna" ? "D" : "U";
     vedi("Sto chiamando..."); $("tempo").textContent = "00:00"; $("riattacca").disabled = false;
@@ -147,10 +174,13 @@ p{margin:0;color:var(--muted);line-height:1.5}
         agentId: AGENTI[genere],
         connectionType: "webrtc",
         dynamicVariables: {
-          prodotto: PRODOTTO[prodotto],
+          consulente: CONSULENTE[prodotto],
+          profilo: pesca(PROFILO[prodotto]),
           carattere: pesca(CARATTERI[prodotto]),
+          ricordo: pesca(RICORDO),
           difficolta: pesca(DIFF),
-          genere: genere === "donna" ? "una donna" : "un uomo"
+          genere: genere === "donna" ? "una donna" : "un uomo",
+          metodo: METODO[prodotto]
         },
         clientTools: { riattacca: async ({ motivo }) => { await riattaccato(motivo); return "riattaccato"; } },
         onConnect: () => { inizio = Date.now(); timer = setInterval(orologio, 1000); livello(); },
@@ -162,6 +192,7 @@ p{margin:0;color:var(--muted);line-height:1.5}
     }catch(e){
       errore("Non riesco a chiamare il lead adesso. Riprova fra poco."); fine();
     }
+    avvio = false; $("chiama").disabled = false;
   };
   $("riattacca").onclick = async () => { $("riattacca").disabled = true; if (conv){ try{ await conv.endSession(); }catch(e){} } fine(); };
   $("ancora").onclick = () => { $("ancora").hidden = true; $("righe").hidden = true; $("chiama").hidden = false; intro.forEach(x => x.hidden = false); errore(""); };
