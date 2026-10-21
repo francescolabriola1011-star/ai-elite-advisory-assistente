@@ -40,6 +40,7 @@ p{margin:0;color:var(--muted);line-height:1.5}
 .righe div{white-space:pre-wrap;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:8px 12px;font-size:15px;line-height:1.45}
 .righe b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
 .err{color:#FFB4AB;font-size:14px}
+.tipo{margin:0;font-weight:800;color:var(--yellow);font-size:16px}
 .giu{width:100%;background:#B3261E;border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
 .giu b{font-size:17px}
 .giu span{font-size:14px;color:#FFE1DC}
@@ -63,6 +64,7 @@ p{margin:0;color:var(--muted);line-height:1.5}
     <div class="giu" id="giu" hidden><b>Il lead ti ha riattaccato</b><span id="giu-motivo"></span></div>
     <button class="rosso" id="riattacca">Riattacca</button>
   </section>
+  <p class="tipo" id="tipo" hidden></p>
   <button class="ancora" id="ancora" hidden>Chiama un altro lead</button>
   <p class="err" id="err" hidden></p>
   <div class="righe" id="righe" hidden></div>
@@ -76,26 +78,37 @@ p{margin:0;color:var(--muted);line-height:1.5}
 (function(){
   // Agenti ElevenLabs creati da sparring/crea_agenti.py (agenti.json)
   const AGENTI = { donna: "agent_1301m5ekq72xfv6amxrs43xcfg89", uomo: "agent_4401m5ekqd75ev9s50sc8pk7jd3v" };
-  // Caratteri presi dai lead veri dei training (20/10/2026 e precedenti)
+  // Tipi di lead: dai lead veri dei training (20/10/2026 e precedenti) e dalla buyer persona. A fine chiamata si vede che tipo era.
   const CARATTERI = {
     cf: [
-      "Rispondi di fretta mentre fai altro e vuoi chiudere in un minuto.",
-      "Hai un consulente in banca da anni, ci vai anche a pranzo, e non vedi perche' cambiare; della pensione pero' non avete mai parlato.",
-      "Dici che il tema ti interessa ma non adesso, hai altro a cui pensare, e proponi tu di richiamare piu' avanti.",
-      "Sei diffidente: chiedi subito chi e', chi lo conosce e cosa ci guadagna.",
-      "Hai visto la pubblicita' ma la guida non l'hai letta e non ricordi perche' hai lasciato i dati.",
-      "Hai i soldi fermi in BTP e sul conto in banca, paghi costi che non capisci, ma non ti fidi di cambiare.",
-      "Sei un ex promotore che ora fa da solo con gli ETF: pensi di non aver bisogno di nessuno e lo dici con sufficienza.",
-      "Vuoi solo che ti mandino tutto per mail o WhatsApp e cerchi di evitare l'appuntamento."
+      {"nome": "Quello che vuole scappare", "testo": "Vuoi chiudere la chiamata il prima possibile: rispondi a monosillabi, dici che sei in macchina o al lavoro, cerchi ogni scusa per riattaccare. Resti solo se il consulente in pochi secondi ti incuriosisce con una domanda su di te."},
+      {"nome": "Quello che non si ricorda", "testo": "Non hai nessun ricordo di aver lasciato i dati e sei un po' infastidito: pensi a un errore o a un call center. Ti apri solo se il consulente ti spiega con calma cosa avevi chiesto e ti fa una domanda che ti riguarda.", "ricordo": "Non ti ricordi proprio di aver lasciato i dati: all'inizio dici di non aver chiesto niente."},
+      {"nome": "Quello piu' preparato di te", "testo": "Sei una persona colta e informata, leggi il Sole 24 Ore, conosci ETF, costi di gestione e inflazione. Fai domande precise e metti alla prova la competenza del consulente. Se lui si mette a spiegare i mercati al telefono lo smonti; lo rispetti se ammette che va visto con i documenti e ti porta all'incontro."},
+      {"nome": "Il chiacchierone", "testo": "Sei simpatico e parli tanto: divaghi su figli, lavoro, vacanze, la banca di tuo cugino. Sembri disponibile ma non arrivi mai al punto. Il consulente deve riportarti al tema con garbo e chiudere l'appuntamento, altrimenti finisce la chiamata senza niente."},
+      {"nome": "Il diffidente", "testo": "Pensi che sia una truffa o un call center. Chiedi chi e', da dove chiama, come ha avuto il tuo numero, chi lo conosce, cosa ci guadagna. Ti apri solo con risposte semplici e sicure, senza giri di parole."},
+      {"nome": "Lo scocciato", "testo": "Sei di cattivo umore, sei stato chiamato da troppi venditori questa settimana. Rispondi secco e un po' sgarbato. Se il consulente non si fa intimorire e resta calmo e leggero, magari con una battuta, ti ammorbidisci."},
+      {"nome": "Il gentile che non decide mai", "testo": "Sei gentilissimo, dici sempre 'si', certo, interessante', ma quando si arriva all'appuntamento rimandi: 'ci penso', 'mi richiami la settimana prossima', 'devo guardare l'agenda'. Fissi solo se il consulente ti mette davanti due orari precisi e ti fa vedere che rimandare non ti conviene."},
+      {"nome": "Mandami tutto per mail", "testo": "Vuoi che ti mandino tutto per mail o WhatsApp per non doverti impegnare. Lo chiedi piu' volte. Accetti l'appuntamento solo se il consulente ti spiega perche' su carta non si puo' fare e ti propone mezz'ora precisa."},
+      {"nome": "Deve sentire il coniuge", "testo": "Sei interessato davvero, ma su queste cose decidi con tua moglie o tuo marito e non vuoi impegnarti senza. Se il consulente ti propone di venire insieme, con giorno e ora, accetti."},
+      {"nome": "Quello di fretta", "testo": "Rispondi mentre fai altro, hai pochissimo tempo. Se il consulente si dilunga lo interrompi: 'mi dica in breve'. Apprezzi chi va al punto con una domanda secca e propone subito due orari."},
+      {"nome": "Quello che ha gia' il consulente", "testo": "Hai un consulente in banca da anni, ci vai anche a pranzo, e non vedi perche' cambiare. Della pensione pero' non avete mai parlato davvero. Ti apri se il consulente ti chiede cosa ti piace del tuo e su cosa non ti ha mai seguito."},
+      {"nome": "Quello che ha preso una batosta", "testo": "Hai perso dei soldi con un prodotto della banca qualche anno fa e da allora non ti fidi di nessuno. Lo racconti con amarezza. Ti apri se il consulente ascolta e non ti promette niente."},
+      {"nome": "L'ex del mestiere", "testo": "Sei un ex promotore che ora fa da solo con gli ETF: pensi di non aver bisogno di nessuno e lo dici con sufficienza. Rispetti solo chi non si mette a gareggiare con te ma ti fa una domanda su quello che non riesci a fare da solo."}
     ],
     oro: [
-      "Rispondi di fretta mentre fai altro e vuoi chiudere in un minuto.",
-      "Pensi che l'oro adesso sia ai massimi e che convenga aspettare che scenda.",
-      "Hai paura delle truffe sull'oro fisico: chiedi dove viene custodito, chi lo garantisce e chi e' lui.",
-      "Hai gia' un piano in banca col tuo consulente e non vedi perche' aggiungere oro.",
-      "Hai visto la pubblicita' ma non ricordi bene di cosa si trattava.",
-      "Dici che il tema ti interessa ma non adesso, e proponi tu di richiamare piu' avanti.",
-      "Vuoi solo che ti mandino tutto per mail o WhatsApp e cerchi di evitare l'appuntamento."
+      {"nome": "Quello che vuole scappare", "testo": "Vuoi chiudere la chiamata il prima possibile: rispondi a monosillabi, dici che sei in macchina o al lavoro, cerchi ogni scusa per riattaccare. Resti solo se il consulente in pochi secondi ti incuriosisce con una domanda su di te."},
+      {"nome": "Quello che non si ricorda", "testo": "Non hai nessun ricordo di aver lasciato i dati e sei un po' infastidito: pensi a un errore o a un call center. Ti apri solo se il consulente ti spiega con calma cosa avevi chiesto e ti fa una domanda che ti riguarda.", "ricordo": "Non ti ricordi proprio di aver lasciato i dati: all'inizio dici di non aver chiesto niente."},
+      {"nome": "Quello piu' preparato di te", "testo": "Sei una persona colta e informata, leggi il Sole 24 Ore, conosci ETF, costi di gestione e inflazione. Fai domande precise e metti alla prova la competenza del consulente. Se lui si mette a spiegare i mercati al telefono lo smonti; lo rispetti se ammette che va visto con i documenti e ti porta all'incontro."},
+      {"nome": "Il chiacchierone", "testo": "Sei simpatico e parli tanto: divaghi su figli, lavoro, vacanze, la banca di tuo cugino. Sembri disponibile ma non arrivi mai al punto. Il consulente deve riportarti al tema con garbo e chiudere l'appuntamento, altrimenti finisce la chiamata senza niente."},
+      {"nome": "Il diffidente", "testo": "Pensi che sia una truffa o un call center. Chiedi chi e', da dove chiama, come ha avuto il tuo numero, chi lo conosce, cosa ci guadagna. Ti apri solo con risposte semplici e sicure, senza giri di parole."},
+      {"nome": "Lo scocciato", "testo": "Sei di cattivo umore, sei stato chiamato da troppi venditori questa settimana. Rispondi secco e un po' sgarbato. Se il consulente non si fa intimorire e resta calmo e leggero, magari con una battuta, ti ammorbidisci."},
+      {"nome": "Il gentile che non decide mai", "testo": "Sei gentilissimo, dici sempre 'si', certo, interessante', ma quando si arriva all'appuntamento rimandi: 'ci penso', 'mi richiami la settimana prossima', 'devo guardare l'agenda'. Fissi solo se il consulente ti mette davanti due orari precisi e ti fa vedere che rimandare non ti conviene."},
+      {"nome": "Mandami tutto per mail", "testo": "Vuoi che ti mandino tutto per mail o WhatsApp per non doverti impegnare. Lo chiedi piu' volte. Accetti l'appuntamento solo se il consulente ti spiega perche' su carta non si puo' fare e ti propone mezz'ora precisa."},
+      {"nome": "Deve sentire il coniuge", "testo": "Sei interessato davvero, ma su queste cose decidi con tua moglie o tuo marito e non vuoi impegnarti senza. Se il consulente ti propone di venire insieme, con giorno e ora, accetti."},
+      {"nome": "Quello di fretta", "testo": "Rispondi mentre fai altro, hai pochissimo tempo. Se il consulente si dilunga lo interrompi: 'mi dica in breve'. Apprezzi chi va al punto con una domanda secca e propone subito due orari."},
+      {"nome": "L'oro costa troppo", "testo": "Pensi che l'oro adesso sia ai massimi e che convenga aspettare che scenda. Chiedi il prezzo al grammo. Ti apri se il consulente non ti da' quotazioni al telefono e ti parla di proteggere il patrimonio, non di indovinare il momento."},
+      {"nome": "Ha paura delle truffe sull'oro", "testo": "Hai paura di comprare oro falso o di farti fregare: chiedi chi lo certifica, dove viene custodito, come lo rivendi. Ti apri con risposte semplici e la proposta di vedere il materiale vero in ufficio."},
+      {"nome": "Ha gia' comprato oro online", "testo": "Hai gia' comprato qualche moneta online e pensi di saperne abbastanza. Confronti tutto col prezzo del sito. Ti apri se il consulente ti fa capire cosa non sai su tagli, spread e rivendita, senza dirti che hai sbagliato."}
     ]
   };
   const CONSULENTE = { cf: "consulente finanziario", oro: "consulente che vende oro fisico da investimento" };
@@ -154,16 +167,18 @@ p{margin:0;color:var(--muted);line-height:1.5}
     vedi("Il voto");
   }
   function fine(){
+    if (tipo){ $("tipo").textContent = "Era il lead: " + tipo.nome; $("tipo").hidden = false; }
     clearInterval(timer); cancelAnimationFrame(raf); conv = null;
     $("call").hidden = true; $("ancora").hidden = false;
   }
 
-  let avvio = false;
+  let avvio = false, tipo = null;
   $("chiama").onclick = async () => {
     if (avvio || conv) return;   // un tocco = una chiamata: niente lead doppi mentre il browser chiede il microfono
     avvio = true; $("chiama").disabled = true;
     errore(""); $("righe").innerHTML = ""; $("righe").hidden = true;
     const genere = Math.random() < 0.5 ? "donna" : "uomo";
+    tipo = pesca(CARATTERI[prodotto]); $("tipo").hidden = true;
     try{ await navigator.mediaDevices.getUserMedia({ audio: true }); }
     catch(e){ errore("Serve il microfono: consentilo al sito dalle impostazioni del browser e riprova."); avvio = false; $("chiama").disabled = false; return; }
     $("chiama").hidden = true; intro.forEach(x => x.hidden = true); $("giu").hidden = true;
@@ -176,8 +191,8 @@ p{margin:0;color:var(--muted);line-height:1.5}
         dynamicVariables: {
           consulente: CONSULENTE[prodotto],
           profilo: pesca(PROFILO[prodotto]),
-          carattere: pesca(CARATTERI[prodotto]),
-          ricordo: pesca(RICORDO),
+          carattere: tipo.testo,
+          ricordo: tipo.ricordo || pesca(RICORDO),
           difficolta: pesca(DIFF),
           genere: genere === "donna" ? "una donna" : "un uomo",
           metodo: METODO[prodotto]
@@ -195,7 +210,7 @@ p{margin:0;color:var(--muted);line-height:1.5}
     avvio = false; $("chiama").disabled = false;
   };
   $("riattacca").onclick = async () => { $("riattacca").disabled = true; if (conv){ try{ await conv.endSession(); }catch(e){} } fine(); };
-  $("ancora").onclick = () => { $("ancora").hidden = true; $("righe").hidden = true; $("chiama").hidden = false; intro.forEach(x => x.hidden = false); errore(""); };
+  $("ancora").onclick = () => { $("ancora").hidden = true; $("tipo").hidden = true; $("righe").hidden = true; $("chiama").hidden = false; intro.forEach(x => x.hidden = false); errore(""); };
   window.addEventListener("pagehide", () => { if (conv) conv.endSession(); });
 })();
 </script>
