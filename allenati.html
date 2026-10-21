@@ -1,477 +1,99 @@
 <!doctype html>
 <html lang="it">
 <meta charset="utf-8">
-<title>Allenati alla prima chiamata · Braccio Destro</title>
+<title>Allenati alla prima chiamata</title>
 <meta name="robots" content="noindex">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0B1A3A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Figtree:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,700&family=Figtree:wght@400;600;800&display=swap">
 <style>
-:root{
-  --navy:#0B1A3A; --navy2:#13285A; --yellow:#FFD21F; --gold:#D4A537; --white:#FFFFFF;
-  --ground:#F5F3EE; --card:#FFFFFF; --ink:#0F1B33; --muted:#5E6A82; --line:#E3E0D8;
-  --shadow:0 1px 2px rgba(11,26,58,.06), 0 8px 24px rgba(11,26,58,.06);
-  --serif:"Source Serif 4", Georgia, serif;
-  --sans:"Figtree", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-}
+:root{--navy:#0B1A3A;--navy2:#13285A;--yellow:#FFD21F;--gold:#D4A537;--white:#FFFFFF;--muted:#C9D2E6}
 *{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;display:flex;flex-direction:column;min-height:100dvh}
-button,select,textarea{font:inherit;color:inherit}
-:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:8px}
-[hidden]{display:none!important}
-.top{position:sticky;top:0;z-index:5;background:var(--navy);color:var(--white);padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px}
-.top .in{max-width:820px;margin:0 auto;display:flex;align-items:center;gap:12px}
-.logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--yellow),var(--gold));color:var(--navy);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:18px;flex:none}
-.brand{flex:1}
-.brand b{font-family:var(--serif);font-size:19px;display:block;line-height:1.1}
-.brand b span{color:var(--yellow)}
-.brand small{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700}
-main{flex:1;width:100%;max-width:820px;margin:0 auto;padding:20px 16px 8px;display:flex;flex-direction:column;gap:14px}
-h1{font-family:var(--serif);font-size:clamp(26px,5vw,34px);line-height:1.15;margin:0}
-h1 em{font-style:normal;color:var(--gold)}
-.muted{color:var(--muted);margin:0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
-label{font-weight:700;font-size:14px;display:flex;flex-direction:column;gap:6px}
-select{border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--white)}
-.modi{display:flex;gap:8px}
-.modi button{flex:1;border:1px solid var(--line);background:var(--white);border-radius:12px;padding:10px;font-weight:700;cursor:pointer;text-align:left;line-height:1.3}
-.modi button small{display:block;font-weight:500;color:var(--muted);font-size:12px}
-.modi button[aria-pressed="true"]{border-color:var(--gold);background:#FFF6D6}
-.btn{border:0;border-radius:999px;padding:12px 18px;font-weight:800;cursor:pointer;background:var(--navy);color:var(--yellow)}
-.btn.alt{background:transparent;border:1px solid var(--line);color:var(--ink)}
-.btn.gold{background:var(--yellow);color:var(--navy)}
-.btn:disabled{opacity:.5;cursor:default}
-.thread{display:flex;flex-direction:column;gap:10px}
-.msg{max-width:85%;padding:10px 14px;border-radius:16px;white-space:pre-wrap;box-shadow:var(--shadow)}
-.me{align-self:flex-end;background:var(--navy);color:var(--white);border-bottom-right-radius:4px}
-.lead{align-self:flex-start;background:var(--card);border:1px solid var(--line);border-bottom-left-radius:4px}
-.voto{align-self:stretch;max-width:100%;background:#FFF6D6;border:1px solid #EED68A}
-.who{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
-.bar{position:sticky;bottom:0;background:var(--ground);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line)}
-.bar .in{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
-.row{display:flex;gap:8px;align-items:flex-end}
-textarea{flex:1;border:1px solid var(--line);border-radius:14px;padding:10px 12px;resize:none;min-height:46px;max-height:140px;background:var(--white)}
-.mic{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--white);cursor:pointer;flex:none;font-size:20px}
-.mic[aria-pressed="true"]{background:var(--yellow);border-color:var(--gold)}
-.err{color:#9C2B2B;font-size:14px;margin:0}
-
-/* telefonata */
-.call{background:linear-gradient(180deg,var(--navy),var(--navy2));color:var(--white);border-radius:24px;padding:28px 16px 20px;display:flex;flex-direction:column;align-items:center;gap:14px;box-shadow:var(--shadow)}
-.call .stato{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:800;min-height:20px;text-align:center}
-.call .tempo{font-variant-numeric:tabular-nums;color:#C9D2E6;font-size:14px}
-.av{width:116px;height:116px;border-radius:50%;background:linear-gradient(135deg,var(--yellow),var(--gold));color:var(--navy);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:44px;position:relative}
-.av::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:3px solid var(--yellow);opacity:0;transform:scale(.9)}
-.call[data-fase="parla"] .av::after,.call[data-fase="squilla"] .av::after{animation:onda 1.2s ease-out infinite}
-@keyframes onda{0%{opacity:.8;transform:scale(.92)}100%{opacity:0;transform:scale(1.25)}}
-.call .nome{font-family:var(--serif);font-size:22px;font-weight:700}
-.ascolto{width:100%;max-width:520px;min-height:52px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px 12px;color:#E9EDF6;font-size:15px}
-.ascolto b{color:var(--yellow);font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:block}
-.livello{height:6px;width:100%;max-width:520px;border-radius:3px;background:rgba(255,255,255,.12);overflow:hidden}
-.livello i{display:block;height:100%;width:0;background:var(--yellow);transition:width .08s}
-.tasti{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:100%}
-.tasti .btn{flex:1;min-width:140px}
-.btn.rosso{background:#B3261E;color:var(--white)}
-.btn.vetro{background:rgba(255,255,255,.1);color:var(--white);border:1px solid rgba(255,255,255,.2)}
-.btn.vetro[aria-pressed="true"]{background:var(--yellow);color:var(--navy)}
-details.trascr{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 14px}
-details.trascr summary{cursor:pointer;font-weight:700}
-details.trascr .thread{margin-top:10px}
-@media (prefers-reduced-motion:reduce){.call .av::after{animation:none!important}}
+body{margin:0;min-height:100dvh;background:linear-gradient(180deg,var(--navy),var(--navy2));color:var(--white);font-family:"Figtree",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px calc(24px + env(safe-area-inset-bottom,0px))}
+main{width:100%;max-width:440px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+small.top{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:800}
+h1{font-family:"Source Serif 4",Georgia,serif;font-size:clamp(28px,7vw,36px);line-height:1.15;margin:0}
+h1 em{font-style:normal;color:var(--yellow)}
+p{margin:0;color:var(--muted);line-height:1.5}
+.scelta{display:flex;gap:8px;width:100%}
+.scelta button{flex:1;padding:12px;border-radius:14px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:var(--white);font:inherit;font-weight:600;cursor:pointer}
+.scelta button[aria-pressed="true"]{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+.chiama{width:132px;height:132px;border-radius:50%;border:0;background:linear-gradient(135deg,var(--yellow),var(--gold));color:var(--navy);font:inherit;font-weight:800;font-size:17px;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.chiama:focus-visible,.scelta button:focus-visible{outline:3px solid var(--white);outline-offset:3px}
+.come{font-size:14px;text-align:left;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 14px;width:100%}
+.come b{color:var(--yellow)}
+#zona{width:100%;min-height:10px}
 </style>
 <body>
-<header class="top"><div class="in">
-  <div class="logo">BD</div>
-  <div class="brand"><small>AI Elite Advisory</small><b>Braccio <span>Destro</span> · Allenati</b></div>
-</div></header>
-
 <main>
-  <section id="setup" class="card">
-    <h1>Allenati alla <em>prima chiamata</em></h1>
-    <p class="muted">Io faccio il lead che ha lasciato i dati dalle ads, tu lo chiami. Quando hai finito riattacchi: ti dico cosa hai fatto bene, la cosa da correggere e la frase giusta.</p>
-    <div class="modi" role="group" aria-label="Come vuoi allenarti">
-      <button id="m-voce" aria-pressed="true">Telefonata a voce<small>Parli e il lead ti risponde a voce</small></button>
-      <button id="m-scritta" aria-pressed="false">Scritta<small>Scrivi le battute come in chat</small></button>
-    </div>
-    <label>Cosa proponi
-      <select id="prodotto"><option value="cf">Consulenza finanziaria</option><option value="oro">Oro fisico</option></select>
-    </label>
-    <label>Che lead vuoi trovare
-      <select id="tipo">
-        <option value="">A sorpresa</option>
-        <option value="tempo">Ha poco tempo</option>
-        <option value="mail">Mandami tutto per mail o WhatsApp</option>
-        <option value="banca">Ho gia' la banca o un consulente</option>
-        <option value="diffidente">Diffidente, pensa che sia una vendita</option>
-        <option value="guida" data-p="cf">Non ricorda la guida</option>
-        <option value="prezzo" data-p="oro">L'oro adesso costa troppo</option>
-        <option value="caldo">Interessato ma deve sentire il coniuge</option>
-      </select>
-    </label>
-    <label>Difficolta'
-      <select id="livello"><option value="facile">Facile</option><option value="medio" selected>Media</option><option value="difficile">Difficile</option></select>
-    </label>
-    <button class="btn gold" id="via">Chiama il lead</button>
-    <p class="muted" style="font-size:13px" id="nota-voce">A voce: usa Chrome o Safari, consenti il microfono e, se puoi, metti le cuffie. Il lead ti sente quando lui ha finito di parlare; quando smetti tu, la tua battuta parte da sola.</p>
-    <p class="muted" style="font-size:13px" id="nota-scritta" hidden>Puoi scrivere o dettare: tocca il microfono, oppure usa il microfono della tastiera del telefono.</p>
-  </section>
-
-  <section id="call" class="call" data-fase="squilla" hidden aria-live="polite">
-    <div class="stato" id="stato">Squilla...</div>
-    <div class="av" id="av" aria-hidden="true">?</div>
-    <div class="nome" id="nome">Lead dalle ads</div>
-    <div class="tempo" id="tempo">00:00</div>
-    <div class="ascolto" id="ascolto"><b id="ascolto-chi">Il lead</b><span id="ascolto-txt">...</span></div>
-    <div class="livello" aria-hidden="true"><i id="livello-mic"></i></div>
-    <div class="tasti">
-      <button class="btn gold" id="inviavoce" disabled>Ho finito di parlare</button>
-      <button class="btn vetro" id="muto" aria-pressed="false">Microfono spento</button>
-    </div>
-    <div class="tasti">
-      <button class="btn rosso" id="riattacca">Riattacca e dammi il voto</button>
-    </div>
-  </section>
-
-  <section id="thread" class="thread" aria-live="polite"></section>
-  <details class="trascr" id="trascr" hidden><summary>Trascrizione della chiamata</summary><div class="thread" id="trascr-in"></div></details>
-  <p class="err" id="err" hidden></p>
-  <div id="dopo" class="row" hidden><button class="btn gold" id="ancora" style="flex:1">Nuova chiamata</button></div>
+  <small class="top">AI Elite Advisory · Sparring partner</small>
+  <h1>Allenati alla <em>prima chiamata</em></h1>
+  <p>Chiami un lead arrivato dalle ads e lui ti risponde a voce, con le sue obiezioni. Ogni chiamata e' un lead diverso.</p>
+  <div class="scelta" role="group" aria-label="Cosa proponi">
+    <button id="p-cf" aria-pressed="true">Consulenza finanziaria</button>
+    <button id="p-oro" aria-pressed="false">Oro fisico</button>
+  </div>
+  <button class="chiama" id="chiama">Chiama<br>il lead</button>
+  <div id="zona"></div>
+  <div class="come">
+    <b>Come funziona.</b> Consenti il microfono e parla come al telefono. Quando hai finito di' <b>"fine allenamento"</b>: ti da' il voto, la cosa da correggere e la frase giusta dagli script.
+  </div>
 </main>
-
-<div class="bar" id="bar" hidden><div class="in">
-  <div class="row">
-    <textarea id="txt" rows="1" placeholder="Cosa dici al lead..."></textarea>
-    <button class="mic" id="mic" aria-pressed="false" title="Parla">🎙</button>
-    <button class="btn" id="invia">Invia</button>
-  </div>
-  <div class="row">
-    <button class="btn gold" id="fine" style="flex:1">Chiudi e dammi il voto</button>
-    <button class="btn alt" id="nuova">Nuova chiamata</button>
-  </div>
-</div></div>
 
 <script>
 (function(){
-  const API = "https://braccio-destro-chat.braccio-destro-connettore.workers.dev";
-  const $ = (s) => document.querySelector(s);
-  const store = { get(k, d){ try{ return JSON.parse(localStorage.getItem("bd_" + k)) ?? d; }catch(e){ return d; } } };
-  const dati = store.get("dati", {});
-  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  let turns = [], scenario = {}, busy = false, finita = false, modo = SR ? "voce" : "scritta";
+  // Agenti ElevenLabs creati da sparring/crea_agenti.py (agenti.json)
+  const AGENTI = { donna: "agent_1301m5ekq72xfv6amxrs43xcfg89", uomo: "agent_4401m5ekqd75ev9s50sc8pk7jd3v" };
+  const CARATTERI = {
+    cf: [
+      "Hai poco tempo, rispondi di fretta e vuoi chiudere in un minuto.",
+      "Hai gia' la banca o un altro consulente e non vedi perche' cambiare.",
+      "Chiedi di ricevere tutto per mail o WhatsApp invece di fissare un appuntamento.",
+      "Sei diffidente: pensi che sia una vendita e chiedi subito quanto costa e cosa ci guadagna lui.",
+      "Ricordi vagamente di aver scaricato la guida ma non sai bene perche' ti chiama.",
+      "Sei interessato davvero ma rimandi: devi sentire tuo marito o tua moglie prima di decidere."
+    ],
+    oro: [
+      "Hai poco tempo, rispondi di fretta e vuoi chiudere in un minuto.",
+      "Pensi che l'oro adesso sia troppo caro e che convenga aspettare che scenda.",
+      "Chiedi di ricevere tutto per mail o WhatsApp invece di fissare un appuntamento.",
+      "Sei diffidente: temi truffe sull'oro fisico, chiedi dove viene custodito e chi lo garantisce.",
+      "Hai gia' qualcosa in banca o un piano col tuo consulente e non vedi perche' aggiungere oro.",
+      "Sei interessato davvero ma rimandi: devi sentire tuo marito o tua moglie prima di decidere."
+    ]
+  };
+  const PRODOTTO = { cf: "consulenza finanziaria", oro: "oro fisico da investimento" };
+  const DIFF = ["facile", "media", "media", "difficile"];
+  let prodotto = "cf";
+  const pesca = (a) => a[Math.floor(Math.random() * a.length)];
 
-  // ---------- impostazioni ----------
-  $("#prodotto").value = dati.prodotto === "oro" ? "oro" : "cf";
-  function filtra(){
-    const p = $("#prodotto").value;
-    [...$("#tipo").options].forEach(o => { o.hidden = !!o.dataset.p && o.dataset.p !== p; });
-    if ($("#tipo").selectedOptions[0].hidden) $("#tipo").value = "";
-  }
-  $("#prodotto").addEventListener("change", filtra); filtra();
-  function scegliModo(m){
-    modo = m;
-    $("#m-voce").setAttribute("aria-pressed", m === "voce"); $("#m-scritta").setAttribute("aria-pressed", m === "scritta");
-    $("#nota-voce").hidden = m !== "voce"; $("#nota-scritta").hidden = m !== "scritta";
-  }
-  $("#m-voce").addEventListener("click", () => {
-    if (!SR){ errore("Questo browser non riconosce la voce: apri la pagina con Chrome o Safari, oppure usa la versione scritta."); return; }
-    errore(""); scegliModo("voce");
-  });
-  $("#m-scritta").addEventListener("click", () => { errore(""); scegliModo("scritta"); });
-  scegliModo(modo);
+  function scegli(p){ prodotto = p; document.getElementById("p-cf").setAttribute("aria-pressed", p === "cf"); document.getElementById("p-oro").setAttribute("aria-pressed", p === "oro"); }
+  document.getElementById("p-cf").onclick = () => scegli("cf");
+  document.getElementById("p-oro").onclick = () => scegli("oro");
 
-  function bolla(cls, chi, testo, dove){
-    const d = document.createElement("div"); d.className = "msg " + cls;
-    const w = document.createElement("span"); w.className = "who"; w.textContent = chi;
-    const b = document.createElement("div"); b.textContent = testo;
-    d.append(w, b); (dove || $("#thread")).append(d);
-    if (!dove) d.scrollIntoView({ block: "end" });
-    return b;
-  }
-  function errore(t){ $("#err").textContent = t; $("#err").hidden = !t; }
-
-  // ---------- richiesta al server (testo che arriva man mano) ----------
-  async function chiedi(box, onPezzo){
-    busy = true; errore("");
-    let testo = "", ok = false;
-    try{
-      const r = await fetch(API, { method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ modalita: "allenamento", voce: modo === "voce", scenario, profilo: { ...dati, prodotto: scenario.prodotto }, messages: turns.slice(-40) }) });
-      if (r.status === 429) throw new Error("Stai andando veloce: aspetta un minuto e riprova.");
-      if (!r.ok) throw new Error("Il servizio non ha risposto. Riprova fra poco.");
-      const reader = r.body.getReader(), dec = new TextDecoder();
-      while (true){
-        const { value, done } = await reader.read(); if (done) break;
-        testo += dec.decode(value, { stream: true });
-        const k = testo.indexOf("[[ERRORE]]");
-        if (k >= 0){ const m = testo.slice(k + 10); testo = testo.slice(0, k).trim(); if (!testo) throw new Error(m); break; }
-        if (box){ box.textContent = testo.replace(/\*\*/g, ""); if (!box.closest("#trascr")) box.parentElement.scrollIntoView({ block: "end" }); }
-        if (onPezzo) onPezzo(testo, false);
-      }
-      if (onPezzo) onPezzo(testo, true);
-      turns.push({ role: "assistant", content: testo }); ok = true;
-    }catch(e){
-      if (box) box.parentElement.remove();
-      // a voce la battuta del consulente resta, cosi' "Ho finito di parlare" la rimanda; nella scritta si toglie
-      if (modo !== "voce") turns.pop();
-      errore(e.message || "Errore di rete.");
+  let caricato = false;
+  document.getElementById("chiama").onclick = () => {
+    const genere = Math.random() < 0.5 ? "donna" : "uomo";
+    const zona = document.getElementById("zona");
+    zona.innerHTML = "";
+    const w = document.createElement("elevenlabs-convai");
+    w.setAttribute("agent-id", AGENTI[genere]);
+    w.setAttribute("variant", "expanded");
+    w.setAttribute("dynamic-variables", JSON.stringify({
+      prodotto: PRODOTTO[prodotto],
+      carattere: pesca(CARATTERI[prodotto]),
+      difficolta: pesca(DIFF),
+      genere: genere === "donna" ? "una donna" : "un uomo"
+    }));
+    zona.append(w);
+    if (!caricato){
+      const s = document.createElement("script");
+      s.src = "https://unpkg.com/@elevenlabs/convai-widget-embed"; s.async = true;
+      document.body.append(s); caricato = true;
     }
-    busy = false;
-    return ok ? testo : null;
-  }
-
-  // ---------- versione scritta ----------
-  async function iniziaScritta(){
-    $("#bar").hidden = false;
-    bolla("me", "Tu", "Stai chiamando il lead...");
-    await chiedi(bolla("lead", "Lead", "..."));
-    $("#txt").focus();
-  }
-  async function invia(){
-    const t = $("#txt").value.trim(); if (!t || busy || finita) return;
-    $("#txt").value = ""; bolla("me", "Tu", t); turns.push({ role: "user", content: t });
-    await chiedi(bolla("lead", "Lead", "..."));
-  }
-  $("#invia").addEventListener("click", invia);
-  $("#txt").addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey){ e.preventDefault(); invia(); } });
-  $("#fine").addEventListener("click", () => voto());
-  $("#nuova").addEventListener("click", () => { if (!busy) reset(); });
-  $("#ancora").addEventListener("click", () => { if (!busy) reset(); });
-
-  if (!SR){ $("#mic").hidden = true; }
-  else {
-    const det = new SR(); det.lang = "it-IT"; det.interimResults = true; det.continuous = true;
-    let base = "";
-    det.onresult = (e) => { let s = ""; for (const r of e.results) s += r[0].transcript; $("#txt").value = (base + " " + s).trim(); };
-    det.onend = () => $("#mic").setAttribute("aria-pressed", "false");
-    $("#mic").addEventListener("click", () => {
-      if ($("#mic").getAttribute("aria-pressed") === "true"){ det.stop(); return; }
-      base = $("#txt").value; det.start(); $("#mic").setAttribute("aria-pressed", "true");
-    });
-  }
-
-  // ---------- telefonata a voce ----------
-  let actx = null, audioEl = null, vocePagina = true, vociBrowser = [], timer = null, inizio = 0;
-  let coda = [], parlando = false, finitoTesto = false, detto = 0, attesa = null;
-  let rec = null, ascoltando = false, muto = false, finale = "", parziale = "", silenzio = null, micStream = null, rafLiv = 0;
-
-  function fase(f, stato){ $("#call").dataset.fase = f; $("#stato").textContent = stato; }
-  function scrivi(chi, t){ $("#ascolto-chi").textContent = chi; $("#ascolto-txt").textContent = t; }
-  function orologio(){ const s = Math.floor((Date.now() - inizio) / 1000); $("#tempo").textContent = String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0"); }
-
-  function caricaVoci(){ try{ vociBrowser = speechSynthesis.getVoices().filter(v => /^it/i.test(v.lang)); }catch(e){} }
-  if ("speechSynthesis" in window){ caricaVoci(); speechSynthesis.onvoiceschanged = caricaVoci; }
-  function voceBrowser(){
-    const F = /alice|federica|elsa|paola|emma|bianca|isabella|chiara|google italiano/i, M = /luca|diego|cosimo|giorgio|giuseppe|marco|roberto/i;
-    const re = scenario.genere === "uomo" ? M : F;
-    return vociBrowser.find(v => re.test(v.name)) || vociBrowser[0] || null;
-  }
-
-  // Squillo all'italiana (425 Hz), suonato mentre il server prepara il "Pronto?".
-  function squillo(volte){
-    if (!actx) return Promise.resolve();
-    const t0 = actx.currentTime + 0.05;
-    for (let i = 0; i < volte; i++){
-      const o = actx.createOscillator(), g = actx.createGain();
-      o.frequency.value = 425; o.connect(g); g.connect(actx.destination);
-      const a = t0 + i * 2.2; g.gain.setValueAtTime(0, a); g.gain.linearRampToValueAtTime(0.12, a + 0.03);
-      g.gain.setValueAtTime(0.12, a + 1.0); g.gain.linearRampToValueAtTime(0, a + 1.05);
-      o.start(a); o.stop(a + 1.1);
-    }
-    return new Promise(r => setTimeout(r, volte * 2200 - 900));
-  }
-
-  // Ogni frase del lead diventa audio: prima la voce ElevenLabs dal server, se non c'e' quella del browser.
-  async function audioDi(frase){
-    if (!vocePagina) return null;
-    try{
-      const r = await fetch(API + "/voce", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ testo: frase, genere: scenario.genere }) });
-      if (r.status === 200){ return URL.createObjectURL(await r.blob()); }
-      if (r.status === 204) vocePagina = false;
-    }catch(e){}
-    return null;
-  }
-  function suona(url, frase){
-    return new Promise((fatto) => {
-      if (url){
-        audioEl.src = url; audioEl.onended = audioEl.onerror = () => { URL.revokeObjectURL(url); fatto(); };
-        audioEl.play().catch(() => fatto());
-        return;
-      }
-      if (!("speechSynthesis" in window)){ fatto(); return; }
-      const u = new SpeechSynthesisUtterance(frase); u.lang = "it-IT"; u.rate = 1.05;
-      const v = voceBrowser(); if (v) u.voice = v;
-      u.onend = u.onerror = () => fatto();
-      speechSynthesis.speak(u);
-    });
-  }
-  function accoda(frase){
-    frase = frase.replace(/\*\*/g, "").trim(); if (!frase) return;
-    coda.push({ frase, audio: audioDi(frase) });
-    if (!parlando) parla();
-  }
-  async function parla(){
-    parlando = true; fase("parla", "Parla il lead");
-    while (coda.length){
-      const { frase, audio } = coda.shift();
-      const url = await audio;
-      if (finita) break;
-      await suona(url, frase);
-    }
-    parlando = false;
-    if (finitoTesto && !finita) ascolta();
-  }
-  // Mentre il testo arriva, ogni frase completa parte subito: il lead comincia a parlare prima di aver finito di "pensare".
-  function aPezzi(testo, fine){
-    const resto = testo.slice(detto);
-    const re = /[^.!?…]+[.!?…]+["')\]]*\s+/g; let m, fin = 0;
-    while ((m = re.exec(resto))){ accoda(m[0]); fin = re.lastIndex; }
-    detto += fin;
-    if (fine){ accoda(testo.slice(detto)); detto = testo.length; }
-  }
-
-  async function turnoLead(){
-    finitoTesto = false; detto = 0;
-    fase("pensa", "..."); scrivi("Il lead", "...");
-    const box = bolla("lead", "Lead", "...", $("#trascr-in"));
-    const t = await chiedi(box, (testo, fine) => { scrivi("Il lead", testo.replace(/\*\*/g, "")); aPezzi(testo, fine); });
-    if (t === null){ fase("errore", "Linea disturbata"); scrivi("Sistema", "Il lead non ha risposto. Premi \"Ho finito di parlare\" per riprovare."); $("#inviavoce").disabled = false; retry = true; return; }
-    finitoTesto = true;
-    if (!parlando && !finita) ascolta();
-  }
-  let retry = false;
-
-  function ascolta(){
-    if (finita) return;
-    finale = ""; parziale = ""; scrivi("Tu", "Parla pure...");
-    $("#inviavoce").disabled = false;
-    if (muto){ fase("muto", "Microfono spento"); return; }
-    fase("ascolta", "Ti ascolto");
-    ascoltando = true; avviaRec();
-  }
-  function avviaRec(){
-    if (!ascoltando || finita) return;
-    rec = new SR(); rec.lang = "it-IT"; rec.interimResults = true; rec.continuous = true;
-    rec.onresult = (e) => {
-      let f = "", p = "";
-      for (let i = e.resultIndex; i < e.results.length; i++){ const r = e.results[i]; if (r.isFinal) f += r[0].transcript + " "; else p += r[0].transcript; }
-      finale += f; parziale = p;
-      scrivi("Tu", (finale + parziale).trim() || "Parla pure...");
-      clearTimeout(silenzio);
-      if ((finale + parziale).trim()) silenzio = setTimeout(chiudiBattuta, 1500);
-    };
-    rec.onerror = (e) => {
-      if (e.error === "not-allowed" || e.error === "service-not-allowed"){
-        ascoltando = false; fase("errore", "Microfono bloccato");
-        scrivi("Sistema", "Il browser non ti fa usare il microfono. Consentilo dalle impostazioni del sito e riprova, oppure usa la versione scritta.");
-      }
-    };
-    // Il riconoscimento si spegne da solo dopo qualche secondo di silenzio: se stiamo ancora ascoltando, riparte.
-    rec.onend = () => { rec = null; if (ascoltando && !finita) setTimeout(avviaRec, 150); };
-    try{ rec.start(); }catch(e){}
-  }
-  function fermaRec(){ ascoltando = false; clearTimeout(silenzio); if (rec){ try{ rec.stop(); }catch(e){} } }
-
-  async function chiudiBattuta(){
-    if (busy || finita) return;
-    const t = (finale + " " + parziale).replace(/\s+/g, " ").trim();
-    if (!t) return;
-    fermaRec(); $("#inviavoce").disabled = true;
-    bolla("me", "Tu", t, $("#trascr-in")); turns.push({ role: "user", content: t });
-    await turnoLead();
-  }
-  $("#inviavoce").addEventListener("click", () => {
-    if (retry && !busy){ retry = false; $("#inviavoce").disabled = true; turnoLead(); return; }
-    chiudiBattuta();
-  });
-  $("#muto").addEventListener("click", () => {
-    muto = !muto; $("#muto").setAttribute("aria-pressed", muto);
-    $("#muto").textContent = muto ? "Riaccendi il microfono" : "Microfono spento";
-    if (muto && ascoltando){ fermaRec(); fase("muto", "Microfono spento"); }
-    else if (!muto && !busy && !parlando && finitoTesto) ascolta();
-  });
-
-  // Barra del volume del microfono: fa vedere che il telefono ti sta sentendo.
-  async function avviaLivello(){
-    try{
-      micStream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } });
-      const src = actx.createMediaStreamSource(micStream), an = actx.createAnalyser(); an.fftSize = 512; src.connect(an);
-      const buf = new Uint8Array(an.fftSize);
-      const giro = () => {
-        an.getByteTimeDomainData(buf); let s = 0; for (const v of buf){ const x = (v - 128) / 128; s += x * x; }
-        const liv = $("#call").dataset.fase === "ascolta" ? Math.min(100, Math.sqrt(s / buf.length) * 400) : 0;
-        $("#livello-mic").style.width = liv + "%"; rafLiv = requestAnimationFrame(giro);
-      };
-      giro();
-    }catch(e){
-      if (e && e.name === "NotAllowedError"){ fase("errore", "Microfono bloccato"); scrivi("Sistema", "Consenti il microfono al sito e richiama, oppure usa la versione scritta."); throw e; }
-    }
-  }
-  function spegniAudio(){
-    fermaRec(); coda = []; parlando = false;
-    try{ speechSynthesis.cancel(); }catch(e){}
-    if (audioEl){ audioEl.pause(); }
-    cancelAnimationFrame(rafLiv); $("#livello-mic").style.width = "0";
-    if (micStream){ micStream.getTracks().forEach(t => t.stop()); micStream = null; }
-    clearInterval(timer);
-  }
-
-  async function iniziaVoce(){
-    // Tutto cio' che fa suonare la pagina va sbloccato qui, dentro il tocco su "Chiama".
-    actx = actx || new (window.AudioContext || window.webkitAudioContext)();
-    if (actx.state === "suspended") actx.resume();
-    audioEl = audioEl || new Audio(); audioEl.muted = false;
-    try{ speechSynthesis.speak(new SpeechSynthesisUtterance("")); }catch(e){}
-    vocePagina = true; muto = false; $("#muto").setAttribute("aria-pressed", "false"); $("#muto").textContent = "Microfono spento";
-    $("#call").hidden = false; $("#trascr").hidden = false; $("#trascr").open = false; $("#trascr-in").innerHTML = "";
-    $("#av").textContent = scenario.genere === "uomo" ? "U" : "D"; $("#nome").textContent = "Lead dalle ads";
-    $("#inviavoce").disabled = true; $("#riattacca").disabled = false;
-    fase("squilla", "Squilla..."); scrivi("Il lead", "...");
-    try{ await avviaLivello(); }catch(e){ return; }
-    const pronto = squillo(2);
-    // Il "Pronto?" si prepara mentre squilla, poi parte quando lo squillo e' finito.
-    finitoTesto = false; detto = 0;
-    const box = bolla("lead", "Lead", "...", $("#trascr-in"));
-    let testo = null;
-    const att = chiedi(box).then(t => { testo = t; });
-    await pronto; await att;
-    if (testo === null){ fase("errore", "Non risponde"); scrivi("Sistema", "Il lead non ha risposto. Riprova fra poco."); spegniAudio(); $("#dopo").hidden = false; return; }
-    inizio = Date.now(); orologio(); timer = setInterval(orologio, 1000);
-    scrivi("Il lead", testo); aPezzi(testo, true); finitoTesto = true;
-  }
-  $("#riattacca").addEventListener("click", () => voto());
-
-  // ---------- voto ----------
-  async function voto(){
-    if (finita) return;
-    if (turns.length < 3){
-      errore(modo === "voce" ? "Fai almeno una battuta prima di riattaccare." : "Fai almeno una battuta prima di chiedere il voto.");
-      return;
-    }
-    if (busy) return;
-    finita = true;
-    if (modo === "voce"){ spegniAudio(); fase("fine", "Chiamata chiusa"); scrivi("Sistema", "Sto valutando la chiamata..."); $("#inviavoce").disabled = true; $("#riattacca").disabled = true; }
-    const ultimo = turns[turns.length - 1];
-    if (ultimo.role === "user") ultimo.content += "\n\n[[FINE CHIAMATA]]";
-    else turns.push({ role: "user", content: "[[FINE CHIAMATA]]" });
-    await chiedi(bolla("voto", "Il tuo voto", "Sto valutando la chiamata..."));
-    if (modo === "voce"){ $("#call").hidden = true; $("#trascr").open = false; $("#dopo").hidden = false; }
-  }
-
-  function reset(){
-    spegniAudio(); finita = false; turns = []; retry = false;
-    $("#setup").hidden = false; $("#bar").hidden = true; $("#call").hidden = true; $("#trascr").hidden = true; $("#dopo").hidden = true;
-    $("#thread").innerHTML = ""; errore(""); window.scrollTo(0, 0);
-  }
-
-  $("#via").addEventListener("click", async () => {
-    scenario = { prodotto: $("#prodotto").value, tipo: $("#tipo").value, livello: $("#livello").value, genere: Math.random() < 0.5 ? "donna" : "uomo" };
-    turns = [{ role: "user", content: "INIZIA" }]; finita = false;
-    $("#setup").hidden = true; $("#thread").innerHTML = ""; errore("");
-    if (modo === "voce") await iniziaVoce(); else await iniziaScritta();
-  });
-  window.addEventListener("pagehide", spegniAudio);
+  };
 })();
 </script>
 </body>
