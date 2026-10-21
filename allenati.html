@@ -24,7 +24,22 @@ p{margin:0;color:var(--muted);line-height:1.5}
 .chiama:focus-visible,.scelta button:focus-visible{outline:3px solid var(--white);outline-offset:3px}
 .come{font-size:14px;text-align:left;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 14px;width:100%}
 .come b{color:var(--yellow)}
-#zona{width:100%;min-height:10px}
+#call{width:100%;display:flex;flex-direction:column;align-items:center;gap:14px}
+.av{width:132px;height:132px;border-radius:50%;background:linear-gradient(135deg,var(--yellow),var(--gold));color:var(--navy);display:grid;place-items:center;font-family:"Source Serif 4",Georgia,serif;font-weight:700;font-size:48px;position:relative}
+.av::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:3px solid var(--yellow);opacity:0}
+#call[data-fase="parla"] .av::after,#call[data-fase="connette"] .av::after{animation:onda 1.2s ease-out infinite}
+@keyframes onda{0%{opacity:.8;transform:scale(.92)}100%{opacity:0;transform:scale(1.25)}}
+.stato{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:800}
+.tempo{font-variant-numeric:tabular-nums;color:var(--muted)}
+.livello{height:6px;width:100%;border-radius:3px;background:rgba(255,255,255,.12);overflow:hidden}
+.livello i{display:block;height:100%;width:0;background:var(--yellow);transition:width .08s}
+.rosso{border:0;border-radius:999px;padding:14px 22px;background:#B3261E;color:var(--white);font:inherit;font-weight:800;cursor:pointer;width:100%}
+.ancora{border:0;border-radius:999px;padding:14px 22px;background:var(--yellow);color:var(--navy);font:inherit;font-weight:800;cursor:pointer;width:100%}
+.righe{width:100%;text-align:left;display:flex;flex-direction:column;gap:8px;max-height:40vh;overflow:auto}
+.righe div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:8px 12px;font-size:15px;line-height:1.45}
+.righe b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.err{color:#FFB4AB;font-size:14px}
+@media (prefers-reduced-motion:reduce){.av::after{animation:none!important}}
 </style>
 <body>
 <main>
@@ -36,12 +51,22 @@ p{margin:0;color:var(--muted);line-height:1.5}
     <button id="p-oro" aria-pressed="false">Oro fisico</button>
   </div>
   <button class="chiama" id="chiama">Chiama<br>il lead</button>
-  <div id="zona"></div>
+  <section id="call" data-fase="connette" hidden aria-live="polite">
+    <div class="stato" id="stato">Sto chiamando...</div>
+    <div class="av" id="av" aria-hidden="true">?</div>
+    <div class="tempo" id="tempo">00:00</div>
+    <div class="livello" aria-hidden="true"><i id="liv"></i></div>
+    <button class="rosso" id="riattacca">Riattacca</button>
+  </section>
+  <button class="ancora" id="ancora" hidden>Chiama un altro lead</button>
+  <p class="err" id="err" hidden></p>
+  <div class="righe" id="righe" hidden></div>
   <div class="come">
-    <b>Come funziona.</b> Consenti il microfono e parla come al telefono. Quando hai finito di' <b>"fine allenamento"</b>: ti da' il voto, la cosa da correggere e la frase giusta dagli script.
+    <b>Come funziona.</b> Consenti il microfono e parla come al telefono. Quando hai finito di' <b>"fine allenamento"</b>: ti da' a voce il voto, la cosa da correggere e la frase giusta dagli script. Poi puoi rifare la chiamata.
   </div>
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/@elevenlabs/client@1.27.0/dist/lib.iife.js"></script>
 <script>
 (function(){
   // Agenti ElevenLabs creati da sparring/crea_agenti.py (agenti.json)
@@ -73,27 +98,50 @@ p{margin:0;color:var(--muted);line-height:1.5}
   document.getElementById("p-cf").onclick = () => scegli("cf");
   document.getElementById("p-oro").onclick = () => scegli("oro");
 
-  let caricato = false;
-  document.getElementById("chiama").onclick = () => {
+  const $ = (id) => document.getElementById(id);
+  let conv = null, timer = null, inizio = 0, raf = 0;
+  const intro = [...document.querySelectorAll("main > p, main > h1, .scelta, .come")];
+  function vedi(stato){ $("stato").textContent = stato; }
+  function riga(chi, testo){ const d = document.createElement("div"); const b = document.createElement("b"); b.textContent = chi; d.append(b, document.createTextNode(testo)); $("righe").append(d); $("righe").hidden = false; d.scrollIntoView({ block: "nearest" }); }
+  function orologio(){ const s = Math.floor((Date.now() - inizio) / 1000); $("tempo").textContent = String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0"); }
+  function livello(){ if (conv){ try{ $("liv").style.width = Math.min(100, conv.getInputVolume() * 250) + "%"; }catch(e){} } raf = requestAnimationFrame(livello); }
+  function errore(t){ $("err").textContent = t; $("err").hidden = !t; }
+  function fine(){
+    clearInterval(timer); cancelAnimationFrame(raf); conv = null;
+    $("call").hidden = true; $("ancora").hidden = false;
+  }
+
+  $("chiama").onclick = async () => {
+    errore(""); $("righe").innerHTML = ""; $("righe").hidden = true;
     const genere = Math.random() < 0.5 ? "donna" : "uomo";
-    const zona = document.getElementById("zona");
-    zona.innerHTML = "";
-    const w = document.createElement("elevenlabs-convai");
-    w.setAttribute("agent-id", AGENTI[genere]);
-    w.setAttribute("variant", "expanded");
-    w.setAttribute("dynamic-variables", JSON.stringify({
-      prodotto: PRODOTTO[prodotto],
-      carattere: pesca(CARATTERI[prodotto]),
-      difficolta: pesca(DIFF),
-      genere: genere === "donna" ? "una donna" : "un uomo"
-    }));
-    zona.append(w);
-    if (!caricato){
-      const s = document.createElement("script");
-      s.src = "https://unpkg.com/@elevenlabs/convai-widget-embed"; s.async = true;
-      document.body.append(s); caricato = true;
+    try{ await navigator.mediaDevices.getUserMedia({ audio: true }); }
+    catch(e){ errore("Serve il microfono: consentilo al sito dalle impostazioni del browser e riprova."); return; }
+    $("chiama").hidden = true; intro.forEach(x => x.hidden = true);
+    $("call").hidden = false; $("call").dataset.fase = "connette"; $("av").textContent = genere === "donna" ? "D" : "U";
+    vedi("Sto chiamando..."); $("tempo").textContent = "00:00"; $("riattacca").disabled = false;
+    try{
+      conv = await ElevenLabsClient.Conversation.startSession({
+        agentId: AGENTI[genere],
+        connectionType: "webrtc",
+        dynamicVariables: {
+          prodotto: PRODOTTO[prodotto],
+          carattere: pesca(CARATTERI[prodotto]),
+          difficolta: pesca(DIFF),
+          genere: genere === "donna" ? "una donna" : "un uomo"
+        },
+        onConnect: () => { inizio = Date.now(); timer = setInterval(orologio, 1000); livello(); },
+        onModeChange: ({ mode }) => { $("call").dataset.fase = mode === "speaking" ? "parla" : "ascolta"; vedi(mode === "speaking" ? "Parla il lead" : "Ti ascolto"); },
+        onMessage: (m) => { if (m.message) riga(m.role === "user" || m.source === "user" ? "Tu" : "Lead", m.message); },
+        onError: (msg) => { errore("La linea e' caduta: " + (msg || "riprova fra poco.")); },
+        onDisconnect: () => fine()
+      });
+    }catch(e){
+      errore("Non riesco a chiamare il lead adesso. Riprova fra poco."); fine();
     }
   };
+  $("riattacca").onclick = async () => { $("riattacca").disabled = true; if (conv){ try{ await conv.endSession(); }catch(e){} } fine(); };
+  $("ancora").onclick = () => { $("ancora").hidden = true; $("righe").hidden = true; $("chiama").hidden = false; intro.forEach(x => x.hidden = false); errore(""); };
+  window.addEventListener("pagehide", () => { if (conv) conv.endSession(); });
 })();
 </script>
 </body>
