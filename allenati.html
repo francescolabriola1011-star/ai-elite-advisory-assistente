@@ -45,6 +45,15 @@ p{margin:0;color:var(--muted);line-height:1.5}
 .giu b{font-size:17px}
 .giu span{font-size:14px;color:#FFE1DC}
 @media (prefers-reduced-motion:reduce){.av::after{animation:none!important}}
+.ascolto{width:100%;min-height:52px;text-align:left;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:8px 12px;font-size:15px;line-height:1.45}
+.ascolto b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.tasto{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:13px 22px;background:rgba(255,255,255,.08);color:var(--white);font:inherit;font-weight:700;cursor:pointer;width:100%}
+.tasto:disabled,.rosso:disabled{opacity:.45;cursor:default}
+.scritto{width:100%;display:flex;gap:8px}
+.scritto textarea{flex:1;min-height:48px;resize:vertical;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:var(--white);font:inherit;font-size:16px;padding:10px 12px}
+.scritto button{border:0;border-radius:12px;padding:0 16px;background:var(--yellow);color:var(--navy);font:inherit;font-weight:800;cursor:pointer}
+.voto{background:rgba(255,210,31,.10)!important;border-color:var(--yellow)!important}
+#call[data-fase="pensa"] .av{opacity:.85}
 </style>
 <body>
 <main>
@@ -61,157 +70,230 @@ p{margin:0;color:var(--muted);line-height:1.5}
     <div class="av" id="av" aria-hidden="true">?</div>
     <div class="tempo" id="tempo">00:00</div>
     <div class="livello" aria-hidden="true"><i id="liv"></i></div>
-    <div class="giu" id="giu" hidden><b>Il lead ti ha riattaccato</b><span id="giu-motivo"></span></div>
-    <button class="rosso" id="riattacca">Riattacca</button>
+    <div class="ascolto" id="ascolto"><b id="ascolto-chi">Il lead</b><span id="ascolto-txt">...</span></div>
+    <div class="giu" id="giu" hidden><b id="giu-titolo">Il lead ti ha riattaccato</b><span id="giu-motivo"></span></div>
+    <button class="tasto" id="inviavoce" disabled>Ho finito di parlare</button>
+    <form class="scritto" id="scritto" hidden><textarea id="scritto-txt" rows="2" placeholder="Scrivi quello che diresti al telefono"></textarea><button type="submit">Invia</button></form>
+    <button class="rosso" id="riattacca">Riattacca e dammi il voto</button>
   </section>
   <p class="tipo" id="tipo" hidden></p>
   <button class="ancora" id="ancora" hidden>Chiama un altro lead</button>
   <p class="err" id="err" hidden></p>
   <div class="righe" id="righe" hidden></div>
   <div class="come">
-    <b>Come funziona.</b> Consenti il microfono e parla come al telefono. Quando hai finito di' <b>"fine allenamento"</b>: Braccio Destro ti da' a voce il voto, la cosa da correggere e la frase giusta dagli script. Poi puoi rifare la chiamata.
+    <b>Come funziona.</b> Consenti il microfono e parla come al telefono: quando ti fermi un attimo, il lead risponde. Se ti senti tagliato, premi <b>"Ho finito di parlare"</b>. Quando hai finito di' <b>"fine allenamento"</b> o premi Riattacca: Braccio Destro ti da' il voto, la cosa da correggere e la frase giusta dagli script. Va meglio con Chrome o Safari e le cuffie.
   </div>
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/@elevenlabs/client@1.27.0/dist/lib.iife.js"></script>
 <script>
 (function(){
-  // Agenti ElevenLabs creati da sparring/crea_agenti.py (agenti.json)
-  const AGENTI = { donna: "agent_1301m5ekq72xfv6amxrs43xcfg89", uomo: "agent_4401m5ekqd75ev9s50sc8pk7jd3v" };
-  // Tipi di lead: dai lead veri dei training (20/10/2026 e precedenti) e dalla buyer persona. A fine chiamata si vede che tipo era.
-  const CARATTERI = {
-    cf: [
-      {"nome": "Quello che vuole scappare", "testo": "Vuoi chiudere la chiamata il prima possibile: rispondi a monosillabi, dici che sei in macchina o al lavoro, cerchi ogni scusa per riattaccare. Resti solo se il consulente in pochi secondi ti incuriosisce con una domanda su di te."},
-      {"nome": "Quello che non si ricorda", "testo": "Non hai nessun ricordo di aver lasciato i dati e sei un po' infastidito: pensi a un errore o a un call center. Ti apri solo se il consulente ti spiega con calma cosa avevi chiesto e ti fa una domanda che ti riguarda.", "ricordo": "Non ti ricordi proprio di aver lasciato i dati: all'inizio dici di non aver chiesto niente."},
-      {"nome": "Quello piu' preparato di te", "testo": "Sei una persona colta e informata, leggi il Sole 24 Ore, conosci ETF, costi di gestione e inflazione. Fai domande precise e metti alla prova la competenza del consulente. Se lui si mette a spiegare i mercati al telefono lo smonti; lo rispetti se ammette che va visto con i documenti e ti porta all'incontro."},
-      {"nome": "Il chiacchierone", "testo": "Sei simpatico e parli tanto: divaghi su figli, lavoro, vacanze, la banca di tuo cugino. Sembri disponibile ma non arrivi mai al punto. Il consulente deve riportarti al tema con garbo e chiudere l'appuntamento, altrimenti finisce la chiamata senza niente."},
-      {"nome": "Il diffidente", "testo": "Pensi che sia una truffa o un call center. Chiedi chi e', da dove chiama, come ha avuto il tuo numero, chi lo conosce, cosa ci guadagna. Ti apri solo con risposte semplici e sicure, senza giri di parole."},
-      {"nome": "Lo scocciato", "testo": "Sei di cattivo umore, sei stato chiamato da troppi venditori questa settimana. Rispondi secco e un po' sgarbato. Se il consulente non si fa intimorire e resta calmo e leggero, magari con una battuta, ti ammorbidisci."},
-      {"nome": "Il gentile che non decide mai", "testo": "Sei gentilissimo, dici sempre 'si', certo, interessante', ma quando si arriva all'appuntamento rimandi: 'ci penso', 'mi richiami la settimana prossima', 'devo guardare l'agenda'. Fissi solo se il consulente ti mette davanti due orari precisi e ti fa vedere che rimandare non ti conviene."},
-      {"nome": "Mandami tutto per mail", "testo": "Vuoi che ti mandino tutto per mail o WhatsApp per non doverti impegnare. Lo chiedi piu' volte. Accetti l'appuntamento solo se il consulente ti spiega perche' su carta non si puo' fare e ti propone mezz'ora precisa."},
-      {"nome": "Deve sentire il coniuge", "testo": "Sei interessato davvero, ma su queste cose decidi con tua moglie o tuo marito e non vuoi impegnarti senza. Se il consulente ti propone di venire insieme, con giorno e ora, accetti."},
-      {"nome": "Quello di fretta", "testo": "Rispondi mentre fai altro, hai pochissimo tempo. Se il consulente si dilunga lo interrompi: 'mi dica in breve'. Apprezzi chi va al punto con una domanda secca e propone subito due orari."},
-      {"nome": "Quello che ha gia' il consulente", "testo": "Hai un consulente in banca da anni, ci vai anche a pranzo, e non vedi perche' cambiare. Della pensione pero' non avete mai parlato davvero. Ti apri se il consulente ti chiede cosa ti piace del tuo e su cosa non ti ha mai seguito."},
-      {"nome": "Quello che ha preso una batosta", "testo": "Hai perso dei soldi con un prodotto della banca qualche anno fa e da allora non ti fidi di nessuno. Lo racconti con amarezza. Ti apri se il consulente ascolta e non ti promette niente."},
-      {"nome": "L'ex del mestiere", "testo": "Sei un ex promotore che ora fa da solo con gli ETF: pensi di non aver bisogno di nessuno e lo dici con sufficienza. Rispetti solo chi non si mette a gareggiare con te ma ti fa una domanda su quello che non riesci a fare da solo."}
-    ],
-    oro: [
-      {"nome": "Quello che vuole scappare", "testo": "Vuoi chiudere la chiamata il prima possibile: rispondi a monosillabi, dici che sei in macchina o al lavoro, cerchi ogni scusa per riattaccare. Resti solo se il consulente in pochi secondi ti incuriosisce con una domanda su di te."},
-      {"nome": "Quello che non si ricorda", "testo": "Non hai nessun ricordo di aver lasciato i dati e sei un po' infastidito: pensi a un errore o a un call center. Ti apri solo se il consulente ti spiega con calma cosa avevi chiesto e ti fa una domanda che ti riguarda.", "ricordo": "Non ti ricordi proprio di aver lasciato i dati: all'inizio dici di non aver chiesto niente."},
-      {"nome": "Quello piu' preparato di te", "testo": "Sei una persona colta e informata, leggi il Sole 24 Ore, conosci ETF, costi di gestione e inflazione. Fai domande precise e metti alla prova la competenza del consulente. Se lui si mette a spiegare i mercati al telefono lo smonti; lo rispetti se ammette che va visto con i documenti e ti porta all'incontro."},
-      {"nome": "Il chiacchierone", "testo": "Sei simpatico e parli tanto: divaghi su figli, lavoro, vacanze, la banca di tuo cugino. Sembri disponibile ma non arrivi mai al punto. Il consulente deve riportarti al tema con garbo e chiudere l'appuntamento, altrimenti finisce la chiamata senza niente."},
-      {"nome": "Il diffidente", "testo": "Pensi che sia una truffa o un call center. Chiedi chi e', da dove chiama, come ha avuto il tuo numero, chi lo conosce, cosa ci guadagna. Ti apri solo con risposte semplici e sicure, senza giri di parole."},
-      {"nome": "Lo scocciato", "testo": "Sei di cattivo umore, sei stato chiamato da troppi venditori questa settimana. Rispondi secco e un po' sgarbato. Se il consulente non si fa intimorire e resta calmo e leggero, magari con una battuta, ti ammorbidisci."},
-      {"nome": "Il gentile che non decide mai", "testo": "Sei gentilissimo, dici sempre 'si', certo, interessante', ma quando si arriva all'appuntamento rimandi: 'ci penso', 'mi richiami la settimana prossima', 'devo guardare l'agenda'. Fissi solo se il consulente ti mette davanti due orari precisi e ti fa vedere che rimandare non ti conviene."},
-      {"nome": "Mandami tutto per mail", "testo": "Vuoi che ti mandino tutto per mail o WhatsApp per non doverti impegnare. Lo chiedi piu' volte. Accetti l'appuntamento solo se il consulente ti spiega perche' su carta non si puo' fare e ti propone mezz'ora precisa."},
-      {"nome": "Deve sentire il coniuge", "testo": "Sei interessato davvero, ma su queste cose decidi con tua moglie o tuo marito e non vuoi impegnarti senza. Se il consulente ti propone di venire insieme, con giorno e ora, accetti."},
-      {"nome": "Quello di fretta", "testo": "Rispondi mentre fai altro, hai pochissimo tempo. Se il consulente si dilunga lo interrompi: 'mi dica in breve'. Apprezzi chi va al punto con una domanda secca e propone subito due orari."},
-      {"nome": "L'oro costa troppo", "testo": "Pensi che l'oro adesso sia ai massimi e che convenga aspettare che scenda. Chiedi il prezzo al grammo. Ti apri se il consulente non ti da' quotazioni al telefono e ti parla di proteggere il patrimonio, non di indovinare il momento."},
-      {"nome": "Ha paura delle truffe sull'oro", "testo": "Hai paura di comprare oro falso o di farti fregare: chiedi chi lo certifica, dove viene custodito, come lo rivendi. Ti apri con risposte semplici e la proposta di vedere il materiale vero in ufficio."},
-      {"nome": "Ha gia' comprato oro online", "testo": "Hai gia' comprato qualche moneta online e pensi di saperne abbastanza. Confronti tutto col prezzo del sito. Ti apri se il consulente ti fa capire cosa non sai su tagli, spread e rivendita, senza dirti che hai sbagliato."}
-    ]
-  };
-  const CONSULENTE = { cf: "consulente finanziario", oro: "consulente che vende oro fisico da investimento" };
-  // Il lead e' sempre il potenziale cliente del consulente (buyer persona delle cartelle madre)
-  const PROFILO = {
-    cf: [
-      "Hai i risparmi investiti tramite la tua banca, con prodotti proposti dallo sportello e mai scelti davvero. Non sai quanto paghi ogni anno e sospetti che la banca ci guadagni piu' di te.",
-      "Hai una bella somma ferma sul conto per prudenza, perche' almeno non perdi. Inizi a pensare alla pensione e non hai un piano.",
-      "Hai un consulente che non si fa mai sentire, ti chiama solo per proporti un prodotto nuovo. Ti arriva ogni anno un documento dei costi che non leggi.",
-      "Hai appena ricevuto un'eredita' e non sai dove metterla. Hai paura di sbagliare, sono soldi di famiglia."
-    ],
-    oro: [
-      "Hai liquidita' ferma sul conto e temi che perda valore ogni anno. Vorresti mettere al riparo una parte del patrimonio, ma non sai niente di oro fisico.",
-      "Hai gia' comprato qualche moneta d'oro anni fa e vorresti capire se ha senso comprarne ancora, ma non ti fidi di chi vende.",
-      "Hai un titolo o un conto deposito che scade fra qualche mese e stai pensando a cosa fare con quei soldi.",
-      "Vorresti lasciare qualcosa ai figli in una forma che non si svaluta, ma hai paura delle truffe."
-    ]
-  };
-  const RICORDO = [
-    "Ti ricordi bene di aver lasciato i dati e di aver scaricato la guida, ma non l'hai ancora letta.",
-    "Ti ricordi vagamente: hai visto tante pubblicita' e non sai bene quale fosse.",
-    "Non ti ricordi proprio di aver lasciato i dati: all'inizio dici di non aver chiesto niente."
-  ];
-  const METODO = {
-    cf: "Apertura in una frase con il motivo della chiamata e 'ti ricordi?'. Frame: 'in 8-10 minuti capiamo la tua situazione'. Domanda sull'obiettivo: 'cosa ti ha spinto proprio adesso a informarti? cosa vorresti ottenere?'. Situazione: soldi fermi, investiti, chi lo segue, sa quanto paga in euro. Domanda che apre tutto: 'hai mai fatto due conti su quanto ti servira' al mese in pensione?' senza dare la risposta al telefono. Solo dopo: quanto mette da parte al mese e se ha una somma ferma. Decide da solo o in due. Le quattro fasi obbligatorie prima dell'appuntamento: obiettivo, pain, consapevolezza (gia' provato qualcosa? decide da solo o in due?), budget (solo dopo aver rotto il ghiaccio). Chiusura: 30-40 minuti in ufficio con doppia scelta di giorno e ora, mai 'ci risentiamo'. Follow up: ripete giorno e ora, conferma scritta con indirizzo, recensioni se le chiede, si fa salvare il numero. A ogni domanda tecnica: 'te lo spiego con calma quando ci vediamo'.",
-    oro: "Apertura in una frase con il motivo della chiamata e 'ti ricordi?'. Frame: 8-10 minuti per capire la situazione. Obiettivo: 'cosa ti ha spinto adesso a informarti sull'oro?'. Situazione: dove tiene i soldi, ha gia' oro, fattura e certificato. Solo dopo: che cifra destinerebbe, se e' gia' disponibile o si libera a una data. Mai quotare prezzi al grammo al telefono: 'la quotazione si fissa quando si compra, te la faccio vedere in ufficio'. Decide da solo o in due. Disinnesco: niente rendimenti promessi. Le quattro fasi obbligatorie prima dell'appuntamento: obiettivo, pain, consapevolezza (gia' informato o comprato? decide da solo o in due?), budget (cifra e quando e' disponibile, solo dopo aver rotto il ghiaccio). Chiusura in ufficio con doppia scelta di giorno e ora. Follow up: ripete giorno e ora, conferma scritta con indirizzo, documento d'identita', recensioni se le chiede."
-  };
-  const DIFF = ["media", "difficile", "difficile"];
-  let prodotto = "cf";
-  const pesca = (a) => a[Math.floor(Math.random() * a.length)];
-
-  function scegli(p){ prodotto = p; document.getElementById("p-cf").setAttribute("aria-pressed", p === "cf"); document.getElementById("p-oro").setAttribute("aria-pressed", p === "oro"); }
-  document.getElementById("p-cf").onclick = () => scegli("cf");
-  document.getElementById("p-oro").onclick = () => scegli("oro");
-
+  // Lead della telefonata con Haiku (dal 26/10/2026): voce e ascolto li fa il browser, le battute il worker (/sparring).
+  // Carattere, profilo e prompt stanno nel worker: qui arriva solo il nome del tipo di lead, a fine chiamata.
+  const API = "https://braccio-destro-chat.braccio-destro-connettore.workers.dev";
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
   const $ = (id) => document.getElementById(id);
-  let conv = null, timer = null, inizio = 0, raf = 0;
+  let codice = ""; try{ codice = localStorage.getItem("bd_codice") || ""; }catch(e){}
+
+  let prodotto = "cf";
+  function scegli(p){ prodotto = p; $("p-cf").setAttribute("aria-pressed", p === "cf"); $("p-oro").setAttribute("aria-pressed", p === "oro"); }
+  $("p-cf").onclick = () => scegli("cf");
+  $("p-oro").onclick = () => scegli("oro");
+
   const intro = [...document.querySelectorAll("main > p, main > h1, .scelta, .come")];
-  function vedi(stato){ $("stato").textContent = stato; }
-  function riga(chi, testo){ const d = document.createElement("div"); const b = document.createElement("b"); b.textContent = chi; d.append(b, document.createTextNode(testo)); $("righe").append(d); $("righe").hidden = false; d.scrollIntoView({ block: "nearest" }); }
+  let genere = "donna", scenario = "", tipo = "", turns = [], finita = true, busy = false, timer = null, inizio = 0;
+  let actx = null, vociBrowser = [], rec = null, ascoltando = false, finale = "", parziale = "", silenzio = null, micStream = null, raf = 0;
+
+  function fase(f, stato){ $("call").dataset.fase = f; $("stato").textContent = stato; }
+  function scrivi(chi, t){ $("ascolto-chi").textContent = chi; $("ascolto-txt").textContent = t; }
+  function riga(chi, testo, cls){ const d = document.createElement("div"); if (cls) d.className = cls; const b = document.createElement("b"); b.textContent = chi; d.append(b, document.createTextNode(testo)); $("righe").append(d); $("righe").hidden = false; d.scrollIntoView({ block: "nearest" }); }
   function orologio(){ const s = Math.floor((Date.now() - inizio) / 1000); $("tempo").textContent = String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0"); }
-  function livello(){ if (conv){ try{ $("liv").style.width = Math.min(100, conv.getInputVolume() * 250) + "%"; }catch(e){} } raf = requestAnimationFrame(livello); }
   function errore(t){ $("err").textContent = t; $("err").hidden = !t; }
-  // Il lead riattacca: tono di occupato all'italiana (425 Hz, tre colpi) e scritta rossa, poi arriva il voto.
-  async function riattaccato(motivo){
-    $("call").dataset.fase = "giu"; vedi("Il lead ti ha riattaccato");
-    $("giu").hidden = false; $("giu-motivo").textContent = motivo ? "Motivo: " + motivo : "";
-    try{
-      const ac = new (window.AudioContext || window.webkitAudioContext)(), t0 = ac.currentTime + 0.05;
-      for (let i = 0; i < 4; i++){
-        const o = ac.createOscillator(), g = ac.createGain(); o.frequency.value = 425; o.connect(g); g.connect(ac.destination);
-        const a = t0 + i * 0.4; g.gain.setValueAtTime(0.15, a); g.gain.setValueAtTime(0, a + 0.2); o.start(a); o.stop(a + 0.22);
-      }
-      await new Promise(r => setTimeout(r, 1700)); ac.close();
-    }catch(e){}
-    vedi("Il voto");
+  const attendi = (ms) => new Promise(r => setTimeout(r, ms));
+
+  // Voce italiana del browser, scelta per genere.
+  function caricaVoci(){ try{ vociBrowser = speechSynthesis.getVoices().filter(v => /^it/i.test(v.lang)); }catch(e){} }
+  if ("speechSynthesis" in window){ caricaVoci(); speechSynthesis.onvoiceschanged = caricaVoci; }
+  function voceBrowser(){
+    const F = /alice|federica|elsa|paola|emma|bianca|isabella|chiara|google italiano/i, M = /luca|diego|cosimo|giorgio|giuseppe|marco|roberto/i;
+    const re = genere === "uomo" ? M : F;
+    return vociBrowser.find(v => re.test(v.name)) || vociBrowser[0] || null;
   }
-  function fine(){
-    if (tipo){ $("tipo").textContent = "Era il lead: " + tipo.nome; $("tipo").hidden = false; }
-    clearInterval(timer); cancelAnimationFrame(raf); conv = null;
+  function frase(t){
+    return new Promise((fatto) => {
+      if (!("speechSynthesis" in window) || finita && !busy){ fatto(); return; }
+      const u = new SpeechSynthesisUtterance(t); u.lang = "it-IT"; u.rate = 1.05;
+      const v = voceBrowser(); if (v) u.voice = v;
+      // Alcuni browser non chiamano mai onend: si va avanti comunque dopo il tempo della frase.
+      const via = setTimeout(fatto, 1500 + t.length * 90);
+      u.onend = u.onerror = () => { clearTimeout(via); fatto(); };
+      speechSynthesis.speak(u);
+    });
+  }
+  // Frase per frase: le battute lunghe in un colpo solo si interrompono a meta' su Chrome.
+  async function dici(testo){
+    const pezzi = testo.match(/[^.!?…]+[.!?…]*/g) || [];
+    for (const p of pezzi){ if (p.trim()) await frase(p.trim()); }
+  }
+
+  // Squillo e tono di occupato all'italiana (425 Hz).
+  function tono(volte, lungo){
+    if (!actx) return Promise.resolve();
+    const t0 = actx.currentTime + 0.05, passo = lungo ? 2.2 : 0.4, durata = lungo ? 1.0 : 0.2;
+    for (let i = 0; i < volte; i++){
+      const o = actx.createOscillator(), g = actx.createGain(); o.frequency.value = 425; o.connect(g); g.connect(actx.destination);
+      const a = t0 + i * passo; g.gain.setValueAtTime(0, a); g.gain.linearRampToValueAtTime(0.13, a + 0.02);
+      g.gain.setValueAtTime(0.13, a + durata); g.gain.linearRampToValueAtTime(0, a + durata + 0.03); o.start(a); o.stop(a + durata + 0.05);
+    }
+    return attendi(lungo ? volte * 2200 - 900 : volte * 400 + 300);
+  }
+
+  // Barra del volume: fa vedere che il telefono ti sta sentendo.
+  async function avviaLivello(){
+    micStream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } });
+    const src = actx.createMediaStreamSource(micStream), an = actx.createAnalyser(); an.fftSize = 512; src.connect(an);
+    const buf = new Uint8Array(an.fftSize);
+    const giro = () => {
+      an.getByteTimeDomainData(buf); let s = 0; for (const v of buf){ const x = (v - 128) / 128; s += x * x; }
+      $("liv").style.width = ($("call").dataset.fase === "ascolta" ? Math.min(100, Math.sqrt(s / buf.length) * 400) : 0) + "%";
+      raf = requestAnimationFrame(giro);
+    };
+    giro();
+  }
+
+  function ascolta(){
+    if (finita) return;
+    finale = ""; parziale = "";
+    if (!SR){ fase("ascolta", "Tocca a te"); scrivi("Tu", "Scrivi qui sotto e premi Invia"); $("scritto-txt").focus(); return; }
+    fase("ascolta", "Ti ascolto"); scrivi("Tu", "Parla pure...");
+    $("inviavoce").disabled = false; ascoltando = true; avviaRec();
+  }
+  function avviaRec(){
+    if (!ascoltando || finita) return;
+    rec = new SR(); rec.lang = "it-IT"; rec.interimResults = true; rec.continuous = true;
+    rec.onresult = (e) => {
+      let f = "", p = "";
+      for (let i = e.resultIndex; i < e.results.length; i++){ const r = e.results[i]; if (r.isFinal) f += r[0].transcript + " "; else p += r[0].transcript; }
+      finale += f; parziale = p;
+      scrivi("Tu", (finale + parziale).trim() || "Parla pure...");
+      clearTimeout(silenzio);
+      if ((finale + parziale).trim()) silenzio = setTimeout(chiudiBattuta, 1500);
+    };
+    rec.onerror = (e) => {
+      if (e.error === "not-allowed" || e.error === "service-not-allowed"){
+        ascoltando = false; scritto(true); scrivi("Sistema", "Il browser non ti fa usare il riconoscimento della voce: scrivi qui sotto quello che diresti.");
+      }
+    };
+    // Il riconoscimento si spegne da solo dopo qualche secondo: se stiamo ancora ascoltando, riparte.
+    rec.onend = () => { rec = null; if (ascoltando && !finita) setTimeout(avviaRec, 150); };
+    try{ rec.start(); }catch(e){}
+  }
+  function fermaRec(){ ascoltando = false; clearTimeout(silenzio); if (rec){ try{ rec.stop(); }catch(e){} } }
+  function scritto(si){ $("scritto").hidden = !si; $("inviavoce").hidden = si; }
+
+  async function battuta(t){
+    t = t.replace(/\s+/g, " ").trim();
+    if (!t || busy || finita) return;
+    fermaRec(); $("inviavoce").disabled = true;
+    riga("Tu", t);
+    if (/fine (dell')?allenamento/i.test(t)){ await voto(); return; }
+    turns.push({ role: "user", content: t });
+    await turnoLead();
+  }
+  function chiudiBattuta(){ battuta(finale + " " + parziale); }
+  $("inviavoce").onclick = () => { if (riprova){ riprova = false; turnoLead(); } else chiudiBattuta(); };
+  $("scritto").onsubmit = (e) => { e.preventDefault(); const t = $("scritto-txt").value; $("scritto-txt").value = ""; battuta(t); };
+
+  async function chiedi(){
+    const r = await fetch(API + "/sparring", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prodotto, genere, scenario, messages: turns, code: codice }) });
+    const d = await r.json().catch(() => ({}));
+    if (r.status === 401) throw new Error("Serve il codice di accesso: apri Braccio Destro dal link che ti abbiamo dato.");
+    if (!r.ok) throw new Error(d.error || "La linea e' caduta. Riprova fra poco.");
+    if (d.scenario) scenario = d.scenario;
+    if (d.tipo) tipo = d.tipo;
+    return d;
+  }
+
+  let riprova = false;
+  async function turnoLead(){
+    busy = true; fase("pensa", "..."); scrivi("Il lead", "...");
+    let d;
+    try{ d = await chiedi(); }
+    catch(e){ busy = false; errore(e.message); fase("ascolta", "Linea disturbata"); scrivi("Sistema", "Il lead non ha risposto. Premi \"Ho finito di parlare\" per riprovare."); $("inviavoce").disabled = false; riprova = true; return; }
+    errore("");
+    if (d.testo){ turns.push({ role: "assistant", content: d.testo }); riga("Lead", d.testo); fase("parla", "Parla il lead"); scrivi("Il lead", d.testo); await dici(d.testo); }
+    busy = false;
+    if (finita) return;
+    if (d.riattacca){ await giu("Il lead ti ha riattaccato", d.motivo ? "Motivo: " + d.motivo : ""); await voto(); return; }
+    if (d.fine){ await giu("Il lead ha chiuso la chiamata", ""); await voto(); return; }
+    ascolta();
+  }
+
+  // Il lead mette giu': tono di occupato, poi arriva il voto.
+  async function giu(titolo, motivo){
+    fermaRec(); fase("giu", titolo);
+    $("giu").hidden = false; $("giu-titolo").textContent = titolo; $("giu-motivo").textContent = motivo;
+    await tono(4, false);
+  }
+
+  async function voto(){
+    if (busy) return;
+    fermaRec(); busy = true; $("inviavoce").disabled = true; $("riattacca").disabled = true; scritto(false); $("inviavoce").hidden = true;
+    fase("pensa", "Il voto"); scrivi("Braccio Destro", "Sto guardando la chiamata...");
+    turns.push({ role: "user", content: "[[VOTO]]" });
+    try{
+      const d = await chiedi();
+      if (d.testo){ riga("Braccio Destro", d.testo, "voto"); fase("parla", "Il voto"); scrivi("Braccio Destro", d.testo); await dici(d.testo); }
+    }catch(e){ errore(e.message); }
+    busy = false; chiudi();
+  }
+
+  function chiudi(){
+    finita = true; fermaRec();
+    try{ speechSynthesis.cancel(); }catch(e){}
+    cancelAnimationFrame(raf); $("liv").style.width = "0";
+    if (micStream){ micStream.getTracks().forEach(t => t.stop()); micStream = null; }
+    clearInterval(timer);
+    if (tipo){ $("tipo").textContent = "Era il lead: " + tipo; $("tipo").hidden = false; }
     $("call").hidden = true; $("ancora").hidden = false;
   }
 
-  let avvio = false, tipo = null;
   $("chiama").onclick = async () => {
-    if (avvio || conv) return;   // un tocco = una chiamata: niente lead doppi mentre il browser chiede il microfono
-    avvio = true; $("chiama").disabled = true;
-    errore(""); $("righe").innerHTML = ""; $("righe").hidden = true;
-    const genere = Math.random() < 0.5 ? "donna" : "uomo";
-    tipo = pesca(CARATTERI[prodotto]); $("tipo").hidden = true;
-    try{ await navigator.mediaDevices.getUserMedia({ audio: true }); }
-    catch(e){ errore("Serve il microfono: consentilo al sito dalle impostazioni del browser e riprova."); avvio = false; $("chiama").disabled = false; return; }
-    $("chiama").hidden = true; intro.forEach(x => x.hidden = true); $("giu").hidden = true;
-    $("call").hidden = false; $("call").dataset.fase = "connette"; $("av").textContent = genere === "donna" ? "D" : "U";
-    vedi("Sto chiamando..."); $("tempo").textContent = "00:00"; $("riattacca").disabled = false;
-    try{
-      conv = await ElevenLabsClient.Conversation.startSession({
-        agentId: AGENTI[genere],
-        connectionType: "webrtc",
-        dynamicVariables: {
-          consulente: CONSULENTE[prodotto],
-          profilo: pesca(PROFILO[prodotto]),
-          carattere: tipo.testo,
-          ricordo: tipo.ricordo || pesca(RICORDO),
-          difficolta: pesca(DIFF),
-          genere: genere === "donna" ? "una donna" : "un uomo",
-          metodo: METODO[prodotto]
-        },
-        clientTools: { riattacca: async ({ motivo }) => { await riattaccato(motivo); return "riattaccato"; } },
-        onConnect: () => { inizio = Date.now(); timer = setInterval(orologio, 1000); livello(); },
-        onModeChange: ({ mode }) => { $("call").dataset.fase = mode === "speaking" ? "parla" : "ascolta"; vedi(mode === "speaking" ? "Parla il lead" : "Ti ascolto"); },
-        onMessage: (m) => { if (m.message && m.message.replace(/[.\s…]/g, "")) riga(m.role === "user" || m.source === "user" ? "Tu" : "Lead", m.message.replace(/\*\*/g, "").replace(/^\s*-{3,}\s*$/gm, "").replace(/\n{3,}/g, "\n\n").trim()); },
-        onError: (msg) => { errore("La linea e' caduta: " + (msg || "riprova fra poco.")); },
-        onDisconnect: () => fine()
-      });
-    }catch(e){
-      errore("Non riesco a chiamare il lead adesso. Riprova fra poco."); fine();
+    if (!finita) return;
+    finita = false; busy = false; riprova = false; $("chiama").disabled = true;
+    errore(""); $("righe").innerHTML = ""; $("righe").hidden = true; $("tipo").hidden = true; $("giu").hidden = true;
+    genere = Math.random() < 0.5 ? "donna" : "uomo"; scenario = ""; tipo = "";
+    // Tutto cio' che fa suonare la pagina va sbloccato qui, dentro il tocco su "Chiama".
+    actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+    if (actx.state === "suspended") actx.resume();
+    try{ speechSynthesis.speak(new SpeechSynthesisUtterance("")); }catch(e){}
+    if (SR){
+      try{ await avviaLivello(); }
+      catch(e){ errore("Serve il microfono: consentilo al sito dalle impostazioni del browser e riprova."); finita = true; $("chiama").disabled = false; return; }
     }
-    avvio = false; $("chiama").disabled = false;
+    $("chiama").disabled = false; $("chiama").hidden = true; intro.forEach(x => x.hidden = true);
+    $("call").hidden = false; $("av").textContent = genere === "donna" ? "D" : "U"; $("tempo").textContent = "00:00";
+    $("riattacca").disabled = false; $("inviavoce").hidden = false; $("inviavoce").disabled = true; scritto(!SR);
+    if (!SR) errore("Questo browser non riconosce la voce: la chiamata si fa scrivendo. Con Chrome o Safari si parla.");
+    fase("connette", "Squilla..."); scrivi("Il lead", "...");
+    await tono(2, true);
+    if (finita) return;
+    inizio = Date.now(); timer = setInterval(orologio, 1000);
+    // Il lead risponde: lo stesso "Pronto?" che il worker si aspetta in testa alla conversazione.
+    turns = [{ role: "user", content: "[[SQUILLO]]" }, { role: "assistant", content: "Pronto?" }];
+    riga("Lead", "Pronto?"); fase("parla", "Parla il lead"); scrivi("Il lead", "Pronto?");
+    busy = true; await dici("Pronto?"); busy = false;
+    ascolta();
   };
-  $("riattacca").onclick = async () => { $("riattacca").disabled = true; if (conv){ try{ await conv.endSession(); }catch(e){} } fine(); };
+  $("riattacca").onclick = () => {
+    if (finita) return;
+    // Senza nemmeno una battuta del consulente non c'e' niente da votare.
+    if (!turns.some((m, i) => i > 1 && m.role === "user")){ chiudi(); return; }
+    if (busy){ $("riattacca").disabled = true; const giro = setInterval(() => { if (!busy){ clearInterval(giro); voto(); } }, 200); return; }
+    voto();
+  };
   $("ancora").onclick = () => { $("ancora").hidden = true; $("tipo").hidden = true; $("righe").hidden = true; $("chiama").hidden = false; intro.forEach(x => x.hidden = false); errore(""); };
-  window.addEventListener("pagehide", () => { if (conv) conv.endSession(); });
+  window.addEventListener("pagehide", () => { if (!finita) chiudi(); });
 })();
 </script>
 </body>
