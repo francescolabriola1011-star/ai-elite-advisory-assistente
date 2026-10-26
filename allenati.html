@@ -101,7 +101,7 @@ p{margin:0;color:var(--muted);line-height:1.5}
 
   const intro = [...document.querySelectorAll("main > p, main > h1, .scelta, .come")];
   let genere = "donna", scenario = "", tipo = "", turns = [], finita = true, busy = false, timer = null, inizio = 0;
-  let actx = null, vociBrowser = [], rec = null, ascoltando = false, finale = "", parziale = "", silenzio = null, micStream = null, raf = 0;
+  let actx = null, audioEl = null, voceVera = true, vociBrowser = [], rec = null, ascoltando = false, finale = "", parziale = "", silenzio = null, micStream = null, raf = 0;
 
   function fase(f, stato){ $("call").dataset.fase = f; $("stato").textContent = stato; }
   function scrivi(chi, t){ $("ascolto-chi").textContent = chi; $("ascolto-txt").textContent = t; }
@@ -113,26 +113,66 @@ p{margin:0;color:var(--muted);line-height:1.5}
   // Voce italiana del browser, scelta per genere.
   function caricaVoci(){ try{ vociBrowser = speechSynthesis.getVoices().filter(v => /^it/i.test(v.lang)); }catch(e){} }
   if ("speechSynthesis" in window){ caricaVoci(); speechSynthesis.onvoiceschanged = caricaVoci; }
+  // Si prende la voce migliore che il telefono ha: le neurali (Natural, Online, Premium, Enhanced) prima di tutto,
+  // poi il genere del lead; le voci buffe di Apple (Grandma, Grandpa, Rocko) mai.
+  function punteggio(v, re){
+    const n = v.name; let p = 0;
+    if (/natural|neural|online/i.test(n)) p += 6;
+    if (/premium/i.test(n)) p += 5;
+    if (/enhanced|avanzat|miglior/i.test(n)) p += 4;
+    if (/google/i.test(n)) p += 2;
+    if (re.test(n)) p += 3;
+    if (/grandma|grandpa|nonn|rocko/i.test(n)) p -= 20;
+    if (/eddy|flo\b|reed|sandy|shelley/i.test(n)) p -= 2;
+    return p;
+  }
   function voceBrowser(){
-    const F = /alice|federica|elsa|paola|emma|bianca|isabella|chiara|google italiano/i, M = /luca|diego|cosimo|giorgio|giuseppe|marco|roberto/i;
+    const F = /alice|federica|elsa|paola|emma|bianca|isabella|chiara|google italiano/i, M = /luca|diego|cosimo|giorgio|giuseppe|marco|roberto|eddy|reed/i;
     const re = genere === "uomo" ? M : F;
-    return vociBrowser.find(v => re.test(v.name)) || vociBrowser[0] || null;
+    const ordinate = vociBrowser.slice().sort((a, b) => punteggio(b, re) - punteggio(a, re));
+    return ordinate[0] || null;
   }
   function frase(t){
     return new Promise((fatto) => {
       if (!("speechSynthesis" in window) || finita && !busy){ fatto(); return; }
-      const u = new SpeechSynthesisUtterance(t); u.lang = "it-IT"; u.rate = 1.05;
+      const u = new SpeechSynthesisUtterance(t); u.lang = "it-IT"; u.rate = 1.07; u.pitch = genere === "uomo" ? 0.92 : 1.0;
       const v = voceBrowser(); if (v) u.voice = v;
       // Alcuni browser non chiamano mai onend: si va avanti comunque dopo il tempo della frase.
-      const via = setTimeout(fatto, 1500 + t.length * 90);
+      const via = setTimeout(fatto, 2000 + t.length * 95);
       u.onend = u.onerror = () => { clearTimeout(via); fatto(); };
       speechSynthesis.speak(u);
     });
   }
-  // Frase per frase: le battute lunghe in un colpo solo si interrompono a meta' su Chrome.
+  // Voce vera (ElevenLabs dal worker): se il worker risponde 204 la voce vera e' spenta e si resta sulla voce del telefono.
+  async function audioDi(t){
+    if (!voceVera) return null;
+    try{
+      const r = await fetch(API + "/voce", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ testo: t, genere }) });
+      if (r.status === 200) return URL.createObjectURL(await r.blob());
+      if (r.status === 204) voceVera = false;
+    }catch(e){}
+    return null;
+  }
+  function suona(url, t){
+    if (!url) return frase(t);
+    return new Promise((fatto) => {
+      if (finita && !busy){ URL.revokeObjectURL(url); fatto(); return; }
+      let chiuso = false;
+      const fine = () => { if (chiuso) return; chiuso = true; clearTimeout(via); URL.revokeObjectURL(url); fatto(); };
+      const via = setTimeout(fine, 4000 + t.length * 110);
+      audioEl.src = url; audioEl.playbackRate = 1.07; audioEl.onended = audioEl.onerror = fine;
+      audioEl.play().catch(() => { chiuso = true; clearTimeout(via); URL.revokeObjectURL(url); frase(t).then(fatto); });
+    });
+  }
+  // Frase per frase: mentre suona una frase si scarica gia' la successiva, cosi' fra le frasi non c'e' pausa.
   async function dici(testo){
-    const pezzi = testo.match(/[^.!?…]+[.!?…]*/g) || [];
-    for (const p of pezzi){ if (p.trim()) await frase(p.trim()); }
+    const pezzi = (testo.match(/[^.!?…]+[.!?…]*/g) || []).map(p => p.trim()).filter(Boolean);
+    let prossimo = pezzi.length ? audioDi(pezzi[0]) : null;
+    for (let i = 0; i < pezzi.length; i++){
+      const url = await prossimo;
+      prossimo = i + 1 < pezzi.length ? audioDi(pezzi[i + 1]) : null;
+      await suona(url, pezzi[i]);
+    }
   }
 
   // Squillo e tono di occupato all'italiana (425 Hz).
@@ -251,6 +291,7 @@ p{margin:0;color:var(--muted);line-height:1.5}
   function chiudi(){
     finita = true; fermaRec();
     try{ speechSynthesis.cancel(); }catch(e){}
+    if (audioEl){ audioEl.pause(); }
     cancelAnimationFrame(raf); $("liv").style.width = "0";
     if (micStream){ micStream.getTracks().forEach(t => t.stop()); micStream = null; }
     clearInterval(timer);
@@ -267,6 +308,8 @@ p{margin:0;color:var(--muted);line-height:1.5}
     actx = actx || new (window.AudioContext || window.webkitAudioContext)();
     if (actx.state === "suspended") actx.resume();
     try{ speechSynthesis.speak(new SpeechSynthesisUtterance("")); }catch(e){}
+    // Un attimo di silenzio suonato dentro il tocco: su iPhone sblocca l'audio della voce vera per tutta la chiamata.
+    audioEl = audioEl || new Audio(); audioEl.src = "data:audio/wav;base64,UklGRmQGAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YUAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; audioEl.play().catch(() => {});
     if (SR){
       try{ await avviaLivello(); }
       catch(e){ errore("Serve il microfono: consentilo al sito dalle impostazioni del browser e riprova."); finita = true; $("chiama").disabled = false; return; }
