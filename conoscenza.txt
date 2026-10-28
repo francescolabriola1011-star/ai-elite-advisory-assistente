@@ -1,4 +1,4 @@
-CONOSCENZA DI BRACCIO DESTRO, AI ELITE ADVISORY. Versione del 27/10/2026.
+CONOSCENZA DI BRACCIO DESTRO, AI ELITE ADVISORY. Versione del 28/10/2026.
 
 SEI "BRACCIO DESTRO DI AI ELITE ADVISORY", l'assistente AI che AI Elite Advisory regala ai consulenti finanziari che lavorano con noi. Quando ti presenti, o quando ti chiedono chi sei, dici sempre: "Sono Braccio Destro di AI Elite Advisory".
 
@@ -510,6 +510,159 @@ No:
 * percentuali medie di costo senza fonte
 * frasi che attaccano la banca o dichiarano "noi siamo diversi": si mostra il documento e la conclusione la tira lui
 * gergo tecnico come asset allocation, TER o benchmark
+
+=== DOCUMENTO: "Follow up lead fermi: 10 messaggi per i tuoi potenziali clienti" (cartella SCRIPT Vendita, CONSULENTE FINANZIARIO) ===
+Follow up lead fermi: 10 messaggi per i tuoi potenziali clienti
+Per i contatti che non hanno ancora fissato l'incontro, anche chi ha detto "ci penso" o ha smesso di rispondere.
+Come si usano
+• uno ogni 2 o 3 giorni, nell'ordine, alternando un messaggio che spiega e una domanda
+
+• i tre AUDIO (1, 4 e 7) si registrano con la tua voce su WhatsApp: il testo è la traccia, dillo con parole tue in 30 o 40 secondi, senza leggerlo
+
+• sostituisci {Nome} e {città} prima di mandare
+
+• chi risponde esce dalla sequenza: si passa alla telefonata
+
+• nessun rendimento promesso: i numeri negli esempi spiegano il meccanismo. Se la tua mandante chiede comunicazioni approvate, falli vedere prima
+Il calendario
+N.
+	Giorno
+	Formato
+	Tema
+	1
+	1
+	Audio
+	Come funziona farsi seguire
+	2
+	3
+	Messaggio
+	I soldi fermi sul conto
+	3
+	5
+	Domanda
+	Dove sono i tuoi risparmi
+	4
+	8
+	Audio
+	Cosa fare quando il mercato scende
+	5
+	10
+	Messaggio
+	Investire un po' al mese
+	6
+	12
+	Domanda
+	Il rendiconto dei costi
+	7
+	15
+	Audio
+	La pensione
+	8
+	17
+	Messaggio
+	Un piano, non una collezione di prodotti
+	9
+	19
+	Messaggio
+	Eredità e passaggio ai figli
+	10
+	22
+	Domanda
+	Quando ci vediamo
+	1. Audio · Come funziona farsi seguire
+Traccia da dire a voce, 30 o 40 secondi. Non leggerla: usala come scaletta.
+
+Ciao {Nome}, come va?
+
+Ti scrivo perché molte persone che mi contattano hanno la stessa domanda, anche se non la fanno: "ma in pratica, cosa vuol dire farsi seguire da un consulente?"
+
+Te lo dico semplice. Il primo incontro serve a capire cosa hai oggi: dove sono i risparmi, quanto paghi, cosa ti serve fra 5, 10 o 20 anni. Non si firma niente, si guarda e basta.
+
+Poi si mette giù un piano, con dentro i tuoi obiettivi e non i prodotti del mese. E da lì non sparisco: ti chiamo io, a scadenze fisse e ogni volta che succede qualcosa sui mercati, senza aspettare che sia tu a chiedere.
+
+La differenza la senti soprattutto quando le cose si muovono, perché sai già cosa fare e con chi parlarne
+
+Se ti va ne parliamo, intanto dimmi se ti ritrovi in questa cosa
+2. Messaggio · I soldi fermi sul conto
+{Nome}, una cosa che vedo spesso: i soldi tenuti sul conto "perché almeno così non perdo".
+
+Il saldo infatti non scende. Però con un'inflazione al 2% l'anno, 100.000 euro dopo 10 anni comprano come circa 82.000 di oggi. Il numero sul conto è lo stesso, la spesa che ci fai no 🛒
+
+È la perdita che non si vede, perché nessun estratto conto la scrive.
+
+Non vuol dire che vanno investiti tutti, anzi: una parte deve restare disponibile. Vuol dire decidere quanto, invece di lasciarlo al caso 😉
+3. Domanda · Dove sono i tuoi risparmi
+{Nome}, ti faccio una domanda secca: oggi i tuoi risparmi dove sono? Fermi sul conto, investiti con la banca, o un po' e un po'? 🙂
+4. Audio · Cosa fare quando il mercato scende
+Traccia da dire a voce, 30 o 40 secondi. Non leggerla: usala come scaletta.
+
+Ciao {Nome}
+
+ti scrivo per una cosa che prima o poi capita a chiunque abbia dei risparmi investiti: il giorno in cui apri l'estratto e vedi il segno meno.
+
+La reazione più naturale è vendere tutto per "fermare l'emorragia". Ed è quasi sempre la scelta che costa di più, perché trasforma un calo sulla carta in una perdita vera, e spesso si esce proprio prima della risalita
+
+Quello che funziona è deciderlo prima, a mente fredda:
+
+• quali soldi ti servono nei prossimi anni, e quelli non devono stare dove il mercato li muove
+
+• quali soldi possono aspettare, e quelli possono restare fermi anche durante un calo
+
+• chi ti chiama quando succede, così non decidi da solo davanti al telegiornale
+
+Il calo non lo puoi evitare, il panico sì. È una delle cose per cui serve qualcuno che ti segua
+5. Messaggio · Investire un po' al mese
+{Nome}, ti spiego una cosa che a molti fa cambiare idea sui mercati che scendono.
+
+Se investi una cifra fissa ogni mese, per esempio 200 euro, quando i prezzi scendono con gli stessi 200 euro compri di più. Con un prezzo di 10 euro prendi 20 quote, con un prezzo di 8 ne prendi 25.
+
+Quindi, se hai un orizzonte lungo, il mese brutto non è solo un mese brutto: è anche il mese in cui accumuli di più 💡
+
+Non è una formula magica e non è adatto a tutti, ma è il motivo per cui chi investe con metodo vive i cali in modo molto diverso da chi guarda solo il saldo.
+6. Domanda · Il rendiconto dei costi
+{Nome}, ogni anno la banca ti manda per legge un rendiconto con i costi che paghi, scritti in euro. Ti è mai capitato di leggerlo? Se vuoi ti mostro dove si trova quel numero, poi decidi tu cosa farne 🙂
+7. Audio · La pensione
+Traccia da dire a voce, 30 o 40 secondi. Non leggerla: usala come scaletta.
+
+Ciao {Nome}, ti scrivo per un tema che di solito si rimanda: la pensione
+
+La domanda che conta non è "quanto prenderò", ma "quanto mi mancherà ogni mese rispetto a quello che guadagno oggi". Per quasi tutti c'è una differenza, e più si va avanti più è difficile coprirla.
+
+Il punto è che questa differenza si può calcolare oggi, in euro al mese, partendo dai tuoi contributi e dai tuoi risparmi. E una volta che hai il numero davanti, diventa una cosa da sistemare con calma, anno dopo anno, invece di una paura vaga.
+
+Chi ci pensa a 45 anni ha tempo e scelta. Chi ci pensa a 60 ha meno tempo e meno strade.
+
+Se vuoi, lo facciamo insieme sui tuoi numeri: ti porti a casa la cifra e poi decidi tu
+8. Messaggio · Un piano, non una collezione di prodotti
+{Nome}, una cosa che noto quando guardo i risparmi delle persone: spesso non c'è un piano, c'è una collezione di prodotti.
+
+Un fondo preso con un direttore, una polizza con quello dopo, un conto deposito aperto per una promozione. Ognuno aveva senso il giorno in cui è stato firmato, insieme non rispondono a nessuna domanda 🧩
+
+Un piano parte al contrario: prima cosa ti serve e quando, poi gli strumenti. Di solito tre blocchi:
+
+• una riserva per gli imprevisti, sempre disponibile
+
+• i soldi per i progetti dei prossimi anni (casa, figli, auto)
+
+• i soldi per la pensione, che possono lavorare più a lungo
+
+Se ti va, guardiamo insieme in quale blocco sta oggi ogni cosa che hai 🙂
+9. Messaggio · Eredità e passaggio ai figli
+Ciao {Nome}, ti scrivo per un argomento delicato che quasi nessuno affronta finché non serve: cosa succede ai risparmi quando passano ai figli o quando si riceve un'eredità 👨‍👩‍👧
+
+Le cose che vedo più spesso:
+
+• conti cointestati che sembrano risolvere tutto e invece al momento del bisogno possono restare bloccati
+
+• soldi ereditati lasciati sul conto per mesi perché "non so dove metterli"
+
+• famiglie che scoprono tempi e passaggi solo quando devono affrontarli, nel momento peggiore
+
+Sono cose che si possono organizzare prima, con calma, così chi resta non deve improvvisare.
+
+Se è un tema che ti tocca, anche solo da vicino, scrivimi e ne parliamo 🙂
+10. Domanda · Quando ci vediamo
+{Nome}, ti volevo far vedere come imposterei il lavoro sui tuoi risparmi. Quando ci vediamo venti minuti, qui a {città} o in videochiamata? 🙂
 
 === DOCUMENTO: "Messaggi da mandare Followup manuali" (cartella SCRIPT Vendita, CONSULENTE FINANZIARIO) ===
 MESSAGGI DA MANDARE
@@ -1826,6 +1979,151 @@ Ricorda al terzo appuntamento servono documento di identità e pagamento traccia
 Registra la call (col suo consenso) e caricala nella cartella Registrazioni: è il modo più veloce per migliorare e per ricevere feedback dal team.
 
 Nota compliance: mai promettere rivalutazioni o guadagni, il prezzo dell'oro può scendere. La differenza fra prezzo di acquisto e di riacquisto va sempre dichiarata. Identificazione del cliente, tracciabilità del pagamento, limiti all'uso del contante e dichiarazione delle operazioni sopra le soglie di legge sono obblighi: verifica con il tuo consulente quali si applicano a te e quali soglie sono in vigore.
+
+=== DOCUMENTO: "09 · Follow up lead fermi: 10 messaggi per i tuoi potenziali clienti" (cartella 02 · SCRIPT Vendita, PROMOTORE ORO FISICO) ===
+Follow up lead fermi: 10 messaggi per i tuoi potenziali clienti (oro fisico)
+Per i contatti che non sono ancora passati in ufficio, anche chi ha detto "ci penso" o ha smesso di rispondere.
+Come si usano
+• uno ogni 2 o 3 giorni, nell'ordine, alternando un messaggio che spiega e una domanda
+
+• i tre AUDIO (1, 4 e 7) si registrano con la tua voce su WhatsApp: il testo è la traccia, dillo con parole tue in 30 o 40 secondi, senza leggerlo
+
+• sostituisci {Nome} e {città} prima di mandare
+
+• chi risponde esce dalla sequenza: si passa alla telefonata e si fissa l'incontro in ufficio
+
+• mai promettere che il prezzo salirà: l'oro può scendere, e la differenza fra prezzo di acquisto e di riacquisto si dice sempre per primi
+Il calendario
+N.
+	Giorno
+	Formato
+	Tema
+	1
+	1
+	Audio
+	Come funziona comprare oro da me
+	2
+	3
+	Messaggio
+	I soldi fermi sul conto
+	3
+	5
+	Domanda
+	Dove sono i tuoi risparmi
+	4
+	8
+	Audio
+	E se il prezzo scende
+	5
+	10
+	Messaggio
+	Oro sulla carta e oro in mano
+	6
+	12
+	Domanda
+	A quanto te lo ricomprano
+	7
+	15
+	Audio
+	Come riconosci un pezzo vero
+	8
+	17
+	Messaggio
+	Dove si tiene l'oro
+	9
+	19
+	Messaggio
+	Qualcosa che resta alla famiglia
+	10
+	22
+	Domanda
+	Quando passi in ufficio
+	1. Audio · Come funziona comprare oro da me
+Traccia da dire a voce, 30 o 40 secondi. Non leggerla: usala come scaletta.
+
+Ciao {Nome}, ti mando un audio perché è più semplice che scriverlo.
+
+Molte persone che mi contattano non sanno bene come funziona comprare oro fisico, e magari si immaginano una cosa complicata. Invece è semplice.
+
+Ci vediamo qui in ufficio a {città}. Prima parliamo di te: cosa hai da parte, cosa vuoi mettere al riparo e cosa invece deve restare disponibile. Poi ti metto in mano i pezzi, guardi fonderia, sigillo e certificato, e decidi coi fatti davanti.
+
+Se compri, esci con il metallo e una fattura intestata a te. E il giorno che lo vuoi rivendere, sono qui a due strade da casa tua.
+
+Se ti va ne parliamo, intanto dimmi se hai domande.
+2. Messaggio · I soldi fermi sul conto
+{Nome}, una cosa che vedo spesso: i risparmi tenuti tutti sul conto "perché almeno così non perdo".
+
+Il saldo infatti non scende. Però con un'inflazione al 2% l'anno, 100.000 euro dopo 10 anni comprano come circa 82.000 di oggi. Il numero sul conto è lo stesso, la spesa che ci fai no 🛒
+
+E c'è una seconda cosa, che conta ancora di più: i soldi liquidi si spendono. Non per colpa tua, per la vita: l'auto che si rompe, il lavoro in casa, l'imprevisto.
+
+Una parte deve restare lì, è giusto. Il punto è decidere quanta, e cosa fare del resto 😉
+3. Domanda · Dove sono i tuoi risparmi
+{Nome}, ti faccio una domanda secca: oggi i tuoi risparmi dove sono? Tutti sul conto, investiti in banca, o hai già messo da parte qualcosa che non dipende da nessuno? 🙂
+4. Audio · E se il prezzo scende
+Traccia da dire a voce, 30 o 40 secondi. Non leggerla: usala come scaletta.
+
+Ciao {Nome}, ti rispondo a una domanda che quasi tutti hanno in testa e pochi fanno: e se compro oggi e il prezzo scende?
+
+Ti do la risposta onesta: può scendere, e chi ti dice che l'oro sale sempre ti sta mentendo.
+
+Per questo si compra in un modo preciso:
+
+• ci metti la parte che puoi lasciare lì, mai i soldi che ti servono nei prossimi anni
+
+• non è un'operazione da pochi mesi: fra il prezzo a cui compri e quello a cui ti viene ricomprato c'è una differenza, e io te la dico prima, scritta
+
+• la liquidità per gli imprevisti resta fuori, dov'è
+
+Il rischio vero, di solito, non è comprare in un giorno un po' più caro. È restare fermi anni ad aspettare il giorno perfetto.
+5. Messaggio · Oro sulla carta e oro in mano
+{Nome}, a volte in banca propongono prodotti "legati all'oro". Non sono una truffa, ma sono un'altra cosa, ed è giusto sapere quale 🧩
+
+Un prodotto sulla carta segue il prezzo dell'oro, si compra e si vende in un clic ed è comodo. Però quello che hai è un contratto con chi l'ha emesso: il metallo non lo vedi e non lo tocchi.
+
+L'oro fisico invece è un pezzo con il suo seriale, sigillato, con la fattura intestata a te. Non dipende da nessun emittente.
+
+Se vuoi solo seguire il prezzo, la carta costa meno ed è onesto dirtelo. Se vuoi una parte dei risparmi che non dipenda da nessuno, la carta non te la dà.
+6. Domanda · A quanto te lo ricomprano
+{Nome}, una domanda che quasi nessuno fa prima di comprare oro: chi te lo vende, a quanto te lo ricompra il giorno che lo vuoi rivendere? Se vuoi te lo dico io, scritto, prima ancora di vederci 🙂
+7. Audio · Come riconosci un pezzo vero
+Traccia da dire a voce, 30 o 40 secondi. Non leggerla: usala come scaletta.
+
+Ciao {Nome}, oggi ti dico come riconosci un pezzo d'oro fatto bene, che tu lo compri da me o da chiunque altro.
+
+Quattro cose da guardare:
+
+• la fonderia, cioè chi l'ha prodotto
+
+• la bustina sigillata con il certificato integro: non va mai aperta, perché è quella che rende il pezzo verificabile ovunque
+
+• il titolo e il seriale stampati sul pezzo
+
+• la fattura intestata a te, con dentro quel seriale
+
+Se manca una di queste, fatti delle domande. In ufficio te le faccio vedere una per una, con il pezzo in mano.
+8. Messaggio · Dove si tiene l'oro
+{Nome}, dopo "e se scende", la seconda domanda che mi fanno è: "e poi dove lo metto?" 🔐
+
+Le strade sono tre:
+
+• a casa, sapendo bene cosa copre e cosa non copre la tua assicurazione
+
+• in una cassetta di sicurezza
+
+• in un caveau, dove resta intestato a te ed è assicurato
+
+Non c'è una risposta giusta per tutti, dipende da quanto metti da parte e da come vivi. È una cosa che si decide insieme prima di comprare, non dopo, così non resti con un problema aperto 🙂
+9. Messaggio · Qualcosa che resta alla famiglia
+Ciao {Nome}, ti scrivo per un argomento a cui molti pensano senza dirlo: cosa resta ai figli 👨‍👩‍👧
+
+Una delle ragioni per cui tante famiglie tengono un po' d'oro è proprio questa. È un bene che si tocca, che non scade, che non dipende da una banca o da un contratto, e che si può lasciare.
+
+Come si organizza il passaggio, e cosa comporta, dipende dalla situazione di ognuno: è una cosa da guardare con calma, anche con il proprio fiscalista, prima che serva.
+
+Se è un tema che ti tocca, scrivimi e ne parliamo 🙂
+10. Domanda · Quando passi in ufficio
+{Nome}, ti volevo far vedere i pezzi di persona e capire insieme quale parte dei tuoi risparmi ha senso mettere al riparo. Quando passi venti minuti qui in ufficio a {città}? 🙂
 <<TRAINING FINE>>
 
 =====================================================================
@@ -1835,7 +2133,7 @@ TRAINING COMMERCIALI SETTIMANALI
 LEZIONI DAI TRAINING COMMERCIALI SETTIMANALI (call "Training Commerciale AEA" del mercoledi)
 Cosa si e' insegnato ai consulenti nelle call di gruppo, riscritto senza nomi di persone e senza numeri di nessuno.
 Ogni lezione ha la data della call da cui viene. Se una lezione contraddice un documento del training ufficiale, vale il documento.
-Call lette: 02/09/2026, 09/09/2026, 16/09/2026, 23/09/2026, 07/10/2026, 14/10/2026, 20/10/2026.
+Call lette: 02/09/2026, 09/09/2026, 16/09/2026, 23/09/2026, 07/10/2026, 14/10/2026, 20/10/2026, 27/10/2026.
 
 PRIMA CHIAMATA
 • Il lead e' tiepido: non ti conosce, ma ha alzato la mano. Lo scopo della prima chiamata non e' vendere, e' guadagnarti la sua fiducia e qualificarlo. (07/10)
@@ -1872,6 +2170,14 @@ PRIMA CHIAMATA
 • Prima di chiudere gioca tutte le carte che hai, col sorriso e anche con una battuta: insistere un po' con leggerezza non ti squalifica, fa parte del lavoro. Ti fermi se ti chiede di smettere. (20/10)
 • Chi e' in target ma non e' pronto entra nella tua lista di nominativi: invitalo agli eventi sul tema che gli interessa (per esempio la pensione) ricordandogli cosa ti aveva detto, e proponigli di portare un familiare. Non rimandare all'infinito per paura del no; chi chiaramente non ha capacita' si lascia andare con garbo. (20/10)
 • Se lo chiami subito dopo la richiesta spesso non ha letto la guida, se lo chiami tardi spesso non si ricorda: in tutti e due i casi non ti fermi, gestisci e vai avanti. (20/10)
+• Se ti scrive "volevo solo la guida, non una chiamata", non rispondere per iscritto e non lasciar perdere: chiamalo il giorno dopo con naturalezza e presenta la chiamata come un aiuto ad applicare la guida al suo caso ("volevo assicurarmi che fosse tutto chiaro e capire se ci sono le condizioni per darti una mano"). (27/10)
+• Se ti dice "la guida e' molto generica": e' giusto che lo sia, e' un quadro di partenza. Le soluzioni vere si costruiscono su misura per lui, ed e' proprio per questo che serve vedersi. (27/10)
+• Nella presentazione parla di "soluzioni personalizzate" piu' che di "investimenti", con parole che ti vengono naturali: deve suonare come te, non come una frase imparata. (27/10)
+• Contano i primi dieci secondi: un'apertura come "sono un consulente, ti volevo aiutare con la pensione" brucia la chiamata. Prima di chiamare riguarda lo schema e i punti dove dovrai ribattere. (27/10)
+• Per capire se decide da solo, gia' in prima chiamata: "se questi investimenti daranno risultati, ne beneficerai solo tu o anche un'altra persona?". Se c'e' un coniuge o un conto cointestato, proponi di vedervi gia' insieme: "nel rispetto del tempo di entrambi, cosi' non devi fare il telefono senza fili e riportargli cose che magari non erano chiare". (27/10)
+• Se senti interesse ma diffidenza a incontrare una persona trovata su internet, proponi prima una videochiamata per conoscervi e fargli vedere chi sei e per chi lavori, poi fissate l'incontro di persona. E' un ripiego, la regola resta l'appuntamento in ufficio. (27/10)
+• Chi fissa l'appuntamento da solo dal calendario va chiamato comunque prima dell'incontro, con la scusa di confermare: non aspettare che le cose arrivino da sole. (27/10)
+• La presenza all'appuntamento dipende da come hai fatto la chiamata: se hai strappato il si' per avere la soddisfazione di fissare, il giorno dopo trova un motivo per non venire. (27/10)
 
 DOPO LA CHIAMATA E FOLLOW UP
 • Nella conferma dell'appuntamento allega 2 o 3 screenshot di messaggi veri di tuoi clienti soddisfatti, col nome coperto. Funziona molto meglio del biglietto da visita e fa presentare molte piu' persone all'appuntamento. (02/09, 07/10)
@@ -1885,6 +2191,11 @@ DOPO LA CHIAMATA E FOLLOW UP
 • Dopo ogni contatto aggiorna stadio e note nel gestionale e le caselle del Foglio Lead: serve a te e serve al team per tarare le campagne. Se il lead e' lontano dalla tua zona, scrivilo nella nota. (07/10)
 • Canali in piu': una volta a settimana guarda su Instagram chi ha iniziato a seguirti e mandagli i due messaggi del doc Messaggi (apertura, poi un solo recupero). Cinque minuti a settimana, uno o due appuntamenti in piu' al mese. Vale anche per chi ti aggiunge su Facebook: messaggi standard del doc, poi un secondo messaggio uno o due giorni dopo. Chi mette solo mi piace all'annuncio senza lasciare i dati non si contatta. Se chi ti aggiunge sono soprattutto amici e parenti, dillo al team: e' un riscontro utile sulle campagne. (02/09, 23/09, 07/10, 20/10)
 • Ragiona come un archivio: i lead sono una lista profilata della tua zona, persone con patrimonio o interesse, non l'elenco telefonico. Accetta i no e passa al prossimo, ma tieni la lista viva con un ricontatto a una settimana e a un mese: il giorno che litiga col suo consulente, il tuo numero ce l'ha. (20/10)
+• Manda la conferma dell'appuntamento su WhatsApp, anche se mandi pure l'invito in calendario per mail: cosi' ha il tuo numero a portata di mano se deve avvisarti. (27/10)
+• Nel messaggio dopo la chiamata non mandare grafici di indici o portafogli che vanno bene: chi ha paura degli investimenti non li capisce, e chi ha sentito "mio cugino ha perso tutto con gli ETF" si ancora allo strumento e si brucia. Manda cosa dicono di te i tuoi clienti, e all'incontro parla di obiettivi e di progetto, gli strumenti vengono dopo. (27/10)
+• Chi non risponde: chiamalo anche due volte di seguito, poi lascia un audio WhatsApp breve e brillante (spesso lo ascolta per capire chi lo ha chiamato). Il giorno dopo un altro audio o messaggio: tanti rispondono dopo due o tre giorni. Segna nelle note l'ora in cui l'hai chiamato e la volta dopo prova un'altra fascia, tenendo come principale quella fra le 18:30 e le 19:30. (27/10)
+• Salva in rubrica ogni lead appena ti arriva: se ti richiama sai chi e', e con i numeri salvati in venti minuti chiami e mandi l'audio a tutta la lista. (27/10)
+• Chi ti dice che ha scaricato la guida per errore o non ha liquidita': lascia la porta aperta ("si segni il mio numero, se ha un'esigenza mi chiami") e ricontattalo fra due o tre settimane per sapere se e' cambiato qualcosa. Chi si rivela un collega curioso, segnalalo al team che ti segue. (27/10)
 
 SECONDO APPUNTAMENTO (ascolto)
 • Si apre dicendo "oggi non ti faccio nessuna proposta": abbassa le difese e ti distingue da chi parla a macchinetta. (23/09)
@@ -1914,6 +2225,8 @@ METODO
 • Allenati nel role play sui lead difficili, quelli che stanno zitti o ti mettono paletti: provare li' non costa niente, sbagliare la prima volta su un lead vero lo brucia. (14/10)
 • Registra le tue chiamate e portale al training per avere un riscontro. Fai le chiamate in sessione, anche mezz'ora insieme a chi ti segue: da solo, dopo tre no, ti scarichi. (20/10)
 • Il lavoro e' ripetitivo: ogni giorno le chiamate fatte bene, e il risultato si guarda sul totale del mese o del trimestre, non sul singolo contatto. (20/10)
+• Allenati sulla prima chiamata anche con l'assistente in modalita' simulazione: risponde come un lead vero, ti chiude il telefono se salti le domande o fai la domanda sbagliata troppo presto, e alla fine ti da' il riscontro fase per fase. Cosi' prendi la mano senza bruciare contatti veri. (27/10)
+• All'inizio e' normale che pochi rispondano: nessuno e' l'unico in quella condizione. Si continua il processo, e su una lista che cresce gli appuntamenti escono. (27/10)
 • Un lead geolocalizzato vede solo te, non dieci concorrenti: c'e' meno da convincere sul perche' scegliere te e piu' da curare nel processo. (09/09)
 <<AEA FINE>>
 
