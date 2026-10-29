@@ -2324,6 +2324,7 @@ I LEAD, COME SONO DAVVERO
 • Un costo per contatto che scende non e' per forza una buona notizia: se insieme aumentano i numeri falsi, il costo del contatto vero e' salito. Segna sempre nelle note chi e' falso: e' cosi' che il media buyer corregge.
 • Il passaggio dove si perde di piu' e' fra contatto qualificato e appuntamento presentato, non la chiusura finale. Quasi sempre il problema e' la chiamata (fatta tardi, fatta una volta sola, senza messaggio), non i lead.
 • La prima settimana decide tutto: velocita' (entro 5 minuti), qualifica prima di mettere l'appuntamento in agenda, appuntamento fissato subito in calendario, promemoria per evitare che non si presenti.
+• La maggior parte delle risposte arriva al primo messaggio automatico, e quasi tutte nella prima ora. Un messaggio scritto a mano ore dopo apre poche conversazioni: quando il lead risponde al primo messaggio, rispondigli e chiamalo subito, mentre ha ancora il telefono in mano.
 • Misura le tue azioni, non solo i risultati: quanti lead hai chiamato su quanti ne sono arrivati, e dopo quanti minuti. Sul risultato si puo' dare la colpa a qualcuno, sull'azione no.
 • Chi ricompila il modulo con lo stesso numero o la stessa mail non compare come lead nuovo in pipeline: il contatto si aggiorna ma resta allo stadio di prima. Cercalo per nome nel gestionale.
 • Chi scrive su WhatsApp direttamente dall'annuncio invece di compilare il modulo entra nel gestionale ma non nel Foglio Lead: va aggiunto a mano nel foglio, scrivendo nelle note che arriva da WhatsApp.
