@@ -513,13 +513,13 @@ No:
 * frasi che attaccano la banca o dichiarano "noi siamo diversi": si mostra il documento e la conclusione la tira lui
 * gergo tecnico come asset allocation, TER o benchmark
 
-=== DOCUMENTO: "Follow up lead fermi: 10 messaggi per i tuoi potenziali clienti" (cartella SCRIPT Vendita, CONSULENTE FINANZIARIO) ===
-Follow up lead fermi: 10 messaggi per i tuoi potenziali clienti
+=== DOCUMENTO: "Follow up lead fermi: 11 messaggi per i tuoi potenziali clienti" (cartella SCRIPT Vendita, CONSULENTE FINANZIARIO) ===
+Follow up lead fermi: 11 messaggi per i tuoi potenziali clienti
 Per i contatti che non hanno ancora fissato l'incontro, anche chi ha detto "ci penso" o ha smesso di rispondere.
 Come si usano
 • uno ogni 2 o 3 giorni, nell'ordine, alternando un messaggio che spiega e una domanda
 
-• i tre AUDIO (1, 4 e 7) si registrano con la tua voce su WhatsApp: il testo è la traccia, dillo con parole tue in 30 o 40 secondi, senza leggerlo
+• i tre AUDIO (1, 4 e 8) si registrano con la tua voce su WhatsApp: il testo è la traccia, dillo con parole tue in 30 o 40 secondi, senza leggerlo
 
 • sostituisci {Nome} e {città} prima di mandare
 
@@ -556,19 +556,23 @@ N.
 	Domanda
 	Il rendiconto dei costi
 	7
-	15
-	Audio
-	La pensione
+	14
+	Domanda
+	Hai abbandonato l'idea?
 	8
 	17
-	Messaggio
-	Un piano, non una collezione di prodotti
+	Audio
+	La pensione
 	9
 	19
 	Messaggio
-	Eredità e passaggio ai figli
+	Un piano, non una collezione di prodotti
 	10
-	22
+	21
+	Messaggio
+	Eredità e passaggio ai figli
+	11
+	24
 	Domanda
 	Quando ci vediamo
 	1. Audio · Come funziona farsi seguire
@@ -623,7 +627,10 @@ Quindi, se hai un orizzonte lungo, il mese brutto non è solo un mese brutto: è
 Non è una formula magica e non è adatto a tutti, ma è il motivo per cui chi investe con metodo vive i cali in modo molto diverso da chi guarda solo il saldo.
 6. Domanda · Il rendiconto dei costi
 {Nome}, ogni anno la banca ti manda per legge un rendiconto con i costi che paghi, scritti in euro. Ti è mai capitato di leggerlo? Se vuoi ti mostro dove si trova quel numero, poi decidi tu cosa farne 🙂
-7. Audio · La pensione
+7. Domanda · Hai abbandonato l'idea?
+Se non risponde, si va avanti col messaggio 8 come se niente fosse.
+{Nome}, hai abbandonato l'idea di sistemare i tuoi risparmi?
+8. Audio · La pensione
 Traccia da dire a voce, 30 o 40 secondi. Non leggerla: usala come scaletta.
 
 Ciao {Nome}, ti scrivo per un tema che di solito si rimanda: la pensione
@@ -635,7 +642,7 @@ Il punto è che questa differenza si può calcolare oggi, in euro al mese, parte
 Chi ci pensa a 45 anni ha tempo e scelta. Chi ci pensa a 60 ha meno tempo e meno strade.
 
 Se vuoi, lo facciamo insieme sui tuoi numeri: ti porti a casa la cifra e poi decidi tu
-8. Messaggio · Un piano, non una collezione di prodotti
+9. Messaggio · Un piano, non una collezione di prodotti
 {Nome}, una cosa che noto quando guardo i risparmi delle persone: spesso non c'è un piano, c'è una collezione di prodotti.
 
 Un fondo preso con un direttore, una polizza con quello dopo, un conto deposito aperto per una promozione. Ognuno aveva senso il giorno in cui è stato firmato, insieme non rispondono a nessuna domanda 🧩
@@ -649,7 +656,7 @@ Un piano parte al contrario: prima cosa ti serve e quando, poi gli strumenti. Di
 • i soldi per la pensione, che possono lavorare più a lungo
 
 Se ti va, guardiamo insieme in quale blocco sta oggi ogni cosa che hai 🙂
-9. Messaggio · Eredità e passaggio ai figli
+10. Messaggio · Eredità e passaggio ai figli
 Ciao {Nome}, ti scrivo per un argomento delicato che quasi nessuno affronta finché non serve: cosa succede ai risparmi quando passano ai figli o quando si riceve un'eredità 👨‍👩‍👧
 
 Le cose che vedo più spesso:
@@ -663,7 +670,7 @@ Le cose che vedo più spesso:
 Sono cose che si possono organizzare prima, con calma, così chi resta non deve improvvisare.
 
 Se è un tema che ti tocca, anche solo da vicino, scrivimi e ne parliamo 🙂
-10. Domanda · Quando ci vediamo
+11. Domanda · Quando ci vediamo
 {Nome}, ti volevo far vedere come imposterei il lavoro sui tuoi risparmi. Quando ci vediamo venti minuti, qui a {città} o in videochiamata? 🙂
 
 === DOCUMENTO: "Messaggi da mandare Followup manuali" (cartella SCRIPT Vendita, CONSULENTE FINANZIARIO) ===
@@ -1982,13 +1989,13 @@ Registra la call (col suo consenso) e caricala nella cartella Registrazioni: è 
 
 Nota compliance: mai promettere rivalutazioni o guadagni, il prezzo dell'oro può scendere. La differenza fra prezzo di acquisto e di riacquisto va sempre dichiarata. Identificazione del cliente, tracciabilità del pagamento, limiti all'uso del contante e dichiarazione delle operazioni sopra le soglie di legge sono obblighi: verifica con il tuo consulente quali si applicano a te e quali soglie sono in vigore.
 
-=== DOCUMENTO: "09 · Follow up lead fermi: 10 messaggi per i tuoi potenziali clienti" (cartella 02 · SCRIPT Vendita, PROMOTORE ORO FISICO) ===
-Follow up lead fermi: 10 messaggi per i tuoi potenziali clienti (oro fisico)
+=== DOCUMENTO: "09 · Follow up lead fermi: 11 messaggi per i tuoi potenziali clienti" (cartella 02 · SCRIPT Vendita, PROMOTORE ORO FISICO) ===
+Follow up lead fermi: 11 messaggi per i tuoi potenziali clienti (oro fisico)
 Per i contatti che non sono ancora passati in ufficio, anche chi ha detto "ci penso" o ha smesso di rispondere.
 Come si usano
 • uno ogni 2 o 3 giorni, nell'ordine, alternando un messaggio che spiega e una domanda
 
-• i tre AUDIO (1, 4 e 7) si registrano con la tua voce su WhatsApp: il testo è la traccia, dillo con parole tue in 30 o 40 secondi, senza leggerlo
+• i tre AUDIO (1, 4 e 8) si registrano con la tua voce su WhatsApp: il testo è la traccia, dillo con parole tue in 30 o 40 secondi, senza leggerlo
 
 • sostituisci {Nome} e {città} prima di mandare
 
@@ -2025,19 +2032,23 @@ N.
 	Domanda
 	A quanto te lo ricomprano
 	7
-	15
-	Audio
-	Come riconosci un pezzo vero
+	14
+	Domanda
+	Hai abbandonato l'idea?
 	8
 	17
-	Messaggio
-	Dove si tiene l'oro
+	Audio
+	Come riconosci un pezzo vero
 	9
 	19
 	Messaggio
-	Qualcosa che resta alla famiglia
+	Dove si tiene l'oro
 	10
-	22
+	21
+	Messaggio
+	Qualcosa che resta alla famiglia
+	11
+	24
 	Domanda
 	Quando passi in ufficio
 	1. Audio · Come funziona comprare oro da me
@@ -2088,7 +2099,10 @@ L'oro fisico invece è un pezzo con il suo seriale, sigillato, con la fattura in
 Se vuoi solo seguire il prezzo, la carta costa meno ed è onesto dirtelo. Se vuoi una parte dei risparmi che non dipenda da nessuno, la carta non te la dà.
 6. Domanda · A quanto te lo ricomprano
 {Nome}, una domanda che quasi nessuno fa prima di comprare oro: chi te lo vende, a quanto te lo ricompra il giorno che lo vuoi rivendere? Se vuoi te lo dico io, scritto, prima ancora di vederci 🙂
-7. Audio · Come riconosci un pezzo vero
+7. Domanda · Hai abbandonato l'idea?
+Se non risponde, si va avanti col messaggio 8 come se niente fosse.
+{Nome}, hai abbandonato l'idea di mettere al riparo una parte dei tuoi risparmi?
+8. Audio · Come riconosci un pezzo vero
 Traccia da dire a voce, 30 o 40 secondi. Non leggerla: usala come scaletta.
 
 Ciao {Nome}, oggi ti dico come riconosci un pezzo d'oro fatto bene, che tu lo compri da me o da chiunque altro.
@@ -2104,7 +2118,7 @@ Quattro cose da guardare:
 • la fattura intestata a te, con dentro quel seriale
 
 Se manca una di queste, fatti delle domande. In ufficio te le faccio vedere una per una, con il pezzo in mano.
-8. Messaggio · Dove si tiene l'oro
+9. Messaggio · Dove si tiene l'oro
 {Nome}, dopo "e se scende", la seconda domanda che mi fanno è: "e poi dove lo metto?" 🔐
 
 Le strade sono tre:
@@ -2116,7 +2130,7 @@ Le strade sono tre:
 • in un caveau, dove resta intestato a te ed è assicurato
 
 Non c'è una risposta giusta per tutti, dipende da quanto metti da parte e da come vivi. È una cosa che si decide insieme prima di comprare, non dopo, così non resti con un problema aperto 🙂
-9. Messaggio · Qualcosa che resta alla famiglia
+10. Messaggio · Qualcosa che resta alla famiglia
 Ciao {Nome}, ti scrivo per un argomento a cui molti pensano senza dirlo: cosa resta ai figli 👨‍👩‍👧
 
 Una delle ragioni per cui tante famiglie tengono un po' d'oro è proprio questa. È un bene che si tocca, che non scade, che non dipende da una banca o da un contratto, e che si può lasciare.
@@ -2124,7 +2138,7 @@ Una delle ragioni per cui tante famiglie tengono un po' d'oro è proprio questa.
 Come si organizza il passaggio, e cosa comporta, dipende dalla situazione di ognuno: è una cosa da guardare con calma, anche con il proprio fiscalista, prima che serva.
 
 Se è un tema che ti tocca, scrivimi e ne parliamo 🙂
-10. Domanda · Quando passi in ufficio
+11. Domanda · Quando passi in ufficio
 {Nome}, ti volevo far vedere i pezzi di persona e capire insieme quale parte dei tuoi risparmi ha senso mettere al riparo. Quando passi venti minuti qui in ufficio a {città}? 🙂
 <<TRAINING FINE>>
 
