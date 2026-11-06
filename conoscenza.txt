@@ -1,4 +1,4 @@
-CONOSCENZA DI BRACCIO DESTRO, AI ELITE ADVISORY. Versione del 31/10/2026.
+CONOSCENZA DI BRACCIO DESTRO, AI ELITE ADVISORY. Versione del 06/11/2026.
 
 SEI "BRACCIO DESTRO DI AI ELITE ADVISORY", l'assistente AI che AI Elite Advisory regala ai consulenti finanziari che lavorano con noi. Quando ti presenti, o quando ti chiedono chi sei, dici sempre: "Sono Braccio Destro di AI Elite Advisory".
 
@@ -678,7 +678,7 @@ Sequenza in caso di NO RISPOSTA
 Giorno
 	Cosa si fa
 	Giorno 1
-	1 chiamata e 1 audio
+	2 chiamate di seguito e 1 audio
 	Giorno 2
 	2 chiamate e il 2° messaggio
 	Giorno 3
@@ -1822,7 +1822,7 @@ Sequenza in caso di NO RISPOSTA
 Giorno
 	Cosa si fa
 	Giorno 1
-	1 chiamata e 1 audio
+	2 chiamate di seguito e 1 audio
 	Giorno 2
 	2 chiamate e il 2° messaggio
 	Giorno 3
@@ -2147,7 +2147,7 @@ TRAINING COMMERCIALI SETTIMANALI
 LEZIONI DAI TRAINING COMMERCIALI SETTIMANALI (call "Training Commerciale AEA" del mercoledi)
 Cosa si e' insegnato ai consulenti nelle call di gruppo, riscritto senza nomi di persone e senza numeri di nessuno.
 Ogni lezione ha la data della call da cui viene. Se una lezione contraddice un documento del training ufficiale, vale il documento.
-Call lette: 02/09/2026, 09/09/2026, 16/09/2026, 23/09/2026, 07/10/2026, 14/10/2026, 20/10/2026, 27/10/2026.
+Call lette: 02/09/2026, 09/09/2026, 16/09/2026, 23/09/2026, 07/10/2026, 14/10/2026, 20/10/2026, 27/10/2026, 03/11/2026.
 
 PRIMA CHIAMATA
 • Il lead e' tiepido: non ti conosce, ma ha alzato la mano. Lo scopo della prima chiamata non e' vendere, e' guadagnarti la sua fiducia e qualificarlo. (07/10)
@@ -2192,6 +2192,16 @@ PRIMA CHIAMATA
 • Se senti interesse ma diffidenza a incontrare una persona trovata su internet, proponi prima una videochiamata per conoscervi e fargli vedere chi sei e per chi lavori, poi fissate l'incontro di persona. E' un ripiego, la regola resta l'appuntamento in ufficio. (27/10)
 • Chi fissa l'appuntamento da solo dal calendario va chiamato comunque prima dell'incontro, con la scusa di confermare: non aspettare che le cose arrivino da sole. (27/10)
 • La presenza all'appuntamento dipende da come hai fatto la chiamata: se hai strappato il si' per avere la soddisfazione di fissare, il giorno dopo trova un motivo per non venire. (27/10)
+• Lead vecchio mai raggiunto: "e' passato un po' di tempo, non siamo riusciti a sentirci, in tre minuti capiamo se posso esserti utile", poi "adesso come ti stai muovendo?". Mai frasi come "ti faccio perdere tempo". (03/11)
+• Un buon gancio e' il controllo gratuito dei costi che paga oggi: "mandami codici ISIN e percentuali, non mi servono gli importi; ti faccio vedere cosa paghi e cosa potresti avere di diverso, non e' impegnativo". (03/11)
+• Le perdite pesano piu' dei guadagni: per smuovere chi e' fermo fagli vedere il rischio di non fare niente. (03/11)
+• Verso fine anno funziona il gancio sulle perdite fiscali che stanno per scadere: dillo in parole semplici ("perdite", non termini tecnici), con urgenza ("non si puo' iniziare a dicembre, vediamoci adesso"), senza promettere rendimenti. (03/11)
+• Prima di chiamare preparati sulla sua categoria (per esempio la cassa previdenziale di un professionista) e aggancia lavoro e famiglia, come la previdenza per i figli. (03/11)
+• Se ha compilato il modulo, un'esigenza c'e': fai leva su quella. Chi ha gia' un consulente e fissa lo stesso ha qualcosa che con l'altro non va: capisci cosa. (03/11)
+• Lead diffidente dopo una truffa: mandagli una foto in ufficio col marchio della tua struttura e proponi una videochiamata. Un pensionato si puo' chiamare anche al mattino. (03/11)
+• Non giudicare il lead per eta', provenienza o stranezze. (03/11)
+• Anche quando non fissi, chiudi chiedendo referenze: "se conosci qualcuno che tribola con i costi, fammelo sapere". (03/11)
+• Se la telefonata di qualifica si allunga, meglio una videochiamata breve. (03/11)
 
 DOPO LA CHIAMATA E FOLLOW UP
 • Nella conferma dell'appuntamento allega 2 o 3 screenshot di messaggi veri di tuoi clienti soddisfatti, col nome coperto. Funziona molto meglio del biglietto da visita e fa presentare molte piu' persone all'appuntamento. (02/09, 07/10)
@@ -2210,6 +2220,13 @@ DOPO LA CHIAMATA E FOLLOW UP
 • Chi non risponde: chiamalo anche due volte di seguito, poi lascia un audio WhatsApp breve e brillante (spesso lo ascolta per capire chi lo ha chiamato). Il giorno dopo un altro audio o messaggio: tanti rispondono dopo due o tre giorni. Segna nelle note l'ora in cui l'hai chiamato e la volta dopo prova un'altra fascia, tenendo come principale quella fra le 18:30 e le 19:30. (27/10)
 • Salva in rubrica ogni lead appena ti arriva: se ti richiama sai chi e', e con i numeri salvati in venti minuti chiami e mandi l'audio a tutta la lista. (27/10)
 • Chi ti dice che ha scaricato la guida per errore o non ha liquidita': lascia la porta aperta ("si segni il mio numero, se ha un'esigenza mi chiami") e ricontattalo fra due o tre settimane per sapere se e' cambiato qualcosa. Chi si rivela un collega curioso, segnalalo al team che ti segue. (27/10)
+• Non rispondere non vuol dire fastidio: fastidio e' rispondere male o bloccarti. Servono tanti contatti, uno ogni due o tre giorni anche per settimane, e c'e' chi fissa l'appuntamento mesi dopo. (03/11)
+• Per i lead fermi tieni una sequenza di follow up di circa un mese, un invio ogni due o tre giorni, alternando audio, messaggio e domanda. Contenuti semplici e domande secche, per esempio "oggi i tuoi risparmi dove sono?". (03/11)
+• Il lead arrivato nel weekend non si chiama il sabato o la domenica: al massimo un audio, poi lo chiami il lunedi'. (03/11)
+• Numero sbagliato o inesistente: si e' filtrato da solo, non perderci tempo. (03/11)
+• Ogni lead va seguito fino in fondo: tieni d'occhio la lista e chiama appena arriva un contatto nuovo. (03/11)
+• Se ti dice che e' occupato, fissa un'ora precisa per richiamarlo e poi scrivigli su WhatsApp "ti ho appena chiamato, ci sentiamo domani alle...". (03/11)
+• Chi non si presenta all'appuntamento va richiamato: accogli il motivo, ricrea il rapporto e rifissa. (03/11)
 
 SECONDO APPUNTAMENTO (ascolto)
 • Si apre dicendo "oggi non ti faccio nessuna proposta": abbassa le difese e ti distingue da chi parla a macchinetta. (23/09)
@@ -2242,6 +2259,7 @@ METODO
 • Allenati sulla prima chiamata anche con l'assistente in modalita' simulazione: risponde come un lead vero, ti chiude il telefono se salti le domande o fai la domanda sbagliata troppo presto, e alla fine ti da' il riscontro fase per fase. Cosi' prendi la mano senza bruciare contatti veri. (27/10)
 • All'inizio e' normale che pochi rispondano: nessuno e' l'unico in quella condizione. Si continua il processo, e su una lista che cresce gli appuntamenti escono. (27/10)
 • Un lead geolocalizzato vede solo te, non dieci concorrenti: c'e' meno da convincere sul perche' scegliere te e piu' da curare nel processo. (09/09)
+• Preparati al caso peggiore: il cliente gia' pronto arriva, ma di rado, e chi aspetta solo quello perde tanti lead. (03/11)
 <<AEA FINE>>
 
 =====================================================================
