@@ -2149,7 +2149,7 @@ TRAINING COMMERCIALI SETTIMANALI
 LEZIONI DAI TRAINING COMMERCIALI SETTIMANALI (call "Training Commerciale AEA" del mercoledi)
 Cosa si e' insegnato ai consulenti nelle call di gruppo, riscritto senza nomi di persone e senza numeri di nessuno.
 Ogni lezione ha la data della call da cui viene. Se una lezione contraddice un documento del training ufficiale, vale il documento.
-Call lette: 02/09/2026, 09/09/2026, 16/09/2026, 23/09/2026, 07/10/2026, 14/10/2026, 20/10/2026, 27/10/2026, 03/11/2026.
+Call lette: 02/09/2026, 09/09/2026, 16/09/2026, 23/09/2026, 07/10/2026, 14/10/2026, 20/10/2026, 27/10/2026, 03/11/2026, 10/11/2026.
 
 PRIMA CHIAMATA
 • Il lead e' tiepido: non ti conosce, ma ha alzato la mano. Lo scopo della prima chiamata non e' vendere, e' guadagnarti la sua fiducia e qualificarlo. (07/10)
@@ -2204,6 +2204,13 @@ PRIMA CHIAMATA
 • Non giudicare il lead per eta', provenienza o stranezze. (03/11)
 • Anche quando non fissi, chiudi chiedendo referenze: "se conosci qualcuno che tribola con i costi, fammelo sapere". (03/11)
 • Se la telefonata di qualifica si allunga, meglio una videochiamata breve. (03/11)
+• Apertura corta: il suo nome e "tempo fa hai scaricato la guida su pensione e risparmi, ti ricordi?", poi subito un riscontro. Se l'annuncio non mostrava il nome della banca, non dirlo in apertura: il lead non lo collega al clic e la chiamata si incarta. (10/11)
+• I primi secondi decidono: tono simpatico e leggero, non troppo professionale, per vincere la diffidenza iniziale. (10/11)
+• Se non si ricorda, fagli un breve recap su chi sei e cosa fai: dopo pochi secondi spesso la guida gli torna in mente. (10/11)
+• Domanda che porta all'appuntamento: "cosa vorresti che preparassi per quando ci vediamo?". Aggancia la sua preoccupazione (per esempio la pensione bassa di commercianti e artigiani) e poi proponi un giorno preciso. (10/11)
+• Chi vuole "solo informazioni" o teme di essere agganciato: "la prima volta che incontro una persona non le vendo niente". Se resiste, vai incontro a meta' strada: chiedigli tre o quattro punti che gli interessano, mandagli un messaggio e richiamalo fra una settimana con un'idea specifica sul suo caso. Troppa pressione fa perdere anche un lead buono. (10/11)
+• Vivi le chiamate come un gioco: il caso peggiore e' che mettano giu'. (10/11)
+• Lead lontano: verifica la zona e digli dov'e' il tuo ufficio. (10/11)
 
 DOPO LA CHIAMATA E FOLLOW UP
 • Nella conferma dell'appuntamento allega 2 o 3 screenshot di messaggi veri di tuoi clienti soddisfatti, col nome coperto. Funziona molto meglio del biglietto da visita e fa presentare molte piu' persone all'appuntamento. (02/09, 07/10)
@@ -2229,6 +2236,11 @@ DOPO LA CHIAMATA E FOLLOW UP
 • Ogni lead va seguito fino in fondo: tieni d'occhio la lista e chiama appena arriva un contatto nuovo. (03/11)
 • Se ti dice che e' occupato, fissa un'ora precisa per richiamarlo e poi scrivigli su WhatsApp "ti ho appena chiamato, ci sentiamo domani alle...". (03/11)
 • Chi non si presenta all'appuntamento va richiamato: accogli il motivo, ricrea il rapporto e rifissa. (03/11)
+• Spesso risponde al terzo follow up: non mollare. Con una referenza (l'amico di un amico) dosa l'insistenza. (10/11)
+• Chi ti chiede di non chiamarlo piu' o ti blocca va segnato Non in target e non si richiama: insistere e' anche un rischio legale. (10/11)
+• Numero falso, come ultima spiaggia: cerca il nome anche su Instagram o LinkedIn; su Facebook il nome puo' essere diverso (un soprannome, il profilo di un familiare). (10/11)
+• Chi ti ha detto si' ma deve ancora aprire il conto non va lasciato li': dagli l'ultima spinta con un messaggio o una chiamata legati a una scadenza vera. (10/11)
+• Segna sempre appuntamenti e fatturato nel modulo: serve a capire quale annuncio porta clienti, altrimenti si rischia di spegnere campagne che funzionano. (10/11)
 
 SECONDO APPUNTAMENTO (ascolto)
 • Si apre dicendo "oggi non ti faccio nessuna proposta": abbassa le difese e ti distingue da chi parla a macchinetta. (23/09)
