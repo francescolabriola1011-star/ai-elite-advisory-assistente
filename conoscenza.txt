@@ -1,4 +1,4 @@
-CONOSCENZA DI BRACCIO DESTRO, AI ELITE ADVISORY. Versione del 12/11/2026.
+CONOSCENZA DI BRACCIO DESTRO, AI ELITE ADVISORY. Versione del 19/11/2026.
 
 SEI "BRACCIO DESTRO DI AI ELITE ADVISORY", l'assistente AI che AI Elite Advisory regala ai consulenti finanziari che lavorano con noi. Quando ti presenti, o quando ti chiedono chi sei, dici sempre: "Sono Braccio Destro di AI Elite Advisory".
 
@@ -90,6 +90,7 @@ REGOLE DEL CSM CHE IL CONSULENTE DEVE CONOSCERE
 =====================================================================
 • Aspettative giuste: per un cambiamento vero ci vuole un anno. La mappa e' in tre tappe: prima le campagne, poi i contenuti (Social Planner), poi le referenze dei clienti gia' presi.
 • I lead non arrivano con un avviso garantito: il gestionale si apre ogni mattina.
+• I tre messaggi automatici al lead: il primo parte appena lascia i dati, a qualsiasi ora; il secondo verso le 9 del mattino dopo, il terzo verso le 9 del giorno dopo ancora. Di notte non riceve altro.
 • I canali sono tre e si usano tutti: i contatti delle campagne, quelli che arrivano da soli, i messaggi che scrive lui su Instagram ai nuovi follower (messaggio di benvenuto e due follow up, come da script).
 • Impegno di partenza: il primo appuntamento presentato entro 14 giorni dall'avvio delle campagne.
 • Ogni giovedi entro sera si compilano le caselle del Foglio Lead e gli appuntamenti e le chiusure del Modulo Fatturato. Dopo ogni appuntamento si spunta l'esito: Fatto se si e' presentato, Saltato se non si e' presentato, Chiuso se e' diventato cliente. Senza esito spuntato l'appuntamento non si conta, e senza appuntamenti contati la garanzia non si puo' verificare.
@@ -160,51 +161,51 @@ Checklist obbligatoria prima dell'onboarding,,,
 
 === DOCUMENTO: "01 · START HERE — Onboarding CF e primi 30 giorni" (cartella Onboarding, CONSULENTE FINANZIARIO) ===
 START HERE · Clienti10X per consulenti finanziari
-Leggi questo documento prima dell’onboarding. Qui trovi cosa preparare, come lavorare i lead e cosa succede nel primo mese. Aggiornato al 19/09/2026.
+Leggi questo documento prima dell’onboarding. Qui trovi cosa preparare, come lavorare i lead e cosa succede nel primo mese.
 
 1. IL RISULTATO CHE COSTRUIAMO
 Le campagne servono a portare nel tuo studio persone della tua zona con almeno 100.000 euro già disponibili da investire o riallocare.
 
-Il percorso è locale e si conclude con un incontro in presenza. Il nostro compito è generare e seguire la macchina di acquisizione. Il tuo compito è chiamare rapidamente, qualificare bene, fissare l’incontro, svolgerlo in studio e aggiornare il gestionale.
+Il percorso è locale e si conclude con un incontro in presenza. Il nostro compito è costruire e seguire la macchina di acquisizione. Il tuo compito è chiamare rapidamente, qualificare bene, fissare l’incontro, svolgerlo in studio e aggiornare il gestionale.
 
 2. PRIMA DELL’ONBOARDING
 Completa tutti questi punti prima di prenotare la call.
 
-☐ Compila per intero il questionario di onboarding.
-☐ Apri la cartella Drive e leggi questo documento.
-☐ Apri il Business Manager e concedi gli accessi richiesti.
-☐ Assicurati di avere accesso al gestionale.
-☐ Prepara il numero WhatsApp Business da collegare.
-☐ Prepara il calendario con gli orari disponibili per gli incontri in studio.
-☐ Carica logo, foto professionali e dati aziendali richiesti.
-☐ Guarda i video: Business Manager, Meta, WhatsApp, gestionale e calendario.
-☐ Leggi almeno Script 1 e Script 2 nella cartella SCRIPT Vendita.
+* Compila per intero il questionario di onboarding.
+* Apri la cartella Drive e leggi questo documento.
+* Apri il Business Manager e concedi gli accessi richiesti.
+* Assicurati di avere accesso al gestionale.
+* Prepara il numero WhatsApp Business da collegare.
+* Prepara il calendario con gli orari disponibili per gli incontri in studio.
+* Carica logo, foto professionali e dati aziendali richiesti.
+* Guarda i video: Business Manager, Meta, WhatsApp, gestionale e calendario.
+* Leggi almeno Script 1 e Script 2 nella cartella SCRIPT Vendita.
 
 Se manca un punto, l’onboarding viene riprogrammato. La call serve a configurare e provare il sistema, non a recuperare accessi mancanti.
 
 3. DURANTE L’ONBOARDING
 Durante la call aprirai direttamente gli strumenti insieme al CSM.
 
-☐ Cartella Drive e materiali.
-☐ Gestionale e pipeline.
-☐ Business Manager e collegamento Meta.
-☐ WhatsApp Business.
-☐ Calendario e disponibilità per gli incontri in presenza.
-☐ Foglio Lead.
-☐ Script commerciale.
-☐ Modalità di registrazione e caricamento delle call.
-☐ Materiali e video da consegnare.
+* Cartella Drive e materiali.
+* Gestionale e pipeline.
+* Business Manager e collegamento Meta.
+* WhatsApp Business.
+* Calendario e disponibilità per gli incontri in presenza.
+* Foglio Lead.
+* Script commerciale.
+* Modalità di registrazione e caricamento delle call.
+* Materiali e video da consegnare.
 
 La call si chiude con un riepilogo scritto: cosa fai tu, cosa facciamo noi e la data di ogni consegna.
 
 4. CHI STIAMO CERCANDO
 Il lead corretto:
 
-☐ Vive o lavora nella zona coperta dalla campagna.
-☐ Ha almeno 100.000 euro disponibili da investire o riallocare.
-☐ Ha un’esigenza reale di gestione, protezione o riorganizzazione del patrimonio.
-☐ È disponibile a venire nel tuo studio.
-☐ Comprende che l’incontro serve a fare un’analisi, non a ricevere una promessa di rendimento.
+* Vive o lavora nella zona coperta dalla campagna.
+* Ha almeno 100.000 euro disponibili da investire o riallocare.
+* Ha un’esigenza reale di gestione, protezione o riorganizzazione del patrimonio.
+* È disponibile a venire nel tuo studio.
+* Comprende che l’incontro serve a fare un’analisi, non a ricevere una promessa di rendimento.
 
 Non trasformare la prima telefonata in una consulenza completa. Serve a verificare requisiti e fissare l’incontro.
 
@@ -225,59 +226,59 @@ Presenta una proposta coerente con ciò che è emerso. Spiega costi, rischi e co
 Uscita: decisione, documentazione e aggiornamento del gestionale.
 
 6. COME LAVORARE OGNI LEAD
-☐ Chiama subito.
-☐ Se non risponde, invia il primo messaggio e pianifica il richiamo.
-☐ Usa i follow up previsti su giorni e orari diversi.
-☐ Sposta il lead nello stadio corretto.
-☐ Scrivi sempre una nota con esito e prossimo passo.
-☐ Quando fissi l’incontro, inseriscilo nel calendario.
-☐ Conferma indirizzo, giorno e ora.
-☐ Aggiorna il gestionale dopo ogni contatto e dopo ogni incontro.
-☐ Non tenere note separate su carta o chat private.
+* Chiama subito.
+* Se non risponde, invia il primo messaggio e pianifica il richiamo.
+* Usa i follow up previsti su giorni e orari diversi.
+* Sposta il lead nello stadio corretto.
+* Scrivi sempre una nota con esito e prossimo passo.
+* Quando fissi l’incontro, inseriscilo nel calendario.
+* Conferma indirizzo, giorno e ora.
+* Aggiorna il gestionale dopo ogni contatto e dopo ogni incontro.
+* Non tenere note separate su carta o chat private.
 
 Nessun lead può restare senza stadio, nota e prossima azione.
 
 7. GUIDA, CALENDARIO E MESSAGGI
 La guida da inviare ai lead è fornita da noi. Non devi crearla.
 
-☐ Usa solo il link presente nel gestionale e nei messaggi ufficiali.
-☐ Apri il link prima di inviarlo.
-☐ Il calendario deve mostrare slot per incontri in presenza.
-☐ Il link al calendario è presente nella pagina finale del modulo e nei messaggi di follow up.
-☐ Non modificare testi, guida o link senza avvisare il CSM.
+* Usa solo il link presente nel gestionale e nei messaggi ufficiali.
+* Apri il link prima di inviarlo.
+* Il calendario deve mostrare slot per incontri in presenza.
+* Il link al calendario è presente nella pagina finale del modulo e nei messaggi di follow up.
+* Non modificare testi, guida o link senza avvisare il CSM.
 
 8. VIDEO E MATERIALI DA CARICARE
 Dopo l’onboarding riceverai gli script da registrare.
 
-☐ Registra un file separato per ogni script.
-☐ Carica i file originali, senza montaggio.
-☐ Usa la cartella Contenuti da registrare.
-☐ Nomina ogni file con tema e data.
-☐ Avvisa il CSM quando il caricamento è completo.
-☐ Non inviare file compressi su WhatsApp se puoi caricare l’originale su Drive.
+* Registra un file separato per ogni script.
+* Carica i file originali, senza montaggio.
+* Usa la cartella Contenuti da registrare.
+* Nomina ogni file con tema e data.
+* Avvisa il CSM quando il caricamento è completo.
+* Non inviare file compressi su WhatsApp se puoi caricare l’originale su Drive.
 
 Il CSM controllerà che i file siano arrivati e ti dirà se serve rifare qualcosa.
 
 9. COMUNICAZIONE CON IL TEAM
 Il CSM è il tuo referente operativo.
 
-☐ Scrivi nel gruppo WhatsApp, non in chat separate.
-☐ Segnala subito problemi con lead, gestionale, calendario o messaggi.
-☐ Quando segnali un lead, indica nome ed esito.
-☐ Riceverai un aggiornamento almeno il lunedì e il venerdì.
-☐ Nel primo mese gli aggiornamenti possono essere più frequenti.
-☐ Le condizioni commerciali e le garanzie valide sono solo quelle del contratto firmato.
+* Scrivi nel gruppo WhatsApp, non in chat separate.
+* Segnala subito problemi con lead, gestionale, calendario o messaggi.
+* Quando segnali un lead, indica nome ed esito.
+* Riceverai un aggiornamento almeno il lunedì e il venerdì.
+* Nel primo mese gli aggiornamenti possono essere più frequenti.
+* Le condizioni commerciali e le garanzie valide sono solo quelle del contratto firmato.
 
 10. CONTROLLO SETTIMANALE
 Ogni settimana:
 
-☐ Verifica che tutti i lead siano lavorati.
-☐ Controlla incontri fissati e incontri presentati.
-☐ Completa note e stati mancanti.
-☐ Carica le registrazioni richieste.
-☐ Condividi qualità dei lead con esempi concreti.
-☐ Partecipa al training commerciale.
-☐ Concorda con il CSM una sola priorità di miglioramento.
+* Verifica che tutti i lead siano lavorati.
+* Controlla incontri fissati e incontri presentati.
+* Completa note e stati mancanti.
+* Carica le registrazioni richieste.
+* Condividi qualità dei lead con esempi concreti.
+* Partecipa al training commerciale.
+* Concorda con il CSM una sola priorità di miglioramento.
 
 11. I PRIMI 30 GIORNI
 Prima settimana: accessi, collegamenti, campagna e primi lead.
@@ -304,28 +305,27 @@ Registrazioni Call e Appuntamenti: call da ascoltare e migliorare.
 Modulo Fatturato: vendite concluse e importi reali.
 
 13. REGOLE FINALI
-☐ Tutti i lead vivono nel gestionale.
-☐ Tutti gli incontri sono in presenza salvo accordo diverso scritto.
-☐ Il target CF parte da almeno 100.000 euro disponibili.
-☐ Nessuna promessa di rendimento.
-☐ Nessuna garanzia diversa dal contratto.
-☐ Nessun problema resta taciuto fino al report mensile.
+* Tutti i lead vivono nel gestionale.
+* Tutti gli incontri sono in presenza salvo accordo diverso scritto.
+* Il target CF parte da almeno 100.000 euro disponibili.
+* Nessuna promessa di rendimento.
+* Nessuna garanzia diversa dal contratto.
+* Nessun problema resta taciuto fino al report mensile.
 
 Benvenuto. Parti dal punto 2 e completa la checklist prima dell’onboarding.
-.
 
 === DOCUMENTO: "02 · Come usare guida, calendario e follow up" (cartella Onboarding, CONSULENTE FINANZIARIO) ===
 COME USARE LA GUIDA, IL CALENDARIO E I FOLLOW UP
-I materiali sono già pronti. Questo documento spiega come usarli senza rompere la catena fra annuncio, modulo, messaggi e incontro in studio. Aggiornato al 19/09/2026.
+I materiali sono già pronti. Questo documento spiega come usarli senza rompere la catena fra annuncio, modulo, messaggi e incontro in studio.
 
 1. LA GUIDA NON DEVI CREARLA TU
 AI Elite Advisory fornisce la guida del verticale con un link già verificato.
 
-☐ Non modificare il PDF.
-☐ Non creare una guida alternativa.
-☐ Non sostituire il link nei messaggi.
-☐ Se il link non si apre, avvisa subito il CSM.
-☐ Usa solo la versione presente nel gestionale e nel gruppo ufficiale.
+* Non modificare il PDF.
+* Non creare una guida alternativa.
+* Non sostituire il link nei messaggi.
+* Se il link non si apre, avvisa subito il CSM.
+* Usa solo la versione presente nel gestionale e nel gruppo ufficiale.
 
 2. A COSA SERVE
 La guida prepara la persona prima dell’incontro. Deve farle capire che la conversazione riguarda capitale già disponibile, obiettivi reali e una consulenza in presenza.
@@ -333,52 +333,51 @@ La guida prepara la persona prima dell’incontro. Deve farle capire che la conv
 Non serve a promettere un rendimento e non sostituisce l’analisi in studio.
 
 3. QUANDO INVIARLA
-☐ Dopo il primo contatto, quando il lead è in target.
-☐ Dopo avere fissato l’incontro, insieme alla conferma.
-☐ Nel follow up, quando serve dare valore invece di inviare un semplice sollecito.
-☐ Mai al posto della telefonata.
+* Dopo il primo contatto, quando il lead è in target.
+* Dopo avere fissato l’incontro, insieme alla conferma.
+* Nel follow up, quando serve dare valore invece di inviare un semplice sollecito.
+* Mai al posto della telefonata.
 
 4. IL CALENDARIO
 Il calendario deve contenere solo orari che puoi rispettare.
 
-☐ Gli slot sono per incontri in presenza.
-☐ Ogni slot ha durata, indirizzo e istruzioni corretti.
-☐ Il link va aperto da telefono prima del lancio.
-☐ Se cambi orari o sede, avvisa il CSM e fai aggiornare modulo e automazioni.
-☐ Non creare un secondo calendario senza coordinarti col team.
+* Gli slot sono per incontri in presenza.
+* Ogni slot ha durata, indirizzo e istruzioni corretti.
+* Il link va aperto da telefono prima del lancio.
+* Se cambi orari o sede, avvisa il CSM e fai aggiornare modulo e automazioni.
+* Non creare un secondo calendario senza coordinarti col team.
 
 5. MESSAGGI 2 E 3
 Il messaggio 2 e il messaggio 3 contengono il link al calendario.
 
-☐ Non cancellare il link.
-☐ Non sostituirlo con un numero di telefono.
-☐ Controlla che porti alla tua agenda.
-☐ Le automazioni aiutano, ma i richiami restano responsabilità tua.
-☐ Se il lead prenota, conferma personalmente l’incontro.
+* Non cancellare il link.
+* Non sostituirlo con un numero di telefono.
+* Controlla che porti alla tua agenda.
+* Le automazioni aiutano, ma i richiami restano responsabilità tua.
+* Se il lead prenota, conferma personalmente l’incontro.
 
 6. PRIMA DELL’INCONTRO
-☐ Invia conferma con data, ora e indirizzo.
-☐ Invia la guida o il contenuto previsto.
-☐ Invia il promemoria previsto.
-☐ Controlla che il lead abbia ricevuto i messaggi.
-☐ Aggiorna il gestionale.
+* Invia conferma con data, ora e indirizzo.
+* Invia la guida o il contenuto previsto.
+* Invia il promemoria previsto.
+* Controlla che il lead abbia ricevuto i messaggi.
+* Aggiorna il gestionale.
 
 7. DOPO L’INCONTRO
-☐ Registra presentato, assente o riprogrammato.
-☐ Scrivi una nota con esito e prossimo passo.
-☐ Se il lead è interessato, fissa subito il passo successivo.
-☐ Se non si presenta, ricontattalo subito.
-☐ Se chiude, aggiorna gestionale e Modulo Fatturato.
+* Registra presentato, assente o riprogrammato.
+* Scrivi una nota con esito e prossimo passo.
+* Se il lead è interessato, fissa subito il passo successivo.
+* Se non si presenta, ricontattalo subito.
+* Se chiude, aggiorna gestionale e Modulo Fatturato.
 
 8. REGOLA CF
 Il lead corretto ha almeno 100.000 euro disponibili da investire o riallocare ed è disponibile a incontrarti in studio.
 
 La guida, il calendario e i messaggi servono a portare questa persona all’incontro. Se uno dei tre racconta una cosa diversa, avvisa il CSM prima di usare il materiale.
-.
 
 === DOCUMENTO: "03 · Questionario Marketing (compilalo prima della call)" (cartella Onboarding, CONSULENTE FINANZIARIO) ===
 Questionario Marketing
-Compilalo prima della call di onboarding. Senza questionario non sappiamo cosa scrivere nelle tue pubblicita'.
+Compilalo prima della call di onboarding. Senza questionario non sappiamo cosa scrivere nelle tue pubblicità.
 Rispondi a tutte le domande, con calma.
 → CLICCA QUI PER COMPILARE IL QUESTIONARIO
 Quando hai finito, spunta il passo 2 nel foglio "00 · CHECKLIST OBBLIGATORIA".
@@ -393,49 +392,37 @@ Chiamata e messaggio sono un'azione sola, non due azioni separate. Una chiamata 
 
 Vale se risponde e vale se non risponde. Vale al primo contatto, al quinto follow up e con chi hai già visto in appuntamento e deve ancora decidere.
 2. PERCHÉ
-• Tante persone non si accorgono nemmeno di essere state chiamate. • Chi vede un numero che non conosce pensa a un call center e non richiama. • Il messaggio dice chi sei e perché l'hai cercato: trasforma una chiamata persa in una conversazione aperta. • Non puoi sapere quando una persona è pronta. Per questo segui tutti con lo stesso metodo, senza improvvisare, finché non arriva una risposta.
+* Tante persone non si accorgono nemmeno di essere state chiamate.
+* Chi vede un numero che non conosce pensa a un call center e non richiama.
+* Il messaggio dice chi sei e perché l'hai cercato: trasforma una chiamata persa in una conversazione aperta.
+* Non puoi sapere quando una persona è pronta. Per questo segui tutti con lo stesso metodo, senza improvvisare, finché non arriva una risposta.
 
 Funziona sui numeri, non sul singolo caso. Capita spesso che una persona sparisca dopo il primo messaggio e due follow up, poi risponda a un messaggio con solo il suo nome: "Marco?"
 3. COSA SCRIVERE, FASE PER FASE
 Primo contatto (contatto nuovo arrivato dalla campagna)
-
-☐ Chiami.
-
-☐ Mandi il messaggio previsto dal doc "Messaggi da mandare Followup manuali", nella cartella SCRIPT Vendita.
-
-☐ Segui la sequenza del doc nell'ordine: audio, messaggio dopo la call senza risposta, poi i follow up.
-
+* Chiami.
+* Mandi il messaggio previsto dal doc "Messaggi da mandare Followup manuali", nella cartella SCRIPT Vendita.
+* Segui la sequenza del doc nell'ordine: audio, messaggio dopo la call senza risposta, poi i follow up.
 Follow up di chi hai già sentito o visto in appuntamento
-
-☐ Chiami.
-
-☐ Mandi comunque il WhatsApp, anche se ti conosce già.
-
-☐ Messaggio breve: l'hai appena cercato e gli chiedi quando potete risentirvi.
-
+* Chiami.
+* Mandi comunque il WhatsApp, anche se ti conosce già.
+* Messaggio breve: l'hai appena cercato e gli chiedi quando potete risentirvi.
 Contatto che ha smesso di rispondere
-
-☐ Chiami.
-
-☐ Mandi solo il suo nome con il punto di domanda. Esempio: "Marco?"
+* Chiami.
+* Mandi solo il suo nome con il punto di domanda. Esempio: "Marco?"
 4. COME SI FA, OGNI VOLTA
 1. Chiamata.
 2. Messaggio WhatsApp subito dopo, entro pochi minuti, non a fine giornata.
 3. Tentativo, esito e prossimo passo segnati nelle note del gestionale.
 5. ERRORI DA NON FARE
-☐ Chiamare e non mandare nessun messaggio.
-
-☐ Saltare il messaggio perché "gli ho già scritto ieri" o "tanto mi conosce".
-
-☐ Inventare il messaggio invece di usare quello del doc, al primo contatto.
-
-☐ Lasciar perdere un contatto dopo uno o due tentativi.
-
-☐ Non segnare il tentativo nelle note.
+* Chiamare e non mandare nessun messaggio.
+* Saltare il messaggio perché "gli ho già scritto ieri" o "tanto mi conosce".
+* Inventare il messaggio invece di usare quello del doc, al primo contatto.
+* Lasciar perdere un contatto dopo uno o due tentativi.
+* Non segnare il tentativo nelle note.
 6. DOVE TROVI I MATERIALI
-Messaggi: "Messaggi da mandare Followup manuali", nella cartella SCRIPT Vendita
-
-Come segnare i tentativi: "Come aggiornare le note", nella cartella SCRIPT Vendita
+* Messaggi: "Messaggi da mandare Followup manuali", nella cartella SCRIPT Vendita
+* Come segnare i tentativi: "Come aggiornare le note", nella cartella SCRIPT Vendita
 
 === DOCUMENTO: "BUYER PERSONA · Cliente finale CF (risparmiatore in banca)" (cartella SCRIPT Vendita, CONSULENTE FINANZIARIO) ===
 BUYER PERSONA 1 · Il risparmiatore con i soldi in banca
@@ -515,15 +502,11 @@ No:
 Follow up lead fermi: 11 messaggi per i tuoi potenziali clienti
 Per i contatti che non hanno ancora fissato l'incontro, anche chi ha detto "ci penso" o ha smesso di rispondere.
 Come si usano
-• uno ogni 2 o 3 giorni, nell'ordine, alternando un messaggio che spiega e una domanda
-
-• i tre AUDIO (1, 4 e 8) si registrano con la tua voce su WhatsApp: il testo è la traccia, dillo con parole tue in 30 o 40 secondi, senza leggerlo
-
-• sostituisci {Nome} e {città} prima di mandare
-
-• chi risponde esce dalla sequenza: si passa alla telefonata
-
-• nessun rendimento promesso: i numeri negli esempi spiegano il meccanismo. Se la tua mandante chiede comunicazioni approvate, falli vedere prima
+* uno ogni 2 o 3 giorni, nell'ordine, alternando un messaggio che spiega e una domanda
+* i tre AUDIO (1, 4 e 8) si registrano con la tua voce su WhatsApp: il testo è la traccia, dillo con parole tue in 30 o 40 secondi, senza leggerlo
+* sostituisci {Nome} e {città} prima di mandare
+* chi risponde esce dalla sequenza: si passa alla telefonata
+* nessun rendimento promesso: i numeri negli esempi spiegano il meccanismo. Se la tua mandante chiede comunicazioni approvate, falli vedere prima
 Il calendario
 N.
 	Giorno
@@ -584,9 +567,9 @@ Te lo dico semplice. Il primo incontro serve a capire cosa hai oggi: dove sono i
 
 Poi si mette giù un piano, con dentro i tuoi obiettivi e non i prodotti del mese. E da lì non sparisco: ti chiamo io, a scadenze fisse e ogni volta che succede qualcosa sui mercati, senza aspettare che sia tu a chiedere.
 
-La differenza la senti soprattutto quando le cose si muovono, perché sai già cosa fare e con chi parlarne
+La differenza la senti soprattutto quando le cose si muovono, perché sai già cosa fare e con chi parlarne.
 
-Se ti va ne parliamo, intanto dimmi se ti ritrovi in questa cosa
+Dimmi se ti ritrovi in questa cosa.
 2. Messaggio · I soldi fermi sul conto
 {Nome}, una cosa che vedo spesso: i soldi tenuti sul conto "perché almeno così non perdo".
 
@@ -600,11 +583,11 @@ Non vuol dire che vanno investiti tutti, anzi: una parte deve restare disponibil
 4. Audio · Cosa fare quando il mercato scende
 Traccia da dire a voce, 30 o 40 secondi. Non leggerla: usala come scaletta.
 
-Ciao {Nome}
+Ciao {Nome},
 
-ti scrivo per una cosa che prima o poi capita a chiunque abbia dei risparmi investiti: il giorno in cui apri l'estratto e vedi il segno meno.
+Ti scrivo per una cosa che prima o poi capita a chiunque abbia dei risparmi investiti: il giorno in cui apri l'estratto e vedi il segno meno.
 
-La reazione più naturale è vendere tutto per "fermare l'emorragia". Ed è quasi sempre la scelta che costa di più, perché trasforma un calo sulla carta in una perdita vera, e spesso si esce proprio prima della risalita
+La reazione più naturale è vendere tutto per "fermare l'emorragia". Ed è quasi sempre la scelta che costa di più, perché trasforma un calo sulla carta in una perdita vera, e spesso si esce proprio prima della risalita.
 
 Quello che funziona è deciderlo prima, a mente fredda:
 
@@ -614,7 +597,7 @@ Quello che funziona è deciderlo prima, a mente fredda:
 
 • chi ti chiama quando succede, così non decidi da solo davanti al telegiornale
 
-Il calo non lo puoi evitare, il panico sì. È una delle cose per cui serve qualcuno che ti segua
+Il calo non lo puoi evitare, il panico sì. È una delle cose per cui serve qualcuno che ti segua.
 5. Messaggio · Investire un po' al mese
 {Nome}, ti spiego una cosa che a molti fa cambiare idea sui mercati che scendono.
 
@@ -631,7 +614,7 @@ Se non risponde, si va avanti col messaggio 8 come se niente fosse.
 8. Audio · La pensione
 Traccia da dire a voce, 30 o 40 secondi. Non leggerla: usala come scaletta.
 
-Ciao {Nome}, ti scrivo per un tema che di solito si rimanda: la pensione
+Ciao {Nome}, ti scrivo per un tema che di solito si rimanda: la pensione.
 
 La domanda che conta non è "quanto prenderò", ma "quanto mi mancherà ogni mese rispetto a quello che guadagno oggi". Per quasi tutti c'è una differenza, e più si va avanti più è difficile coprirla.
 
@@ -639,7 +622,7 @@ Il punto è che questa differenza si può calcolare oggi, in euro al mese, parte
 
 Chi ci pensa a 45 anni ha tempo e scelta. Chi ci pensa a 60 ha meno tempo e meno strade.
 
-Se vuoi, lo facciamo insieme sui tuoi numeri: ti porti a casa la cifra e poi decidi tu
+Se vuoi, lo facciamo insieme sui tuoi numeri: ti porti a casa la cifra e poi decidi tu.
 9. Messaggio · Un piano, non una collezione di prodotti
 {Nome}, una cosa che noto quando guardo i risparmi delle persone: spesso non c'è un piano, c'è una collezione di prodotti.
 
@@ -719,17 +702,16 @@ Un paio di cose utili per non sprecare la mezz'ora:
 * se hai già qualcosa attivo, un fondo, una polizza o degli investimenti, portati l'ultimo estratto conto
 * se le scelte le fate in due, venite insieme a [partner]
 
-Preparami pure le domande che hai. Se ti capita un imprevisto avvisami prima, così rischeduliamo 💪 A presto
+Preparami pure le domande che hai. Se ti capita un imprevisto avvisami prima, così spostiamo 💪 A presto
 La mattina dell'appuntamento
 Ciao [Nome], sono [Consulente], ci vediamo oggi alle [ora]. Ti lascio qui l'indirizzo così ce l'hai a portata di mano: [INDIRIZZO]. A più tardi!
 Messaggi ai nuovi follower su Instagram, per aprire un altro canale di appuntamenti
 Questo canale serve a intercettare persone che non hanno lasciato un contatto tramite la campagna. Si scrive a chi ti ha appena seguito, una volta sola, senza insistere.
 
 Primo messaggio, apertura
-
 Ciao [Nome], piacere di conoscerti 👋
 Ti scrivo perché lavoro spesso con famiglie e professionisti che, pur avendo risparmiato bene, non hanno un piano chiaro per far crescere i propri risparmi in vista della pensione.
-Aiuto i risparmiatori a mettere ordine nel proprio capitale: ti seguo dalla pianificazione del futuro, alla pensione, fino a lasciare un'eredità tutelata se hai figli.
+Aiuto i risparmiatori a mettere ordine nel proprio capitale: ti seguo dalla pianificazione del futuro alla pensione, fino a lasciare un'eredità tutelata se hai figli.
 La cosa bella è che non ti richiede di essere un esperto di mercati o di stare dietro alle notizie.
 Se ti può essere utile come spunto, sul mio profilo trovi alcune testimonianze dei miei clienti.
 Mi farebbe piacere scambiare due chiacchiere veloci per capire se questo tipo di pianificazione fa al caso tuo. Ti andrebbe un breve confronto?
@@ -737,16 +719,15 @@ Un saluto,
 [Consulente]
 
 Se non risponde, un solo recupero dopo qualche giorno
-
 Ciao [Nome], ti lascio comunque questa, che è la cosa più utile che posso darti anche se non ci sentiamo: [LINK GUIDA]. Dentro c'è il conto di quanto capitale serve per la pensione e come ci si arriva. Se poi vuoi vedere i tuoi numeri, sai dove trovarmi 👍
 
 === DOCUMENTO: "PLAYBOOK OBIEZIONI — Consulente Finanziario" (cartella SCRIPT Vendita, CONSULENTE FINANZIARIO) ===
-PLAYBOOK OBIEZIONI — Consulente Finanziario
+PLAYBOOK OBIEZIONI · Consulente Finanziario
 Cliente tipo: capitale fra i 100.000 e i 500.000 euro più una capacità di risparmio mensile, che vuole far crescere quello che ha e prepararsi al momento in cui smetterà di lavorare.
 Le 4 regole prima di rispondere
-1. Valida sempre prima ("capisco", "ci sta", "fai bene a chiederlo"), poi reframe. Mai difenderti.
+1. Valida sempre prima ("capisco", "ci sta", "fai bene a chiederlo"), poi riformula. Mai difenderti.
 2. Riporta al desiderio o al costo di non fare niente: il patrimonio che cresce, i costi che oggi paga senza vederli, gli anni di crescita che non tornano indietro. Mai promettere rendimenti.
-3. Una obiezione alla volta: rispondi, poi "c'è altro?". Così la isoli e la blocchi.
+3. Un'obiezione alla volta: rispondi, poi "c'è altro?". Così la isoli e la blocchi.
 4. Adeguatezza sempre: ogni proposta va valutata su profilo di rischio e adeguatezza del cliente (MiFID). Mai forzare un cliente inadatto.
 
 ________________
@@ -792,7 +773,7 @@ Trappola: minimizzare, o peggio promettere che non scendono.
 
 Risposta: "Fai benissimo a chiederlo, i mercati oscillano e chi dice il contrario ti mente. Proprio per questo si diversifica e si costruisce sul tuo profilo di rischio, così le oscillazioni sono quelle che puoi sostenere, e non si mette tutto nello stesso posto nello stesso momento. E se stai anche versando ogni mese, nei periodi di discesa stai comprando a prezzi bassi: è la parte che lavora meglio, non quella che ti danneggia. Il rischio vero, su un orizzonte lungo, è restare fermi o decidere di pancia."
 
-Mossa: valida, mai promettere, poi diversificazione più profilo più il vero rischio che è l'immobilismo.
+Mossa: valida, non promettere mai, poi diversificazione e profilo di rischio: il rischio vero è l'immobilismo.
 
 ________________
 
@@ -808,7 +789,7 @@ ________________
 7. "Ci ho già provato e mi sono fermato"
 Trappola: liquidarlo con "questa volta è diverso".
 
-Risposta: "Ti ringrazio che me lo dici, perché è la cosa più utile che potevi dirmi. Ti chiedo una cosa sola: quando ti sei fermato, c'era qualcuno che se ne è accorto? Quasi sempre la risposta è no. Non ti sei fermato perché non eri capace: ti sei fermato perché eri da solo. La differenza qui è che quel momento lo vediamo insieme, e si aggiusta il piano invece di abbandonarlo."
+Risposta: "Ti ringrazio di avermelo detto, perché è la cosa più utile che potevi dirmi. Ti chiedo una cosa sola: quando ti sei fermato, c'era qualcuno che se ne è accorto? Quasi sempre la risposta è no. Non ti sei fermato perché non eri capace: ti sei fermato perché eri da solo. La differenza qui è che quel momento lo vediamo insieme, e si aggiusta il piano invece di abbandonarlo."
 
 Mossa: riattribuisci la causa al non essere seguito, non a un difetto suo.
 
@@ -871,7 +852,7 @@ ________________
 Nota compliance: non promettere mai rendimenti o guadagni garantiti. I numeri mostrati sono simulazioni su ipotesi storiche. Ogni raccomandazione va valutata su profilo di rischio e adeguatezza del cliente (MiFID).
 
 === DOCUMENTO: "SCRIPT 1ª CALL — Consulente Finanziario (risparmi e pensione, capitale 100-500k)" (cartella SCRIPT Vendita, CONSULENTE FINANZIARIO) ===
-SCRIPT 1ª CALL — Consulente Finanziario
+SCRIPT 1ª CALL · Consulente Finanziario
 Target: persona che vuole accumulare capitale per la pensione e pianificare il futuro. Risparmi fermi sul conto o capitale investito male, tipicamente fra i 100.000 e i 500.000 euro, più una capacità di risparmio mensile.
 
 Durata massima 10-12 minuti. Obiettivo: raccogliere le informazioni e fissare l'appuntamento in ufficio. Non vendere, non spiegare i mercati, non promettere rendimenti.
@@ -916,7 +897,7 @@ Se dichiara un capitale sopra i 500.000 non è fuori target: è un appuntamento 
 6. Consapevolezza
 "Ti avevano già proposto qualcosa in passato, in banca o da un altro consulente? Come ti sei trovato?"
 
-E la domanda che ti salva dal buco d'acqua: "Su una scelta come questa decidi da solo o ne parli anche con [moglie/marito/partner]?" Se decide in due, il partner va portato all'appuntamento.
+E la domanda che ti salva dal buco nell'acqua: "Su una scelta come questa decidi da solo o ne parli anche con [moglie/marito/partner]?" Se decide in due, il partner va portato all'appuntamento.
 7. Chiusura, fissa l'appuntamento
 "Perfetto [Nome], da quello che mi dici sei esattamente il tipo di situazione su cui lavoro. Ci vediamo in ufficio, 30-40 minuti: facciamo il conto di quanto ti serve in pensione, vediamo da dove parti e ti dico cosa ha senso fare nel tuo caso. Se hai già qualcosa attivo portati l'ultimo estratto conto, così lo guardiamo insieme."
 
@@ -948,7 +929,7 @@ ________________
 Nota compliance: mai promettere rendimenti garantiti. Ogni raccomandazione va fatta valutando profilo di rischio e adeguatezza del cliente (MiFID).
 
 === DOCUMENTO: "SCRIPT 2° APPUNTAMENTO (in ufficio) — Consulente Finanziario (risparmi e pensione)" (cartella SCRIPT Vendita, CONSULENTE FINANZIARIO) ===
-SCRIPT 2° APPUNTAMENTO — in ufficio, dal vivo
+SCRIPT 2° APPUNTAMENTO · in ufficio, dal vivo
 Consulente Finanziario · target: chi vuole accumulare capitale per la pensione e pianificare il futuro, capitale fra i 100.000 e i 500.000 più capacità di risparmio mensile.
 
 Durata 30-45 minuti. Obiettivo: fare il conto di quanto gli serve, far vedere la distanza fra quel numero e dove sta oggi, e posizionarti come la persona che lo accompagna a colmarla. Non vendere ancora. Mai promettere rendimenti.
@@ -964,10 +945,10 @@ Recap breve, poi subito una domanda aperta. Il recap non è il cuore di questo i
 Poi lo lasci parlare. Questo appuntamento serve a farlo aprire, non a fargli il riassunto. Più parla lui, più dati hai per il terzo.
 
 Domande aperte da tenere pronte:
-cosa hai già fatto con questi soldi negli ultimi anni
-cosa ti ha frenato fino a oggi
-se fra dieci anni fosse tutto uguale, cosa cambierebbe per te
-cosa ti aspetti da una persona che ti segue
+* cosa hai già fatto con questi soldi negli ultimi anni
+* cosa ti ha frenato fino a oggi
+* se fra dieci anni fosse tutto uguale, cosa cambierebbe per te
+* cosa ti aspetti da una persona che ti segue
 
 Il questionario si compila qui. In questo appuntamento compili insieme a lui il questionario MiFID, o il questionario di profilazione che usi tu. Non è burocrazia da sbrigare dopo: farlo davanti a lui è il modo più naturale per raccogliere i dati veri, età, reddito, contributi, capacità di risparmio, orizzonte e tolleranza al rischio, e gli dà la sensazione di un lavoro serio già cominciato. Sono esattamente i dati che ti servono per il simulatore del terzo appuntamento.
 2. Il conto (il cuore dell'appuntamento)
@@ -989,7 +970,7 @@ Fai sentire il costo del non fare niente: costi che si pagano ogni anno senza ve
 4. Situazione attuale, la foto del presente
 Quanto c'è, dove (conto, fondi, polizze, immobili), chi lo segue e come, quanto entra ogni mese e quanto avanza. Segna tutto: ti serve per il terzo appuntamento.
 
-Dati da portare a casa per il simulatore del terzo appuntamento: età, età di pensionamento prevista, tipo di contratto, reddito netto mensile, anni di contributi già versati, stipendio medio di quegli anni, capitale disponibile oggi, quanto riesce a versare ogni mese.
+Dati da portare a casa per il simulatore: età, età di pensionamento prevista, tipo di contratto, reddito netto mensile, anni di contributi già versati, stipendio medio di quegli anni, capitale disponibile oggi, quanto riesce a versare ogni mese.
 5. Posizionamento
 Tiri fuori tu le alternative e le disinneschi:
 
@@ -1020,7 +1001,7 @@ ________________
 Nota compliance: mai promettere rendimenti garantiti. Valuta sempre profilo di rischio e adeguatezza del cliente (MiFID).
 
 === DOCUMENTO: "SCRIPT 3° APPUNTAMENTO (dal vivo) — Consulente Finanziario (risparmi e pensione)" (cartella SCRIPT Vendita, CONSULENTE FINANZIARIO) ===
-SCRIPT 3° APPUNTAMENTO — dal vivo, in ufficio
+SCRIPT 3° APPUNTAMENTO · dal vivo, in ufficio
 Consulente Finanziario · target: capitale fra i 100.000 e i 500.000 più la capacità di risparmio mensile.
 
 Durata 30-45 minuti. Obiettivo: far vedere quanto cresce il suo patrimonio se lo gestisci tu, presentare la soluzione, gestire le obiezioni e chiudere. Parla di benefici, non di caratteristiche. Mai promettere rendimenti: i numeri sono proiezioni su ipotesi storiche, non garanzie.
@@ -1074,7 +1055,7 @@ Da martellare: il capitale resta tuo, intestato a te e disponibile · costi tras
 7. Trial close
 "Ti torna? La senti come la strada giusta per il tuo patrimonio, o c'è qualcosa che non ti quadra?" Se arriva un'obiezione isola: "è l'unica cosa o c'è altro?" e vai al Playbook.
 8. Gestione obiezioni
-Valida sempre prima, poi reframe. Mai difenderti, mai promettere rendimenti, una obiezione alla volta.
+Valida sempre prima, poi reframe. Mai difenderti, mai promettere rendimenti, un'obiezione alla volta.
 
 Le principali: "ci penso" · "non voglio muovere tutto" · "e se mi serve prima?" · "e se i mercati scendono?" · "faccio da solo" · "ne parlo col partner".
 9. Chiusura
@@ -1093,8 +1074,8 @@ ________________
 Nota compliance: non promettere mai rendimenti o guadagni garantiti. I numeri mostrati sono simulazioni su ipotesi. Ogni proposta va valutata su profilo di rischio e adeguatezza del cliente (MiFID).
 
 === DOCUMENTO: "SOP 1 apt" (cartella SCRIPT Vendita, CONSULENTE FINANZIARIO) ===
-SOP 1 APT — la prima call di qualifica
-Dal momento che un lead entra riceve subito un messaggio automatico e le mail di follow up. È possibile che si prenoti da solo: in ogni caso è ideale fargli una call di 10-15 minuti al massimo per qualificarlo e capire se è in target per l'appuntamento.
+SOP 1 APT · la prima call di qualifica
+Appena un lead entra, riceve subito un messaggio automatico e le mail di follow up. È possibile che si prenoti da solo: in ogni caso è ideale fargli una call di 10-15 minuti al massimo per qualificarlo e capire se è in target per l'appuntamento.
 
 L'appuntamento si fa in ufficio, dal vivo. È il vantaggio più grande che hai contro una banca o un numero verde, e la persona che viene da te in ufficio chiude molto più spesso di una che ti vede su uno schermo. La video call si usa solo come eccezione, per chi abita lontano e non può proprio venire.
 Le chiamate si fanno fra le 8 e le 10 o fra le 17 e le 20, sempre dando del tu e sempre con un'idea concreta da proporre, perché nella fascia centrale della giornata le persone lavorano e non rispondono.
@@ -1121,7 +1102,7 @@ In questi casi si risponde comunque in modo gentile e si fa capire il valore di 
 Follow up se non risponde alla chiamata
 1. Audio: "ho provato a chiamarti giusto per capire se un piano personalizzato è una cosa applicabile al tuo caso specifico"
 2. Richiamare dopo 24 ore
-3. Messaggio scritto: "Ehy [Nome], fammi sapere con un NO se hai cambiato idea sul sistemare questa cosa, almeno evito di disturbarti!"
+3. Messaggio scritto: "Ehi [Nome], fammi sapere con un NO se hai cambiato idea sul sistemare questa cosa, almeno evito di disturbarti!"
 
 I testi completi stanno in Messaggi da mandare Followup manuali.
 Cosa scrivi nel gestionale, subito dopo la call
@@ -1132,7 +1113,7 @@ ________________
 Traccia parola per parola: SCRIPT 1ª CALL. Questa SOP è il perché e il processo, lo script è il come si dice.
 
 === DOCUMENTO: "SOP 2 APPUNTAMENTO" (cartella SCRIPT Vendita, CONSULENTE FINANZIARIO) ===
-SOP 2 APPUNTAMENTO — regole dell'incontro
+SOP 2 APPUNTAMENTO · regole dell'incontro
 Durata media 30-45 minuti. L'incontro si fa in ufficio, dal vivo.
 
 Mai mandare il prospetto per primo: semmai si arriva al contratto. Il materiale si mostra davanti alla persona, non si spedisce perché lo guardi da sola.
@@ -1171,7 +1152,7 @@ Silenzio totale dopo aver detto garanzia e prezzo. Il primo che parla ha perso.
 
 Nella gestione obiezioni inizia la vendita vera: si alza il livello di fiducia nel consulente, nel metodo e nello strumento, in base alla casistica specifica. Il riferimento completo è il Playbook Obiezioni.
 Nota
-Consiglio per fissare un terzo appuntamento: nel secondo fermarsi solo alla parte di analisi. È esattamente quello che fa lo SCRIPT 2° APPUNTAMENTO, che chiude con "oggi non ti farò nessuna proposta" e rimanda la presentazione al terzo.
+Consiglio per fissare un terzo appuntamento: nel secondo fermarsi solo alla parte di analisi. È esattamente quello che fa lo SCRIPT 2° APPUNTAMENTO, che chiude con "nessuna proposta oggi" e rimanda la presentazione al terzo.
 
 Se invece la persona è pronta e chiede di vedere subito la soluzione, non frenarla: il percorso a tre incontri è la regola, non una gabbia.
 
@@ -2147,7 +2128,7 @@ TRAINING COMMERCIALI SETTIMANALI
 LEZIONI DAI TRAINING COMMERCIALI SETTIMANALI (call "Training Commerciale AEA" del mercoledi)
 Cosa si e' insegnato ai consulenti nelle call di gruppo, riscritto senza nomi di persone e senza numeri di nessuno.
 Ogni lezione ha la data della call da cui viene. Se una lezione contraddice un documento del training ufficiale, vale il documento.
-Call lette: 02/09/2026, 09/09/2026, 16/09/2026, 23/09/2026, 07/10/2026, 14/10/2026, 20/10/2026, 27/10/2026, 03/11/2026, 10/11/2026.
+Call lette: 02/09/2026, 09/09/2026, 16/09/2026, 23/09/2026, 07/10/2026, 14/10/2026, 20/10/2026, 27/10/2026, 03/11/2026, 10/11/2026, 17/11/2026.
 
 PRIMA CHIAMATA
 • Il lead e' tiepido: non ti conosce, ma ha alzato la mano. Lo scopo della prima chiamata non e' vendere, e' guadagnarti la sua fiducia e qualificarlo. (07/10)
@@ -2209,6 +2190,17 @@ PRIMA CHIAMATA
 • Chi vuole "solo informazioni" o teme di essere agganciato: "la prima volta che incontro una persona non le vendo niente". Se resiste, vai incontro a meta' strada: chiedigli tre o quattro punti che gli interessano, mandagli un messaggio e richiamalo fra una settimana con un'idea specifica sul suo caso. Troppa pressione fa perdere anche un lead buono. (10/11)
 • Vivi le chiamate come un gioco: il caso peggiore e' che mettano giu'. (10/11)
 • Lead lontano: verifica la zona e digli dov'e' il tuo ufficio. (10/11)
+• Quando fissi, evita il giorno incerto: se ha un impegno che non sa ancora quando cade (una visita, un turno), fissa il giorno dopo, quello sicuro, invece di "ti richiamo domani e decidiamo". (17/11)
+• Non chiudere la chiamata con l'ansia di portare a casa il si': qualificalo e dagli i motivi per presentarsi. Quando segui lo schema gli appuntamenti si fissano; quando ti lasci andare all'entusiasmo, no. (17/11)
+
+OBIEZIONE "RIMANDIAMO A GENNAIO" (novembre e dicembre)
+• In questi due mesi arrivano "lo facciamo a gennaio", "dopo Natale", "ho altre cose da fare": e' un'obiezione come le altre. Non dare tu l'assist per rimandare: chi rimandi a gennaio, a gennaio di solito non lo rivedi. (17/11)
+• Se vuole partire a gennaio, si prepara adesso: "se vuoi partire a gennaio, il momento di preparare tutto e' ora: il conto lo apriamo adesso, i soldi li spostiamo quando vuoi tu". (17/11)
+• Chiedi sempre "come mai a gennaio?", con tono sincero: avra' una disponibilita' diversa o ha bisogno di pensarci? Se ha bisogno di pensarci: "allora vediamoci dieci minuti, anche in video: mi racconti cosa avevi in mente, ti faccio vedere come lavoro, e hai tutte le vacanze per pensarci". (17/11)
+• Fare domande non e' insistere. Insistere e' rispondere "no, gennaio no". Se e' vero, aggiungi la riprova: "molti miei clienti si sono trovati bene a partire prima, cosi' a gennaio era gia' tutto pronto". (17/11)
+• Se gli fa stare tranquillo lasciare tutto com'e': "vediamo intanto solo la parte che la preoccupa, come muoverci lo vediamo in un secondo momento". (17/11)
+• Disinnesca prima che arrivi: venti minuti prima, nella conversazione, tira fuori tu cosa si perde aspettando (per esempio le perdite fiscali che scadono a fine anno). Quando l'hai detto tu, l'obiezione del rinvio esce molto meno. Mai promettere rendimenti. (17/11)
+• Non devi snaturarti: usa le frasi nel modo che ti viene naturale (anche il "tu" al posto del "lei", se non ti viene subito). Lo sforzo da fare e' uscire un po' dalla zona di comfort, non cambiare il tuo modo di lavorare. (17/11)
 
 DOPO LA CHIAMATA E FOLLOW UP
 • Nella conferma dell'appuntamento allega 2 o 3 screenshot di messaggi veri di tuoi clienti soddisfatti, col nome coperto. Funziona molto meglio del biglietto da visita e fa presentare molte piu' persone all'appuntamento. (02/09, 07/10)
@@ -2239,6 +2231,15 @@ DOPO LA CHIAMATA E FOLLOW UP
 • Numero falso, come ultima spiaggia: cerca il nome anche su Instagram o LinkedIn; su Facebook il nome puo' essere diverso (un soprannome, il profilo di un familiare). (10/11)
 • Chi ti ha detto si' ma deve ancora aprire il conto non va lasciato li': dagli l'ultima spinta con un messaggio o una chiamata legati a una scadenza vera. (10/11)
 • Segna sempre appuntamenti e fatturato nel modulo: serve a capire quale annuncio porta clienti, altrimenti si rischia di spegnere campagne che funzionano. (10/11)
+• Presente non vuol dire insistente. Risulti insistente quando richiami solo per chiedere "allora, quando ci vediamo?" senza portare niente. Richiama con un tema di valore: una cosa che ti aveva detto in prima chiamata, una novita' che lo riguarda ("mi sei venuto in mente perche' alcuni miei clienti stanno facendo questa cosa, ci prendiamo dieci minuti?"). Per questo i messaggi di follow up della cartella hanno sempre qualcosa di utile dentro. (17/11)
+• Se ti disdice l'appuntamento (malattia, imprevisto), rifissalo subito nella stessa conversazione proponendo due giorni precisi: in quel momento non risulti insistente, stai facendo il tuo lavoro. Poi usa buon senso: se ti ha appena scritto che ha da fare, non richiamarlo il giorno dopo. (17/11)
+• Non decidere tu come preferisce essere contattato: c'e' chi non risponde mai su WhatsApp e al telefono risponde subito. Stai dietro a tutti, su tutti i canali. (17/11)
+• "Non in target" e "non risponde" sono due cose diverse: chi semplicemente non ha risposto resta da richiamare, Non in target e' solo chi non ha le condizioni o ti ha chiesto di non chiamarlo. Nei periodi in cui entrano pochi contatti nuovi, il lavoro e' sulla lista che hai gia'. (17/11)
+• Chi ti ha detto "ho gia' un consulente" o "volevo solo la guida" si stava guardando intorno: qualcosa non lo convince. Quando i mercati si agitano, richiamalo e chiedigli come ha vissuto quel periodo: e' il momento in cui chi e' seguito male se ne accorge. (17/11)
+• Con chi arriva dagli annunci puoi insistere piu' che con una referenza: ha alzato la mano e non conosce i tuoi amici. Con il cugino di un amico invece dosa, perche' un fastidio gli fa perdere anche chi te lo ha presentato. (17/11)
+• Quando cambia la campagna i contatti nuovi ripartono dopo un po', come un negozio con l'insegna nuova: serve tempo perche' la gente cominci a passare e a entrare. Intanto non stai fermo, lavori la lista. (17/11)
+• Chi ti ha detto si' e poi sparisce, se e' in zona vallo a trovare (per esempio nella sua attivita'): ti conosce di persona, vede che sei reale, e da li' e' quasi tutto in discesa. Dal vivo la diffidenza che aveva in video cade. (17/11)
+• Chi ha deciso ma continua a rimandare l'apertura del conto spesso si e' incartato da qualche parte: offriti di farla insieme, in videochiamata, anche il sabato ("ci vogliono venti minuti, la facciamo insieme"). (17/11)
 
 SECONDO APPUNTAMENTO (ascolto)
 • Si apre dicendo "oggi non ti faccio nessuna proposta": abbassa le difese e ti distingue da chi parla a macchinetta. (23/09)
@@ -2339,6 +2340,7 @@ QUELLO CHE ABBIAMO IMPARATO LAVORANDO CON TANTI CONSULENTI
 (esperienza di AI Elite Advisory; usala per spiegare il perche' delle cose e per consigliare.
 Non citare mai nomi di altri clienti, prezzi o numeri interni di AI Elite.)
 =====================================================================
+• Quando i lead nuovi rallentano, non aspettare: richiama quelli delle settimane e dei mesi prima. Molte chiusure arrivano da contatti vecchi. Chi lavora solo i lead nuovi lascia sul tavolo la parte migliore della sua zona.
 
 IL CLIENTE IDEALE DEL CONSULENTE
 • Banda principale: capitale fra 100.000 e 500.000 euro piu' una capacita' di risparmio mensile. E' la fascia che le grandi reti intercettano con la pubblicita' e poi scartano perche' sotto la loro soglia: sono tanti e nessuno li segue davvero. Sopra i 500.000 non e' fuori target, vale di piu'.
